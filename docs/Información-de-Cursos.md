@@ -84,3 +84,88 @@ Then: El agente inteligente procesa la base de datos y entrega una respuesta
 
 
 ## Información de Cursos
+
+# PETICIONES DE PABLO
+
+## HU-01: Acceso simplificado al syllabus
+
+*Título:* Acceso simplificado al syllabus  
+*Yo, como:* estudiante de la Universidad Icesi  
+*Quiero:* acceder fácilmente al syllabus oficial de una electiva desde una plataforma centralizada  
+*Para:* consultar información académica detallada sin depender de sistemas externos confusos.
+
+### Criterios de aceptación:
+
+*Scenario: Consulta exitosa del syllabus*  
+Given que el estudiante se encuentra consultando una electiva  
+When selecciona la opción "Ver syllabus"  
+Then el sistema muestra el documento oficial asociado al curso
+
+*Scenario: Syllabus no disponible*  
+Given que el estudiante consulta una electiva  
+When el syllabus no ha sido publicado  
+Then el sistema muestra un mensaje indicando que no está disponible
+
+---
+
+## HU-02: Consulta comparativa de cursos internacionales
+
+*Título:* Consulta comparativa de cursos internacionales  
+*Yo, como:* estudiante en proceso de intercambio académico  
+*Quiero:* comparar electivas de universidades extranjeras con cursos de la Universidad Icesi  
+*Para:* identificar similitudes académicas y agilizar mi proceso de homologación.
+
+### Criterios de aceptación:
+
+*Scenario: Comparación exitosa de cursos*  
+Given que el estudiante selecciona una electiva internacional  
+When solicita comparar su contenido con cursos de Icesi  
+Then el sistema muestra los objetivos académicos de ambos cursos
+
+*Scenario: Sin cursos comparables*  
+Given que el estudiante consulta una electiva internacional  
+When no existen similitudes registradas  
+Then el sistema informa que no hay equivalencias disponibles
+
+
+# PETICIONES DE ROBIN
+
+## HU-01: Actualización de información académica de electivas
+
+*Título:* Actualización de información académica de electivas  
+*Yo, como:* profesor encargado de una electiva  
+*Quiero:* actualizar la información registrada de mi curso  
+*Para:* mantener vigente la información académica disponible para consulta estudiantil.
+
+### Criterios de aceptación:
+
+*Scenario: Actualización exitosa*  
+Given que el profesor accede a su curso registrado  
+When modifica la información y guarda los cambios  
+Then el sistema actualiza la información y la envía nuevamente a revisión
+
+*Scenario: Actualización incompleta*  
+Given que el profesor está editando la información del curso  
+When omite campos obligatorios  
+Then el sistema muestra un mensaje indicando los datos faltantes
+
+---
+
+## HU-02: Consulta del estado de validación del syllabus
+
+*Título:* Consulta del estado de validación del syllabus  
+*Yo, como:* profesor encargado de una electiva  
+*Quiero:* consultar el estado de revisión de la información registrada  
+*Para:* conocer si fue aprobada o requiere ajustes.
+
+### Criterios de aceptación:
+
+*Scenario: Consulta de syllabus aprobado*  
+Given que el profesor accede al sistema  
+When consulta una electiva aprobada  
+Then el sistema muestra el estado "Aprobado"
+
+*Scenario: Consulta de syllabus rechazado*  
+Given que el profesor accede al sistema  
+When consulta una electiva rechazada  
+Then el sistema muestra las observaciones registradas por el jefe de departamento
