@@ -2,6 +2,8 @@
 
 ## Solicitud de equivalencia
 
+### Historia 1
+
 **Título:** Registro de solicitud de equivalencia
 
 **Historia:**
@@ -9,7 +11,7 @@ Yo, como estudiante, quiero registrar una solicitud de equivalencia con la infor
 
 **Criterios de aceptación:**
 
-### Scenario: Registro exitoso con datos completos
+#### Scenario: Registro exitoso con datos completos
 
 **Given:** El estudiante se encuentra en el formulario de solicitud
 
@@ -19,7 +21,7 @@ Yo, como estudiante, quiero registrar una solicitud de equivalencia con la infor
 
 **And:** Muestra un mensaje de confirmación
 
-### Scenario: Registro fallido por datos incompletos
+#### Scenario: Registro fallido por datos incompletos
 
 **Given:** El estudiante se encuentra en el formulario de solicitud
 
@@ -27,7 +29,7 @@ Yo, como estudiante, quiero registrar una solicitud de equivalencia con la infor
 
 **Then:** El sistema muestra un mensaje de error indicando campos faltantes
 
-### Scenario: Registro fallido por documentos inválidos
+#### Scenario: Registro fallido por documentos inválidos
 
 **Given:** El estudiante se encuentra en el formulario de solicitud
 **When:** Adjunta documentos en formato no permitido
@@ -35,7 +37,7 @@ Yo, como estudiante, quiero registrar una solicitud de equivalencia con la infor
 
 ---
 
-## Historia de usuario 2
+### Historia de usuario 2
 
 **Título:** Asignación automática de solicitudes
 
@@ -52,7 +54,7 @@ Yo, como administrador del sistema, quiero asignar automáticamente las solicitu
 
 **Then:** Asigna la solicitud al responsable correspondiente
 
-### Scenario: Solicitud sin departamento identificado
+#### Scenario: Solicitud sin departamento identificado
 
 **Given:** Existe una solicitud registrada
 
@@ -66,7 +68,7 @@ Yo, como administrador del sistema, quiero asignar automáticamente las solicitu
 
 ---
 
-## Historia de usuario 3
+### Historia de usuario 3
 
 **Título:** Evaluación preliminar con inteligencia artificial
 
@@ -75,7 +77,7 @@ Yo, como jefe de departamento, quiero recibir una clasificación automática de 
 
 **Criterios de aceptación:**
 
-### Scenario: Clasificación en alto cumplimiento
+#### Scenario: Clasificación en alto cumplimiento
 
 **Given:** Existe una solicitud registrada
 
@@ -85,8 +87,7 @@ Yo, como jefe de departamento, quiero recibir una clasificación automática de 
 
 **Then:** Clasifica la solicitud como "alto"
 
-
-### Scenario: Clasificación en medio cumplimiento
+#### Scenario: Clasificación en medio cumplimiento
 
 **Given:** Existe una solicitud registrada
 
@@ -97,7 +98,7 @@ Yo, como jefe de departamento, quiero recibir una clasificación automática de 
 **Then:** Clasifica la solicitud como "medio"
 
 
-### Scenario: Clasificación en bajo cumplimiento
+#### Scenario: Clasificación en bajo cumplimiento
 
 **Given:** Existe una solicitud registrada
 
@@ -110,7 +111,7 @@ Yo, como jefe de departamento, quiero recibir una clasificación automática de 
 
 ---
 
-## Historia de usuario 4
+### Historia de usuario 4
 
 **Título:** Consulta de equivalencias previas
 
@@ -119,7 +120,7 @@ Yo, como jefe de departamento, quiero consultar equivalencias previamente aproba
 
 **Criterios de aceptación:**
 
-### Scenario: Consulta exitosa de historial
+#### Scenario: Consulta exitosa de historial
 
 **Given:** El evaluador está en el sistema
 
@@ -128,7 +129,7 @@ Yo, como jefe de departamento, quiero consultar equivalencias previamente aproba
 **Then:** El sistema muestra las equivalencias previas
 
 
-### Scenario: Consulta sin resultados
+#### Scenario: Consulta sin resultados
 
 **Given:** El evaluador está en el sistema
 
@@ -139,7 +140,7 @@ Yo, como jefe de departamento, quiero consultar equivalencias previamente aproba
 
 ---
 
-## Historia de usuario 5
+### Historia de usuario 5
 
 **Título:** Actualización de decisiones históricas
 
@@ -148,7 +149,7 @@ Yo, como jefe de departamento, quiero modificar decisiones anteriores, para mant
 
 **Criterios de aceptación:**
 
-### Scenario: Actualización exitosa de decisión
+#### Scenario: Actualización exitosa de decisión
 
 **Given:** Existe una equivalencia previamente registrada
 
@@ -159,7 +160,7 @@ Yo, como jefe de departamento, quiero modificar decisiones anteriores, para mant
 **And:** Guarda el cambio en el historial
 
 
-### Scenario: Intento de actualización sin permisos
+#### Scenario: Intento de actualización sin permisos
 
 **Given:** Existe una equivalencia registrada
 
@@ -174,7 +175,7 @@ Yo, como jefe de departamento, quiero modificar decisiones anteriores, para mant
 
 ---
 
-## Historia de usuario 6
+### Historia de usuario 6
 
 **Título:** Notificación de cambios en solicitudes
 
@@ -183,7 +184,7 @@ Yo, como estudiante, quiero recibir notificaciones sobre el estado de mi solicit
 
 **Criterios de aceptación:**
 
-### Scenario: Notificación por cambio de estado
+#### Scenario: Notificación por cambio de estado
 
 **Given:** Existe una solicitud en proceso
 
@@ -192,7 +193,7 @@ Yo, como estudiante, quiero recibir notificaciones sobre el estado de mi solicit
 **Then:** El sistema envía una notificación al estudiante
 
 
-### Scenario: Consulta manual del estado
+#### Scenario: Consulta manual del estado
 
 **Given:** El estudiante accede al sistema
 
