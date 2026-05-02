@@ -126,6 +126,18 @@ PETICIONES DE PABLO
 **When:** el syllabus no ha sido publicado  
 **Then:** el sistema muestra un mensaje indicando que no está disponible
 
+## RF DERIVADOS DE HU5 
+
+**RF1:** El sistema debe permitir a los estudiantes acceder al syllabus oficial de cada electiva desde una plataforma centralizada.  
+
+**RF2:** El sistema debe mostrar una opción denominada "Ver syllabus" dentro de la información de cada electiva.  
+
+**RF3:** El sistema debe visualizar el documento oficial del curso dentro de la plataforma.  
+
+**RF4:** El sistema debe informar cuando el syllabus no haya sido publicado o no se encuentre disponible.  
+
+**Analisis PESTLE RF:** No aplica
+
 ---
 
 ## HU-06: Consulta comparativa de cursos internacionales
@@ -146,6 +158,17 @@ PETICIONES DE PABLO
 **Given:** que el estudiante consulta una electiva internacional  
 **When:** no existen similitudes registradas  
 **Then:** el sistema informa que no hay equivalencias disponibles
+## RF DERIVADOS DE HU6 
+
+**RF1:** El sistema debe permitir seleccionar una electiva internacional para realizar comparación académica.  
+
+**RF2:** El sistema debe mostrar los objetivos académicos de la electiva internacional seleccionada.  
+
+**RF3:** El sistema debe comparar los objetivos académicos del curso internacional con electivas de la Universidad Icesi.  
+
+**RF4:** El sistema debe informar cuando no existan equivalencias o similitudes registradas entre cursos.  
+
+**Analisis PESTLE RF:** No aplica
 
 ------------------------------------------------------------------------------
 
@@ -270,6 +293,19 @@ NO APLICA
 **When:** omite campos obligatorios  
 **Then:** el sistema muestra un mensaje indicando los datos faltantes
 
+## RF DERIVADOS DE HU5 
+
+**RF1:** El sistema debe permitir a los profesores editar la información académica de las electivas asignadas.  
+
+**RF2:** El sistema debe guardar los cambios realizados sobre la información del curso.  
+
+**RF3:** El sistema debe reenviar automáticamente la información actualizada al proceso de revisión.  
+
+**RF4:** El sistema debe validar que todos los campos obligatorios estén diligenciados antes de guardar cambios.  
+
+**RF5:** El sistema debe mostrar un mensaje indicando los datos faltantes cuando la actualización esté incompleta.  
+
+**Analisis PESTLE RF:** No aplica
 ---
 
 ## HU-06: Consulta del estado de validación del syllabus
@@ -291,6 +327,19 @@ NO APLICA
 **When:** consulta una electiva rechazada  
 **Then:** el sistema muestra las observaciones registradas por el jefe de departamento
 
+## RF DERIVADOS DE HU6
+
+**RF1:** El sistema debe permitir a los profesores consultar el estado de revisión de cada syllabus registrado.  
+
+**RF2:** El sistema debe mostrar el estado de validación de una electiva como "Aprobado", "Pendiente" o "Rechazado".  
+
+**RF3:** El sistema debe mostrar las observaciones realizadas por el jefe de departamento cuando un syllabus sea rechazado.  
+
+**RF4:** El sistema debe actualizar el estado de validación después de cada revisión realizada.  
+
+**Analisis PESTLE RF:** No aplica
+
+-------------------------------------
 
 # Requerimientos Funcionales
 ## RF DERIVADOS DE HU1
