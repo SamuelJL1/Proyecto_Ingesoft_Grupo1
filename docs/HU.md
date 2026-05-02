@@ -325,4 +325,108 @@ Yo como administrador quiero editar la información de un curso para mantenerla 
 - **Scenario:** Usuario sin permisos intenta editar curso  
   - **Given** que el usuario no es administrador  
   - **When** intenta editar un curso  
-  - **Then** el sistema bloquea la acción  
+  - **Then** el sistema bloquea la acción
+ 
+  # Retroalimentaciones y gestión interna
+
+## HU1 – Visualización de syllabus
+Yo como jefe de departamento quiero visualizar el syllabus de un curso registrado para revisar sus objetivos de aprendizaje y contenidos.
+
+**Feature:** Visualizar syllabus de un curso
+
+- **Scenario:** Curso con syllabus completo  
+  - **Given** que existe un curso registrado con los campos nombre, objetivos de aprendizaje y contenidos diligenciados  
+  - **When** el jefe de departamento consulta el syllabus del curso  
+  - **Then** el sistema muestra el nombre del curso  
+  - **And** muestra los objetivos de aprendizaje  
+  - **And** muestra los contenidos  
+
+- **Scenario:** Curso sin syllabus completo  
+  - **Given** que existe un curso registrado sin objetivos de aprendizaje o sin contenidos  
+  - **When** el jefe de departamento consulta el syllabus del curso  
+  - **Then** el sistema muestra un mensaje indicando que el syllabus está incompleto  
+
+
+## HU2 – Registro de decisión sobre propuestas
+Yo como jefe de departamento quiero registrar una decisión sobre una propuesta de materia para definir su estado dentro del proceso académico.
+
+**Feature:** Gestionar decisiones de propuestas
+
+- **Scenario:** Registro de decisión válida  
+  - **Given** que existe una propuesta con los campos nombre, objetivos y créditos diligenciados  
+  - **When** el jefe registra una decisión con valor “aprobado”, “rechazado” o “en revisión”  
+  - **Then** el sistema guarda el estado seleccionado  
+  - **And** registra la fecha de la decisión  
+
+- **Scenario:** Registro con propuesta incompleta  
+  - **Given** que existe una propuesta con campos obligatorios vacíos  
+  - **When** el jefe intenta registrar una decisión  
+  - **Then** el sistema no permite guardar la decisión  
+  - **And** indica los campos obligatorios faltantes  
+
+
+## HU3 – Selección de cursos para comparación
+Yo como jefe de departamento quiero seleccionar exactamente dos cursos para realizar su comparación.
+
+**Feature:** Seleccionar cursos para comparar
+
+- **Scenario:** Selección válida de dos cursos  
+  - **Given** que existen al menos dos cursos registrados en el sistema  
+  - **When** el jefe selecciona dos cursos diferentes  
+  - **Then** el sistema registra la selección de los dos cursos  
+
+- **Scenario:** Selección inválida de cursos  
+  - **Given** que existen cursos registrados en el sistema  
+  - **When** el jefe selecciona menos o más de dos cursos  
+  - **Then** el sistema no permite continuar con la comparación  
+
+
+## HU4 – Comparación de cursos
+Yo como jefe de departamento quiero comparar los objetivos de aprendizaje de dos cursos seleccionados para identificar diferencias entre ellos.
+
+**Feature:** Comparar cursos
+
+- **Scenario:** Comparación válida  
+  - **Given** que hay dos cursos seleccionados  
+  - **And** ambos tienen objetivos de aprendizaje registrados  
+  - **When** el jefe realiza la comparación  
+  - **Then** el sistema muestra los objetivos de aprendizaje de ambos cursos  
+
+- **Scenario:** Comparación con información incompleta  
+  - **Given** que hay dos cursos seleccionados  
+  - **And** uno de los cursos no tiene objetivos de aprendizaje registrados  
+  - **When** el jefe realiza la comparación  
+  - **Then** el sistema indica que uno de los cursos no tiene información suficiente  
+
+
+## HU5 – Registro de cursos
+Yo como asistente del departamento quiero registrar un curso con sus datos básicos para mantener actualizada la información académica.
+
+**Feature:** Registrar cursos
+
+- **Scenario:** Registro válido de curso  
+  - **Given** que el asistente está en el formulario de registro  
+  - **When** ingresa nombre del curso (texto), créditos (entero mayor a 0) y programa académico existente  
+  - **Then** el sistema guarda el curso  
+
+- **Scenario:** Registro con datos inválidos  
+  - **Given** que el asistente está en el formulario de registro  
+  - **When** ingresa créditos iguales a 0 o deja campos obligatorios vacíos  
+  - **Then** el sistema no guarda el curso  
+  - **And** indica los errores en los campos  
+
+
+## HU6 – Consulta de cursos
+Yo como jefe de departamento quiero consultar los cursos registrados para acceder a su información básica.
+
+**Feature:** Consultar cursos
+
+- **Scenario:** Consulta con cursos existentes  
+  - **Given** que existen cursos registrados en el sistema  
+  - **When** el jefe consulta la lista de cursos  
+  - **Then** el sistema muestra el nombre del curso y el programa académico de cada uno  
+
+- **Scenario:** Consulta sin cursos  
+  - **Given** que no existen cursos registrados en el sistema  
+  - **When** el jefe consulta la lista de cursos  
+  - **Then** el sistema indica que no hay cursos registrados  
