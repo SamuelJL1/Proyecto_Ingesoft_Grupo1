@@ -38,7 +38,48 @@ Then: El sistema despliega los cursos disponibles en esa institucion que pueden 
 *Scenario: Identificacion de similitudes*   
 Given: El estudiante visualiza la lista de cursos internacionales  
 When: Compara la informacion de un curso extranjero con una electiva de ICESI  
-Then: El sistema permite visualizar los objetivos de ambos para facilitar el tramite  
+Then: El sistema permite visualizar los objetivos de ambos para facilitar el tramite 
+
+
+
+## HU-03: Busqueda de electivas disponibles
+
+*Titulo:* Busqueda de electivas disponibles
+*Como:* estudiante de ICESI
+*Quiero:* buscar electivas que se encuentren disponibles en la universidad
+*Para:* encontrar mas facilmente los cursos que se ajusten a mis intereses academicos
+
+
+### Criterios de aceptacion:
+
+*Scenario:Busqueda exitosa de una electiva*
+Given: El estudiante esta en el sitio de electivas
+When: Escribe el nombre o una palabra clave relacionada con el curso
+Then: El sistema muestra las electivas que coinciden con la busqueda
+
+*Scenario: Busqueda de una electiva sin resultados*
+Given: El estudiante esta en el sitio de electivas
+When: Escribe una palabra para buscar un curso
+Then: El sistema muestra un mensaje indicando que no se encontraron resultados
+
+## HU-04: Consulta de informacion general de una electiva
+*Titulo:* Consulta de informacion general de una electiva
+*Como:* Estudiante de ICESI
+*Quiero:* Consultar la informacion principal de una electiva
+*Para:* Conocer de manera rápida de que trata el curso antes de inscribirlo
+
+### Criterios de aceptacion:
+*Scenario: Visualizacion exitosa de la información del curso*
+Given: Que el estudiante ingresa al sitio de electivas
+When: Selecciona una electiva de la lista
+Then: el sistema muestra la descripcion, objetivos, contenidos, departamento responsable y el profesor encargado
+
+*Scenario: Información incompleta del curso*
+Given: El estudiante selecciona una electiva
+When: La informacion del curso no está completa
+Then: El sistema muestra los datos disponibles
+And: Informa que falta información por actualizar
+
 
 ------------------------------------------------------------------------------
 
@@ -81,6 +122,45 @@ Then: El sistema publica la informacion automaticamente para que sea visible par
 Given: El sistema cuenta con un agente inteligente integrado  
 When: Un usuario realiza una pregunta compleja sobre el contenido de los syllabus  
 Then: El agente inteligente procesa la base de datos y entrega una respuesta  
+
+## HU-03: Visualizar departamento al que pertenece una electiva
+
+*Titulo:* Visualizar departamento al que pertenece una electiva  
+*Como:* Estudiante de la universidad  
+*Quiero:* Identificar a que departamento pertenece cada electiva
+*Para:* Saber a donde dirigir las consultas o solicitudes relacionadas con el curso
+
+### Criterios de aceptacion:
+
+*Scenario: Visualizacion del departamento de una electiva*  
+Given: El estudiante esta consultando la lista de las electivas
+When: Selecciona una electiva
+Then: el sistema muestra al departamento académico que pertenece el curso 
+
+*Scenario: Electiva sin departamento asignado*  
+Given: El estudiante esta consultando la lista de las electivas
+When: Selecciona un curso de electiva que no tiene departamento
+Then: El sistema informa en un mensaje indicando que la informacion del departamento esta pendiente por actualizar
+
+
+## HU-04: Consultar syllabus de una electiva
+
+*Titulo:* Consultar syllabus de una electiva
+*Como:* Estudiante de la universidad 
+*Quiero:* Acceder de manera sencilla al syllabus de una electiva
+*Para:* Conocer la información detallada de los contenidos, objetivos, metodología y evaluación del curso
+
+### Criterios de aceptacion:
+
+*Scenario: Consulta exitosa del syllabus*  
+Given: El estudiante está visualizando la información de una electiva
+When: Selecciona la opcion de “Consultar syllabus”
+Then: El sistema muestra el syllabus del curso de forma clara y accesible
+
+*Scenario: Syllabus no disponible*   
+Given: El estudiante intenta consultar el syllabus de una electiva
+When: El Syllabus no ha sido cargado o aprobado 
+Then: El sistema informa que el syllabus aun no se encuentra disponible 
 
 
 ## Información de Cursos
