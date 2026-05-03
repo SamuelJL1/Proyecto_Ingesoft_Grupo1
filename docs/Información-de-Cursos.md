@@ -170,6 +170,41 @@ PETICIONES DE PABLO
 
 **Analisis PESTLE RF:** No aplica
 
+---
+## HU-07: Estructura organizada de la información de electivas
+
+*Título:* Estructura organizada de electivas  
+*Yo, como:* estudiante de la Universidad Icesi  
+*Quiero:* visualizar la informacion de los cursos de manera estructurada  
+*Para:* entender facilmente los datos academicos.  
+
+### Criterios de aceptación:
+
+*Scenario: Visualizacion estructurada*  
+Given que el estudiante accede a la informacion de una electiva  
+When visualiza los datos del curso  
+Then el sistema organiza la informacion en secciones claras como objetivos, contenido, profesor y departamento  
+
+*Scenario: Informacion organizada*  
+Given que el sistema contiene informacion del curso  
+When se muestra al estudiante  
+Then el sistema garantiza que la informacion esté organizada y sea facil de interpretar  
+
+---
+
+## RF derivado del HU-07
+
+*RF1:* El sistema debe organizar la información de cada electiva en secciones definidas (objetivos, contenido, profesor, departamento).  
+
+*Analisis PESTLE RF:*
+
+|  Dimension  |  Hallazgo   |  Argumentacion Etica  |
+|-------------|-------------|-----------------------|
+|O-Organizacional | Una estructura organizada facilita la comprensión y consulta de la información académica | Se debe garantizar que la información presentada sea clara, coherente y no genere confusión en los estudiantes |
+
+---
+
+
 ------------------------------------------------------------------------------
 
 PETICIONES DE ROBIN
@@ -349,3 +384,70 @@ NO APLICA
 
 Nota: Simplemente ponene #RF DERIVADOS DE HU2..HUN,
 PERO siguen el mismo orden de numeros, a que me refiero que independientemente de que HU sea sigue el orden de numero de RF, es decir si HU2 y salen dos RF entonces RF2 Y RF3, ahora del HU3, sale uno entonces RF4.
+
+---
+## HU-07: Estructura organizada de la información de electivas
+
+*Título:* Estructura organizada de electivas  
+*Yo, como:* estudiante de la Universidad Icesi  
+*Quiero:* visualizar la informacion de los cursos de manera estructurada  
+*Para:* entender facilmente los datos academicos.  
+
+### Criterios de aceptación:
+
+*Scenario: Visualizacion estructurada*  
+Given que el estudiante accede a la informacion de una electiva  
+When visualiza los datos del curso  
+Then el sistema organiza la informacion en secciones claras como objetivos, contenido, profesor y departamento  
+
+*Scenario: Informacion organizada*  
+Given que el sistema contiene informacion del curso  
+When se muestra al estudiante  
+Then el sistema garantiza que la informacion esté organizada y sea facil de interpretar  
+
+---
+
+## RF derivado del HU-07
+
+*RF1:* El sistema debe organizar la información de cada electiva en secciones definidas (objetivos, contenido, profesor, departamento).  
+
+*Analisis PESTLE RF:*
+
+|  Dimension  |  Hallazgo   |  Argumentacion Etica  |
+|-------------|-------------|-----------------------|
+|O-Organizacional | Una estructura organizada facilita la comprensión y consulta de la información académica | Se debe garantizar que la información presentada sea clara, coherente y no genere confusión en los estudiantes |
+
+---
+
+## HU-08: Consulta rápida de información académica
+
+*Título:* Consulta rapida de informacion  
+*Yo, como:* estudiante de la Universidad Icesi  
+*Quiero:* acceder rapidamente a la informacion relevante de una electiva  
+*Para:* tomar decisiones academicas de manera agil.  
+
+### Criterios de aceptación:
+
+*Scenario: Consulta eficiente*  
+Given que el estudiante busca informacion de una electiva  
+When accede al curso  
+Then el sistema muestra la informacion principal sin necesidad de multiples pasos  
+
+*Scenario: Acceso optimizado*  
+Given que el estudiante intenta consultar una electiva  
+When el proceso puede ser complejo  
+Then el sistema optimiza el acceso para reducir la cantidad de pasos necesarios  
+
+---
+
+## RF derivado del HU-08
+
+*RF1:* El sistema debe permitir el acceso rápido a la información principal de cada electiva.  
+
+*Analisis PESTLE RF:*
+
+|  Dimension  |  Hallazgo   |  Argumentacion Etica  |
+|-------------|-------------|-----------------------|
+|E-Economico | Reducir el tiempo de consulta mejora la eficiencia del estudiante en la toma de decisiones académicas | Se debe garantizar que el acceso rápido a la información no omita datos importantes que puedan afectar la decisión del estudiante |
+
+---
