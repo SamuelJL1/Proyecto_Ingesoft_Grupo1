@@ -160,13 +160,7 @@ PETICIONES DE PABLO
 
 ## RF DERIVADOS DE HU5 
 
-**RF1:** El sistema debe permitir a los estudiantes acceder al syllabus oficial de cada electiva desde una plataforma centralizada.  
-
-**RF2:** El sistema debe mostrar una opción denominada "Ver syllabus" dentro de la información de cada electiva.  
-
-**RF3:** El sistema debe visualizar el documento oficial del curso dentro de la plataforma.  
-
-**RF4:** El sistema debe informar cuando el syllabus no haya sido publicado o no se encuentre disponible.  
+**RF6:** El sistema debe permitir a los estudiantes acceder al syllabus oficial de cada electiva desde una plataforma centralizada.  
 
 **Analisis PESTLE RF:** No aplica
 
@@ -192,13 +186,7 @@ PETICIONES DE PABLO
 **Then:** el sistema informa que no hay equivalencias disponibles
 ## RF DERIVADOS DE HU6 
 
-**RF1:** El sistema debe permitir seleccionar una electiva internacional para realizar comparación académica.  
-
-**RF2:** El sistema debe mostrar los objetivos académicos de la electiva internacional seleccionada.  
-
-**RF3:** El sistema debe comparar los objetivos académicos del curso internacional con electivas de la Universidad Icesi.  
-
-**RF4:** El sistema debe informar cuando no existan equivalencias o similitudes registradas entre cursos.  
+**RF7:** El sistema debe permitir seleccionar una electiva internacional para realizar comparación académica.  
 
 **Analisis PESTLE RF:** No aplica
 
@@ -226,13 +214,9 @@ Then el sistema garantiza que la informacion esté organizada y sea facil de int
 
 ## RF derivado del HU-07
 
-*RF1:* El sistema debe organizar la información de cada electiva en secciones definidas (objetivos, contenido, profesor, departamento).  
+*RF8:* El sistema debe organizar la información de cada electiva en secciones definidas (objetivos, contenido, profesor, departamento).  
 
-*Analisis PESTLE RF:*
-
-|  Dimension  |  Hallazgo   |  Argumentacion Etica  |
-|-------------|-------------|-----------------------|
-|O-Organizacional | Una estructura organizada facilita la comprensión y consulta de la información académica | Se debe garantizar que la información presentada sea clara, coherente y no genere confusión en los estudiantes |
+*Analisis PESTLE RF:* No Aplica
 
 ---
 
@@ -261,7 +245,7 @@ PETICIONES DE ROBIN
 
 ## RF derivado del HU-01
 
-*RF1:* El sistema debe permitir a los usuarios realizar busquedas de electivas filtrando por contenido, horario y departamento academico
+*RF9:* El sistema debe permitir a los usuarios realizar busquedas de electivas filtrando por contenido, horario y departamento academico
 
 *Analisis PESTLE RF:* 
 NO APLICA
@@ -289,7 +273,7 @@ NO APLICA
 
 ## RF derivado de HU-02:
 
-*RF2:* El sistema debe proporcionar una interfaz para que el jefe de departamento consulte y apruebe los syllabus cargados por los profesores
+*RF10:* El sistema debe proporcionar una interfaz para que el jefe de departamento consulte y apruebe los syllabus cargados por los profesores
 
 *Analisis PESTLE RF:*
 
@@ -319,7 +303,7 @@ NO APLICA
 **When:** Selecciona un curso de electiva que no tiene departamento  
 **Then:** El sistema informa en un mensaje indicando que la informacion del departamento esta pendiente por actualizar  
 
-*RF3:* El sistema debe mostrar el departamento académico al que pertenece una electiva, o informar cuando esta información esté pendiente por actualizar
+*RF11:* El sistema debe mostrar el departamento académico al que pertenece una electiva, o informar cuando esta información esté pendiente por actualizar
 
 *Analisis PESTLE RF:*
 
@@ -383,15 +367,7 @@ NO APLICA
 
 ## RF DERIVADOS DE HU5 
 
-**RF1:** El sistema debe permitir a los profesores editar la información académica de las electivas asignadas.  
-
-**RF2:** El sistema debe guardar los cambios realizados sobre la información del curso.  
-
-**RF3:** El sistema debe reenviar automáticamente la información actualizada al proceso de revisión.  
-
-**RF4:** El sistema debe validar que todos los campos obligatorios estén diligenciados antes de guardar cambios.  
-
-**RF5:** El sistema debe mostrar un mensaje indicando los datos faltantes cuando la actualización esté incompleta.  
+**RF12:** El sistema debe permitir a los profesores editar la información académica de las electivas asignadas.  
 
 **Analisis PESTLE RF:** No aplica
 ---
@@ -417,26 +393,9 @@ NO APLICA
 
 ## RF DERIVADOS DE HU6
 
-**RF1:** El sistema debe permitir a los profesores consultar el estado de revisión de cada syllabus registrado.  
-
-**RF2:** El sistema debe mostrar el estado de validación de una electiva como "Aprobado", "Pendiente" o "Rechazado".  
-
-**RF3:** El sistema debe mostrar las observaciones realizadas por el jefe de departamento cuando un syllabus sea rechazado.  
-
-**RF4:** El sistema debe actualizar el estado de validación después de cada revisión realizada.  
+**RF13:** El sistema debe permitir a los profesores consultar el estado de revisión de cada syllabus registrado.  
 
 **Analisis PESTLE RF:** No aplica
-
--------------------------------------
-
-# Requerimientos Funcionales
-## RF DERIVADOS DE HU1
-**RF1:** El sistema debe mostrar a los estudiantes el video de los profesor del curso
-**Analisis PESTLE RF:** En caso de necesitarlo: Analisis de   PESTLE/ No aplica
-
-
-Nota: Simplemente ponene #RF DERIVADOS DE HU2..HUN,
-PERO siguen el mismo orden de numeros, a que me refiero que independientemente de que HU sea sigue el orden de numero de RF, es decir si HU2 y salen dos RF entonces RF2 Y RF3, ahora del HU3, sale uno entonces RF4.
 
 ---
 ## HU-07: Estructura organizada de la información de electivas
@@ -462,13 +421,9 @@ Then el sistema garantiza que la informacion esté organizada y sea facil de int
 
 ## RF derivado del HU-07
 
-*RF1:* El sistema debe organizar la información de cada electiva en secciones definidas (objetivos, contenido, profesor, departamento).  
+*RF14:* El sistema debe organizar la información de cada electiva en secciones definidas (objetivos, contenido, profesor, departamento).  
 
-*Analisis PESTLE RF:*
-
-|  Dimension  |  Hallazgo   |  Argumentacion Etica  |
-|-------------|-------------|-----------------------|
-|O-Organizacional | Una estructura organizada facilita la comprensión y consulta de la información académica | Se debe garantizar que la información presentada sea clara, coherente y no genere confusión en los estudiantes |
+*Analisis PESTLE RF:* No Aplica
 
 ---
 
@@ -495,7 +450,7 @@ Then el sistema optimiza el acceso para reducir la cantidad de pasos necesarios
 
 ## RF derivado del HU-08
 
-*RF1:* El sistema debe permitir el acceso rápido a la información principal de cada electiva.  
+*RF15:* El sistema debe permitir el acceso rápido a la información principal de cada electiva.  
 
 *Analisis PESTLE RF:*
 
