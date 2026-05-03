@@ -428,7 +428,7 @@ Yo como administrador quiero consultar evaluaciones históricas para analizar la
   - **When** el administrador consulta histórico  
   - **Then** el sistema muestra mensaje sin registros  
 
-# REPOSITORIO DE CURSOS
+## Gestion de Informacion
 
 ### Historia de usuario 21
 Yo como administrador quiero crear cursos en el sistema para mantener actualizado el catálogo.
@@ -460,7 +460,6 @@ Yo como administrador quiero editar la información de un curso para mantenerla 
   - **When** intenta editar un curso  
   - **Then** el sistema bloquea la acción
  
-  # Retroalimentaciones y gestión interna
 
 ### Historia de usuario 23
 Yo como jefe de departamento quiero visualizar el syllabus de un curso registrado para revisar sus objetivos de aprendizaje y contenidos.
@@ -564,8 +563,6 @@ Yo como jefe de departamento quiero consultar los cursos registrados para accede
   - **When** el jefe consulta la lista de cursos  
   - **Then** el sistema indica que no hay cursos registrados  
 
-
-## Gestion de Informacion
 
 ### Historia de usuario 29
 Yo como estudiante quiero ver la lista de cursos disponibles del área para conocer las opciones que puedo elegir.
