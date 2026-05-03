@@ -118,7 +118,9 @@ Yo, como estudiante, quiero registrar una solicitud de equivalencia con la infor
 ### Scenario: Registro fallido por documentos inválidos
 
 **Given:** El estudiante se encuentra en el formulario de solicitud
+
 **When:** Adjunta documentos en formato no permitido
+
 **Then:** El sistema muestra un mensaje indicando el formato inválido
 
 ---
