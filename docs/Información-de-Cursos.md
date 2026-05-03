@@ -85,6 +85,21 @@ PETICIONES DE PABLO
 **When:** Escribe una palabra para buscar un curso    
 **Then:** El sistema muestra un mensaje indicando que no se encontraron resultados
 
+
+## RF derivados del HU-03
+
+*RF3:* El sistema debe permitir la búsqueda de electivas disponibles por nombre o palabra clave.
+
+*Analisis PESTLE RF:*
+
+|  Dimension      |  Hallazgo   |  Argumentacion Etica  |
+|-----------------|-------------|-----------------------|
+|S - Social   | Los estudiantes necesitan una forma sencilla de buscar electivas segun sus intereses academicos | El sistema debe facilitar el acceso equitativo a la información para que todos los estudiantes puedan encontrar cursos sin depender de terceros |  
+|T - Tecnologico  | Se requiere un buscador funcional que permita consultar cursos por nombre una palabra clave | La herramienta debe ser facil e intuitiva de usar para no complicar el acceso a la informacion|  
+
+
+
+
 ---
 
 ## HU-04: Consulta de informacion general de una electiva    
@@ -104,6 +119,23 @@ PETICIONES DE PABLO
 **When:** La informacion del curso no está completa    
 **Then:** El sistema muestra los datos disponibles    
 **And:** Informa que falta información por actualizar
+
+
+*RF4:* El sistema debe permitir consultar la descripcion, objetivos, contenidos, departamento responsable y profesor encargado de una electiva
+
+|  Dimension      |  Hallazgo   |  Argumentacion Etica  |
+|-----------------|-------------|-----------------------|
+|S - Social   | El estudiante necesita información clara antes de inscribir una electiva | El sistema debe permitir una decisión académica informada |  
+|T - Tecnológico  | La informacion del curso debe ser oficial y de confianza | No se debe brindar informacion incorrecta que afecte la inscripcion de un estudiante |  
+
+
+*RF5:* El sistema debe informar cuando la informacion de una electiva este incompleta
+
+|  Dimension      |  Hallazgo   |  Argumentacion Etica  |
+|-----------------|-------------|-----------------------|
+|S - Social   | El estudiante puede confundirse si no sabe que la informacion está incompleta | El sistema debe ser transparente sobre los datos disponibles |  
+|T - Tecnológico  | La plataforma debe manejar casos donde falten datos o informacion | El sistema debe mostrar mensajes claros y no dejar al estudiante sin contexto |  
+
 
 ---
 
@@ -287,6 +319,16 @@ NO APLICA
 **When:** Selecciona un curso de electiva que no tiene departamento  
 **Then:** El sistema informa en un mensaje indicando que la informacion del departamento esta pendiente por actualizar  
 
+*RF3:* El sistema debe mostrar el departamento académico al que pertenece una electiva, o informar cuando esta información esté pendiente por actualizar
+
+*Analisis PESTLE RF:*
+
+|  Dimension      |  Hallazgo   |  Argumentacion Etica  |
+|-----------------|-------------|-----------------------|
+|S - Social   | Los estudiantes necesitan saber a que departamento pertenece una electiva para dirigir correctamente sus consultas o solicitudes | El sistema debe facilitar el acceso claro a la informacion institucional y evitar confusiones en la comunicacion academica |  
+|T - Tecnologico  | La plataforma debe mostrar el departamento asociado al curso y manejar el caso en que este dato no exista | El sistema debe informar claramente cuando la informacion esta pendiente, en lugar de dejar el campo vacio |  
+
+
 ---
 
 ## HU-04: Consultar syllabus de una electiva  
@@ -306,6 +348,17 @@ NO APLICA
 **Given:** El estudiante intenta consultar el syllabus de una electiva  
 **When:** El Syllabus no ha sido cargado o aprobado   
 **Then:** El sistema informa que el syllabus aun no se encuentra disponible 
+
+
+*RF4:* El sistema debe permitir consultar el syllabus de una electiva cuando esté disponible
+
+*Analisis PESTLE RF:*
+
+|  Dimension      |  Hallazgo   |  Argumentacion Etica  |
+|-----------------|-------------|-----------------------|
+|S - Social   | Los estudiantes necesitan acceder fácilmente al syllabus para conocer contenidos, objetivos, metodologia y evaluacion del curso | El sistema debe facilitar el acceso equitativo a la informacion academica antes de que el estudiante tome decisiones sobre la electiva |    
+|L - Legal    | El syllabus debe ser informacion oficial del curso | El sistema debe evitar mostrar informacion no aprobada o no validada como si fuera definitiva |  
+
 
 ---
 
