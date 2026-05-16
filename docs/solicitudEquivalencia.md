@@ -1,67 +1,130 @@
-# Metodo Dorfman
+# Metodo Dorfman y PESTLE
 
 ## Requerimiento funcionales:
 
-RF1: Registrar solicitudes de equivalencia con documentos adjuntos por parte del estudiante
+### RF1 – Registro de solicitud de equivalencia por parte del estudiante
 
-RF1.1: Adjuntar documentos (syllabus, contenidos, etc.)
+El estudiante registra una solicitud indicando el curso origen, curso destino y los documentos requeridos. Si faltan campos obligatorios o los documentos no cumplen el formato establecido, el sistema lo indica sin perder la información ya ingresada.
 
-RF2: Consultar estado de solicitudes
+- Social/Tecnológico: La brecha digital puede excluir a estudiantes con menor acceso tecnológico; fallos durante el registro pueden bloquear el inicio del proceso sin posibilidad de recuperar la información.
 
-RF3: Asignar automáticamente la solicitud al responsable según el flujo oficial de tres niveles
+- Legal: Los datos personales recopilados están sujetos a la Ley 1581 de 2012; su manejo inadecuado constituye una violación directa al derecho de Habeas Data.
 
-RF4: Registrar decisiones (aprobado, rechazado, pendiente)
+### RF1.1: Carga y validación de documentos de soporte
 
-RF4.1: Almacenar decesiones con fecha, Responsable y Estado
+El estudiante adjunta los documentos que sustentan la equivalencia (syllabus, código del curso y balance académico) en formato PDF con un tamaño máximo de 5MB por archivo. Si el archivo no cumple estas condiciones, el sistema indica el motivo con un mensaje específico.
 
-RF5: Consultar equivalencias previamente aprobadas
+- Social: Exigir un formato estricto sin orientación clara puede excluir a estudiantes con menor acceso o conocimiento técnico, vulnerando su derecho a participar en el proceso.
 
-RF6: Actualizar decisiones históricas
+- Tecnológico: La inestabilidad del sistema durante la carga puede provocar pérdida de documentos y dejar la solicitud incompleta sin que el estudiante lo sepa.
 
-RF7: Analizar solicitudes automáticamente (IA)
+### RF2: Consulta del estado de solicitudes por parte del estudiante
 
-RF7.1: Clasificar las solicitudes en alto cumplimiento, medio cumplimiento o bajo cumplimiento
+El estudiante consulta en cualquier momento el estado actual de su solicitud: enviada, en revisión, aprobada o rechazada. Si no tiene solicitudes registradas, el sistema lo indica.
 
-RF8: Notificar cambios de estado al estudiante
+- Político/Social: La falta de visibilidad sobre el estado de la solicitud incumple el principio de transparencia exigido por el MEN y genera desconfianza en el proceso institucional.
 
-RF9: Informar al respectivo responsable siguiendo en el flujo
+### RF3: Asignación automática de solicitudes en el flujo institucional
 
-RF10: Generar y distribuir certificados automáticos al registrar la decisión final
+Al registrarse una solicitud, el sistema la asigna al primer responsable de la cadena (Dirección de Programa), siguiendo el flujo institucional hacia el Jefe de Departamento y finalmente Admisiones. Si no es posible identificar el departamento del curso destino, la solicitud queda en estado "Pendiente de Asignación" y se notifica a la Dirección de Programa para su resolución manual.
 
-RF11: Priorizar solicitudes por fecha de envío y nivel de urgencia
+- Político: Una asignación incorrecta que no respete la jerarquía institucional invalida el proceso académico y puede generar decisiones sin respaldo institucional.
 
-RF12: Consultar información detallada de cursos internos para comparación con externos
+- Tecnológico: Errores en los datos maestros del sistema (departamentos, cursos, responsables) pueden provocar asignaciones incorrectas que perjudiquen directamente al estudiante.
+
+
+
+### RF4: Registro de decisión final de solicitudes por parte del Jefe de Departamento
+
+El Jefe de Departamento registra la decisión final (aprobada o rechazada) junto con una justificación obligatoria. El sistema actualiza el estado de la solicitud y desencadena automáticamente la generación del certificado y las notificaciones correspondientes.
+
+- Político/Legal: Omitir la justificación hace que la decisión no sea auditable, abriendo la puerta a arbitrariedad y exponiendo a la institución a conflictos legales.
+
+- Social: Una decisión sin justificación comprensible afecta directamente la trayectoria académica del estudiante sin darle elementos para apelarla.
+
+### RF4.1: Almacenar decisiones con trazabilidad histórica
+
+Cada decisión queda almacenada con fecha, responsable, estado y justificación. El historial es inmutable; cualquier modificación posterior genera una nueva entrada sin eliminar la anterior, garantizando trazabilidad completa del proceso.
+
+- Legal: Sin trazabilidad inmutable, el historial no puede usarse como evidencia válida en procesos de reclamación o auditoría institucional.
+
+- Tecnológico: La pérdida de registros por fallos del sistema afecta los derechos del estudiante y la credibilidad institucional del proceso.
+
+### RF5: Consulta de historial de equivalencias para reutilización de criterios
+
+El Jefe de Departamento busca equivalencias previas por curso origen, curso destino o filtrando por estado (aprobadas o rechazadas). Si no existen registros para el criterio ingresado, el sistema lo indica sin generar error.
+
+- Social/Económico: No contar con historial consultable obliga a reprocesar solicitudes similares, generando inconsistencias en las decisiones y mayor carga administrativa innecesaria.
+
+### RF6: Modificación justificada de decisiones previas con registro de cambios
+
+El Jefe de Departamento puede modificar el estado o justificación de una equivalencia previamente registrada. El cambio queda registrado en el historial con fecha y responsable, sin eliminar la decisión anterior.
+
+- Social/Legal: Modificar una decisión sin dejar rastro auditable puede afectar a un estudiante que ya actuó con base en el resultado anterior, y expone a la institución a disputas legales sin evidencia que las respalde.
+
+### RF7: Análisis automático de Solicitudes mediante IA por nivel de cumplimiento académico
+
+El sistema analiza la solicitud comparando créditos, objetivos y competencias del curso externo con los del curso destino. El resultado incluye una clasificación de viabilidad (Alto, Medio o Bajo cumplimiento) y una indicación explícita de qué criterios cumple y cuáles no, de forma que el Jefe de Departamento pueda tomar una decisión informada.
+
+- Social/Político: Un análisis automatizado sin explicabilidad incumple el principio de transparencia exigido por el MEN y puede generar desconfianza en los estudiantes sobre cómo son evaluados.
+
+- Tecnológico: El modelo puede replicar sesgos presentes en datos históricos, perpetuando decisiones desiguales de forma sistemática.
+
+### RF8: Notificación automática al estudiante sobre cambios en el estado de su solicitud
+
+Cada vez que el estado de una solicitud cambia, el sistema notifica automáticamente al estudiante con el nuevo estado y, si aplica, la justificación registrada. Los fallos en el envío se gestionan con reintentos automáticos.
+
+- Social/Tecnológico: La falta de notificación oportuna puede llevar al estudiante a tomar decisiones académicas con información desactualizada; un fallo técnico sin reintento equivale a dejar al estudiante sin respuesta.
+
+### RF9: Notificación automática dentro del flujo institucional
+
+Al aprobarse el paso al siguiente nivel, el sistema notifica automáticamente al responsable correspondiente en la cadena. Si el envío falla, el sistema reintenta y alerta a la Dirección de Programa en caso de fallo persistente.
+
+- Político/Tecnológico: Un fallo de notificación sin manejo de errores puede paralizar completamente el flujo institucional sin que ningún responsable lo detecte a tiempo.
+
+### RF10: Generación y distribución automática del certificado de decisión final
+
+Al registrarse la decisión final, el sistema genera un certificado con el nombre del estudiante, curso origen, universidad de origen, curso destino, créditos, decisión, fecha y responsables del flujo. Lo distribuye al estudiante, Dirección de Programa y Jefe de Departamento, y guarda una copia de respaldo en el sistema.
+
+- Legal: El certificado es la evidencia formal de la decisión; generarlo con información incompleta o no almacenarlo correctamente deja sin respaldo legal tanto al estudiante como a la institución.
+
+- Social: Sin distribución automática, la notificación queda sujeta a procesos manuales que pueden omitirse, dejando al estudiante sin constancia oficial del resultado.
+
+### RF11: Priorización automática de solicitudes por urgencia o tiempo de espera
+
+La bandeja de la Dirección de Programa muestra las solicitudes ordenadas de más antigua a más reciente. Las solicitudes que el sistema identifica como urgentes (estudiante con fecha límite de matrícula próxima o que ya se encuentra en la universidad de destino) se destacan visualmente por encima de las demás.
+
+- Social: No atender a tiempo una solicitud urgente puede comprometer la situación académica o migratoria del estudiante de forma irreversible.
+
+- Tecnológico: Si el sistema no detecta automáticamente las condiciones de urgencia, la priorización depende de criterio manual y puede ser inconsistente.
+
+### RF12: Consulta de información académica de cursos internos para comparación con externos
+
+El estudiante en movilidad consulta los cursos del área con su código, nombre, créditos, competencias y resultados de aprendizaje para compararlos con cursos externos antes de iniciar una solicitud. Si no hay cursos registrados, el sistema lo indica.
+
+- Social: Sin acceso a esta información, el estudiante enfrenta una asimetría de conocimiento frente a la institución que lo obliga a iniciar solicitudes a ciegas, aumentando la tasa de rechazos evitables.
 
 ---
 
-## Entidades:
+## Entidades
 
-Actores:
-
+### Actores:
 - Estudiante
+- Dirección de Programa
+- Jefe de Departamento
+- Admisiones
 
-- Administrador del sistema
-
-- Dirección de programa
-
-- Jefe de departamento
-
-- Entidades del negocio:
-
+### Entidades del negocio:
 - Solicitud de equivalencia
-
 - Curso origen
-
 - Curso destino
-
+- Universidad externa
 - Departamento
-
 - Programa académico
-
+- Documento de soporte
 - Decisión
-
 - Historial de decisiones
-
+- Certificado de decisión
 - Evaluación IA
 
 --- 
@@ -82,7 +145,7 @@ RF5 - RF6
 
 Subsistema de Inteligencia Artificial
 
-RF7 - RF7.1
+RF7
 
 Subsistema de Notificaciones
 
@@ -94,13 +157,13 @@ RF8 - RF9
 
 ---
 
-## Historia de usuario 1
+## Registro de solicitud de equivalencia
 
 | **Historia N°:** | 1 |
 |---|---|
 | **Yo como** | Estudiante |
 | **Quiero** | Registrar una solicitud de equivalencia con la información del curso y documentos |
-| **Para** | Que mi curso sea evaluado por la universidad |
+| **Para** | Iniciar formalmente el proceso de evaluación de equivalencia ante la institución |
 
 **Scenario 1.1:** Registro exitoso con datos completos
 
@@ -111,87 +174,89 @@ RF8 - RF9
 | **Then** | El sistema guarda la solicitud correctamente |
 | **And** | Muestra un mensaje de confirmación |
 
-**Scenario 1.2:** Registro fallido por datos incompletos
+**Scenario 1.2:** Guardado de borrador sin envío
 
 | | |
 |---|---|
 | **Given** | El estudiante se encuentra en el formulario de solicitud |
-| **When** | Omite información obligatoria |
-| **Then** | El sistema muestra un mensaje de error indicando campos faltantes |
+| **When** | Completa parcialmente el formulario y selecciona guardar borrador |
+| **Then** | El sistema almacena la información ingresada en estado "borrador" |
+| **And** | Permite al estudiante continuar el registro en una sesión posterior |
 
-**Scenario 1.3:** Registro fallido por documentos inválidos
+**Scenario 1.3:** Registro fallido por datos incompletos
 
 | | |
 |---|---|
 | **Given** | El estudiante se encuentra en el formulario de solicitud |
-| **When** | Adjunta documentos en formato no permitido |
+| **When** | Omite información obligatoria e intenta continuar |
+| **Then** | El sistema muestra un mensaje de error indicando los campos faltantes |
+| **And** | No avanza al siguiente paso hasta que se completen |
+
+**Scenario 1.4:** Registro fallido por documentos en formato inválido
+
+| | |
+|---|---|
+| **Given** | El estudiante se encuentra en el formulario de solicitud |
+| **When** | Adjunta documentos en un formato no permitido |
 | **Then** | El sistema muestra un mensaje indicando el formato inválido |
+| **And** | Solicita al estudiante cargar el archivo en el formato correcto |
 
 ---
 
-## Historia de usuario 2
+## Enrutamiento automático por flujo institucional
 
 | **Historia N°:** | 2 |
 |---|---|
-| **Yo como** | Asistente de Programa |
+| **Yo como** | Direccion de Programa |
 | **Quiero** | Que el sistema asigne automáticamente las solicitudes al responsable correspondiente siguiendo el flujo institucional |
 | **Para** | Agilizar el proceso de evaluación y garantizar el orden correcto a las entidades respectivas |
 
-**Scenario 2.1:** Asignación al Asistente de Programa según departamento
+**Scenario 2.1:** Asignación inicial a la Dirección de Programa
 
 | | |
 |---|---|
-| **Given** | El Estudiante ha enviado una solicitud con documentos válidos y completos |
-| **When** | El Sistema registra la nueva solicitud |
-| **Then** | Asigna la solicitud al asistente de programa correspondiente |
-| **And** | Se notifica al asistente |
+| **Given** | El estudiante ha enviado una solicitud con documentos válidos y completos |
+| **When** | El sistema registra la nueva solicitud |
+| **Then** | Asigna la solicitud a la Dirección de Programa correspondiente |
+| **And** | Notifica a la Dirección de Programa |
 
-**Scenario 2.2:** Paso del Asistente al Director de Programa
-
-| | |
-|---|---|
-| **Given** | El Asistente de Programa ha revisado la solicitud |
-| **When** | El Asistente de Programa aprueba la solicitud |
-| **Then** | El Sistema asigna la solicitud al Director de programa correspondiente |
-| **And** | Se notifica al Director |
-
-**Scenario 2.3:** Paso del Director de Programa al Jefe de Departamento
+**Scenario 2.2:** Paso de la Dirección de Programa al Jefe de Departamento
 
 | | |
 |---|---|
-| **Given** | El Director de Programa ha revisado la solicitud |
-| **When** | El Director de Programa aprueba la solicitud |
-| **Then** | El Sistema asigna la solicitud al Jefe de Departamento correspondiente |
-| **And** | Se notifica al Jefe de Departamento |
+| **Given** | La Dirección de Programa ha revisado la solicitud |
+| **When** | La Dirección de Programa aprueba el paso al siguiente nivel |
+| **Then** | El sistema asigna la solicitud al Jefe de Departamento correspondiente |
+| **And** | Notifica al Jefe de Departamento |
 
-**Scenario 2.4:** Paso del Jefe de Departamento a Admisiones
+**Scenario 2.3:** Paso del Jefe de Departamento a Admisiones
 
 | | |
 |---|---|
-| **Given** | El Jefe de departamento ha revisado la solicitud |
-| **When** | El Jefe de departamento realiza la decisión final |
-| **Then** | El Sistema notifica a admisiones |
+| **Given** | El Jefe de Departamento ha registrado la decisión final |
+| **When** | El sistema confirma la decisión |
+| **Then** | El sistema notifica a Admisiones |
 | **And** | Se cierra el flujo de revisión |
 
-**Scenario 2.5:** Solicitud sin Departamento Identificado
+**Scenario 2.4:** Solicitud sin departamento identificado
 
 | | |
 |---|---|
-| **Given** | El Estudiante ha enviado una solicitud con documentos válidos y completos |
-| **And** | El Sistema no puede identificar el departamento del curso destino |
+| **Given** | El estudiante ha enviado una solicitud con documentos válidos y completos |
+| **And** | El sistema no puede identificar el departamento del curso destino |
 | **When** | Intenta asignar la solicitud |
-| **Then** | La Solicitud queda en estado "Pendiente de Asignación" |
-| **And** | Se notifica al asistente para resolverlo manualmente |
+| **Then** | La solicitud queda en estado "Pendiente de Asignación" |
+| **And** | Se notifica a la Dirección de Programa para resolverlo manualmente |
 
 ---
 
-## Historia de usuario 3
+## Clasificación automática de solicitudes por IA
 
 | **Historia N°:** | 3 |
 |---|---|
-| **Yo como** | Jefe de departamento |
+| **Yo como** | Jefe de Departamento |
 | **Quiero** | Recibir una clasificación automática de las solicitudes |
-| **Para** | Priorizar y optimizar mi revisión |
+| **Para** | Enfocar mi revisión en las solicitudes con mayor y menor viabilidad académica |
 
 **Scenario 3.1:** Clasificación en alto cumplimiento
 
@@ -200,7 +265,7 @@ RF8 - RF9
 | **Given** | Existe una solicitud registrada |
 | **When** | El sistema ejecuta el análisis de IA |
 | **And** | El curso cumple la mayoría de los criterios |
-| **Then** | Clasifica la solicitud como "alto" |
+| **Then** | Clasifica la solicitud como "Alto cumplimiento" |
 
 **Scenario 3.2:** Clasificación en medio cumplimiento
 
@@ -209,7 +274,7 @@ RF8 - RF9
 | **Given** | Existe una solicitud registrada |
 | **When** | El sistema ejecuta el análisis de IA |
 | **And** | El curso cumple parcialmente los criterios |
-| **Then** | Clasifica la solicitud como "medio" |
+| **Then** | Clasifica la solicitud como "Medio cumplimiento" |
 
 **Scenario 3.3:** Clasificación en bajo cumplimiento
 
@@ -218,15 +283,15 @@ RF8 - RF9
 | **Given** | Existe una solicitud registrada |
 | **When** | El sistema ejecuta el análisis de IA |
 | **And** | El curso no cumple los criterios |
-| **Then** | Clasifica la solicitud como "bajo" |
+| **Then** | Clasifica la solicitud como "Bajo cumplimiento" |
 
 ---
 
-## Historia de usuario 4
+## Consulta de historial de equivalencias previas
 
 | **Historia N°:** | 4 |
 |---|---|
-| **Yo como** | Jefe de departamento |
+| **Yo como** | Jefe de Departamento |
 | **Quiero** | Consultar equivalencias previamente aprobadas o rechazadas |
 | **Para** | Evitar reprocesar solicitudes similares |
 
@@ -234,7 +299,7 @@ RF8 - RF9
 
 | | |
 |---|---|
-| **Given** | El jefe de departamento está en el historial |
+| **Given** | El Jefe de Departamento está en el historial |
 | **When** | Busca por curso origen o curso destino |
 | **Then** | El sistema muestra las equivalencias previas |
 
@@ -242,7 +307,7 @@ RF8 - RF9
 
 | | |
 |---|---|
-| **Given** | El jefe de departamento está en el historial |
+| **Given** | El Jefe de Departamento está en el historial |
 | **When** | Busca un curso sin registros previos |
 | **Then** | El sistema muestra un mensaje indicando que no hay resultados |
 
@@ -250,17 +315,17 @@ RF8 - RF9
 
 | | |
 |---|---|
-| **Given** | El jefe de departamento está en el historial |
+| **Given** | El Jefe de Departamento está en el historial |
 | **When** | Aplica el filtro "aprobadas" |
 | **Then** | El sistema muestra únicamente las equivalencias con decisión aprobada |
 
 ---
 
-## Historia de usuario 5
+## Modificación de decisiones con registro de cambios
 
 | **Historia N°:** | 5 |
 |---|---|
-| **Yo como** | Jefe de departamento |
+| **Yo como** | Jefe de Departamento |
 | **Quiero** | Modificar decisiones anteriores |
 | **Para** | Mantener actualizados los criterios académicos |
 
@@ -269,37 +334,37 @@ RF8 - RF9
 | | |
 |---|---|
 | **Given** | Existe una equivalencia previamente registrada |
-| **When** | El Jefe modifica el estado de la decisión |
+| **When** | El Jefe de Departamento modifica el estado de la decisión |
 | **Then** | El sistema actualiza la información |
-| **And** | Guarda el cambio en el historial |
+| **And** | Guarda el cambio en el historial con fecha y responsable |
 
 **Scenario 5.2:** Intento de actualización sin permisos
 
 | | |
 |---|---|
 | **Given** | Existe una equivalencia registrada |
-| **And** | El usuario no es jefe de departamento |
+| **And** | El usuario no es Jefe de Departamento |
 | **When** | Intenta modificar la decisión |
 | **Then** | El sistema bloquea la acción |
 | **And** | Muestra un mensaje de acceso denegado |
 
 ---
 
-## Historia de usuario 6
+## Notificación automática de cambios de estado
 
 | **Historia N°:** | 6 |
 |---|---|
 | **Yo como** | Estudiante |
 | **Quiero** | Recibir notificaciones sobre el estado de mi solicitud |
-| **Para** | Estar informado del proceso |
+| **Para** | Conocer en tiempo real el avance de mi solicitud sin necesidad de consultarla manualmente |
 
 **Scenario 6.1:** Notificación por cambio de estado
 
 | | |
 |---|---|
 | **Given** | Existe una solicitud en proceso |
-| **When** | El estado cambia (aprobado, rechazado o pendiente) |
-| **Then** | El sistema envía una notificación al estudiante |
+| **When** | El estado cambia (aprobada, rechazada o en revisión) |
+| **Then** | El sistema envía una notificación al estudiante con el nuevo estado |
 
 **Scenario 6.2:** Consulta manual del estado
 
@@ -307,17 +372,17 @@ RF8 - RF9
 |---|---|
 | **Given** | El estudiante accede al sistema |
 | **When** | Revisa sus solicitudes |
-| **Then** | El sistema muestra el estado actualizado |
+| **Then** | El sistema muestra el estado actualizado de cada una |
 
 ---
 
-## Historia de usuario 7
+## Consulta de información académica de cursos internos
 
 | **Historia N°:** | 7 |
 |---|---|
 | **Yo como** | Estudiante en movilidad |
 | **Quiero** | Consultar la información detallada de los cursos del área |
-| **Para** | Compararlos con cursos externos |
+| **Para** | Evaluar qué curso interno es equivalente antes de iniciar una solicitud formal |
 
 **Scenario 7.1:** Visualizar cursos con información académica completa
 
@@ -333,11 +398,11 @@ RF8 - RF9
 |---|---|
 | **Given** | No existen cursos en el sistema |
 | **When** | El estudiante accede al módulo |
-| **Then** | El sistema muestra mensaje indicando que no hay cursos disponibles |
+| **Then** | El sistema muestra un mensaje indicando que no hay cursos disponibles |
 
 ---
 
-## Historia de usuario 8
+## Registro de curso de universidad extranjera
 
 | **Historia N°:** | 8 |
 |---|---|
@@ -345,111 +410,111 @@ RF8 - RF9
 | **Quiero** | Registrar un curso de una universidad extranjera |
 | **Para** | Iniciar una propuesta de equivalencia |
 
-**Scenario 8.1:** Registrar curso externo correctamente
+**Scenario 8.1:** Registro exitoso del curso externo
 
 | | |
 |---|---|
-| **Given** | El Estudiante ingresa nombre del curso, universidad, créditos y descripción |
+| **Given** | El estudiante ingresa nombre del curso, universidad, créditos y descripción |
 | **When** | Guarda el curso externo |
-| **Then** | El Sistema registra el curso asociado al estudiante |
+| **Then** | El sistema registra el curso asociado al estudiante |
 
-**Scenario 8.2:** Intentar guardar con datos obligatorios faltantes
+**Scenario 8.2:** Registro fallido por datos obligatorios faltantes
 
 | | |
 |---|---|
-| **Given** | El Estudiante no ingresa nombre del curso, universidad o créditos |
-| **When** | El Estudiante intenta guardar |
-| **Then** | El Sistema bloquea el registro y solicita completar campos obligatorios |
+| **Given** | El estudiante no ingresa nombre del curso, universidad o créditos |
+| **When** | Intenta guardar |
+| **Then** | El sistema bloquea el registro y solicita completar los campos obligatorios |
 
 ---
 
-## Historia de usuario 9
+## Carga de documentos de soporte del curso externo
 
 | **Historia N°:** | 9 |
 |---|---|
 | **Yo como** | Estudiante |
 | **Quiero** | Adjuntar documentos del curso externo, como el syllabus, código del curso y mi balance académico |
-| **Para** | Sustentar la equivalencia |
+| **Para** | Respaldar la solicitud con la documentación académica que justifica la equivalencia |
 
-**Scenario 9.1:** Adjuntar archivo válido
-
-| | |
-|---|---|
-| **Given** | El Archivo es PDF y pesa menos de 5MB |
-| **When** | El Estudiante carga el documento |
-| **Then** | El Sistema guarda el archivo correctamente |
-
-**Scenario 9.2:** Archivo inválido o excede tamaño permitido
+**Scenario 9.1:** Carga exitosa de archivo válido
 
 | | |
 |---|---|
-| **Given** | El Archivo no es PDF o supera 5MB |
-| **When** | El Estudiante intenta cargarlo |
-| **Then** | El Sistema rechaza el archivo mostrando mensaje de error |
+| **Given** | El archivo es PDF y pesa menos de 5MB |
+| **When** | El estudiante carga el documento |
+| **Then** | El sistema guarda el archivo correctamente y lo vincula a la solicitud |
+
+**Scenario 9.2:** Carga fallida por archivo inválido o de tamaño excedido
+
+| | |
+|---|---|
+| **Given** | El archivo no es PDF o supera 5MB |
+| **When** | El estudiante intenta cargarlo |
+| **Then** | El sistema rechaza el archivo y muestra un mensaje indicando el motivo |
 
 ---
 
-## Historia de usuario 10
+## Sugerencia preliminar de viabilidad mediante IA
 
 | **Historia N°:** | 10 |
 |---|---|
 | **Yo como** | Estudiante |
 | **Quiero** | Recibir una sugerencia preliminar de equivalencia |
-| **Para** | Saber si mi propuesta tiene viabilidad |
+| **Para** | Saber si mi propuesta tiene viabilidad antes de enviarla formalmente |
 
-**Scenario 10.1:** Generar sugerencia con información suficiente
-
-| | |
-|---|---|
-| **Given** | El Curso externo tiene créditos, descripción y syllabus adjunto |
-| **When** | El Estudiante solicita sugerencia |
-| **Then** | El Sistema genera recomendación preliminar de equivalencia |
-
-**Scenario 10.2:** Información insuficiente para sugerencia
+**Scenario 10.1:** Generación de sugerencia con información suficiente
 
 | | |
 |---|---|
-| **Given** | El Curso externo no cuenta con descripción o syllabus adjunto |
-| **When** | El Estudiante solicita sugerencia |
-| **Then** | El Sistema solicita completar la información faltante |
+| **Given** | El curso externo tiene créditos, descripción y syllabus adjunto |
+| **When** | El estudiante solicita sugerencia |
+| **Then** | El sistema genera una recomendación preliminar de equivalencia |
+
+**Scenario 10.2:** Información insuficiente para generar sugerencia
+
+| | |
+|---|---|
+| **Given** | El curso externo no cuenta con descripción o syllabus adjunto |
+| **When** | El estudiante solicita sugerencia |
+| **Then** | El sistema solicita completar la información faltante |
 
 **Scenario 10.3:** Sugerencia basada en criterios de aprobación
 
 | | |
 |---|---|
-| **Given** | El Curso externo tiene créditos, descripción y syllabus adjunto |
-| **When** | El Sistema genera la recomendación preliminar |
-| **Then** | La Sugerencia incluye una clasificación (Alto / Medio / Bajo Cumplimiento) basada en similitud de créditos, objetivos y competencias con el curso destino |
-| **And** | El Sistema indica al estudiante los criterios que cumple y los que no |
+| **Given** | El curso externo tiene créditos, descripción y syllabus adjunto |
+| **When** | El sistema genera la recomendación preliminar |
+| **Then** | La sugerencia incluye una clasificación (Alto / Medio / Bajo Cumplimiento) basada en similitud de créditos, objetivos y competencias con el curso destino |
+| **And** | El sistema indica al estudiante los criterios que cumple y los que no |
 
-**Scenario 10.4:** Recomendación apoyada en historial de solicitudes previas
+**Scenario 10.4:** Sugerencia apoyada en historial de solicitudes previas
 
 | | |
 |---|---|
 | **Given** | Existen solicitudes similares previamente aprobadas o rechazadas en el sistema |
-| **When** | El Estudiante solicita sugerencia |
-| **Then** | El Sistema incluye en la recomendación un aviso donde se indica si cursos similares fueron aprobados o rechazados anteriormente |
+| **When** | El estudiante solicita sugerencia |
+| **Then** | El sistema incluye en la recomendación un aviso indicando si cursos similares fueron aprobados o rechazados anteriormente |
 
 **Scenario 10.5:** Curso externo sin precedentes en el historial
 
 | | |
 |---|---|
 | **Given** | No existen solicitudes similares previas en el sistema |
-| **When** | El Estudiante solicita sugerencia |
-| **Then** | El Sistema genera la sugerencia únicamente con base en los criterios académicos disponibles |
+| **When** | El estudiante solicita sugerencia |
+| **Then** | El sistema genera la sugerencia únicamente con base en los criterios académicos disponibles |
 | **And** | Indica al estudiante que no hay precedentes registrados para ese curso |
 
 ---
 
-## Historia de usuario 11
+## Envío formal de solicitud de equivalencia
 
 | **Historia N°:** | 11 |
 |---|---|
 | **Yo como** | Estudiante |
 | **Quiero** | Enviar mi solicitud de equivalencia |
-| **Para** | Revisión académica |
+| **Para** | Someter la solicitud al flujo institucional de evaluación |
 
-**Scenario 11.1:** Enviar solicitud completa
+**Scenario 11.1:** Envío exitoso de solicitud completa
 
 | | |
 |---|---|
@@ -457,77 +522,77 @@ RF8 - RF9
 | **When** | El estudiante envía la solicitud |
 | **Then** | El sistema registra la solicitud con estado "enviada" |
 
-**Scenario 11.2:** Bloquear envío por información incompleta
+**Scenario 11.2:** Envío bloqueado por información incompleta
 
 | | |
 |---|---|
 | **Given** | Faltan documentos o datos obligatorios |
 | **When** | El estudiante intenta enviar la solicitud |
-| **Then** | El sistema bloquea el envío y muestra mensaje de error |
+| **Then** | El sistema bloquea el envío y muestra un mensaje indicando los elementos faltantes |
 
 ---
 
-## Historia de usuario 12
+## Seguimiento del estado de la solicitud
 
 | **Historia N°:** | 12 |
 |---|---|
 | **Yo como** | Estudiante |
 | **Quiero** | Consultar el estado de mi solicitud |
-| **Para** | Hacer seguimiento |
+| **Para** | Conocer en qué etapa del proceso se encuentra mi solicitud en cualquier momento |
 
-**Scenario 12.1:** Visualizar estado válido
+**Scenario 12.1:** Visualización de estado activo
 
 | | |
 |---|---|
 | **Given** | Existe una solicitud registrada |
-| **When** | El Estudiante consulta su solicitud |
-| **Then** | El Sistema muestra uno de los estados: enviada, en revisión, aprobada o rechazada |
+| **When** | El estudiante consulta su solicitud |
+| **Then** | El sistema muestra uno de los estados: enviada, en revisión, aprobada o rechazada |
 
-**Scenario 12.2:** Estudiante sin solicitudes
+**Scenario 12.2:** Estudiante sin solicitudes registradas
 
 | | |
 |---|---|
-| **Given** | El Estudiante no ha enviado solicitudes |
-| **When** | Accede al módulo |
-| **Then** | El sistema muestra mensaje sin solicitudes |
+| **Given** | El estudiante no ha enviado solicitudes |
+| **When** | Accede al módulo de seguimiento |
+| **Then** | El sistema muestra un mensaje indicando que no hay solicitudes registradas |
 
 ---
 
-## Historia de usuario 13
+## Gestión de bandeja de solicitudes recibidas
 
 | **Historia N°:** | 13 |
 |---|---|
-| **Yo como** | Asistente de Programa |
-| **Quiero** | Revisar solicitudes de equivalencia |
+| **Yo como** | Dirección de Programa |
+| **Quiero** | Revisar las solicitudes de equivalencia recibidas |
 | **Para** | Gestionarlas y asignarlas al siguiente responsable |
 
-**Scenario 13.1:** Ver solicitudes en revisión
+**Scenario 13.1:** Visualización de solicitudes pendientes
 
 | | |
 |---|---|
 | **Given** | Existen solicitudes con estado "enviada" |
-| **When** | El Asistente de Programa accede al módulo |
-| **Then** | El sistema muestra listado de solicitudes pendientes |
+| **When** | La Dirección de Programa accede al módulo |
+| **Then** | El sistema muestra el listado de solicitudes pendientes |
 
-**Scenario 13.2:** No existen solicitudes pendientes
+**Scenario 13.2:** Bandeja sin solicitudes pendientes
 
 | | |
 |---|---|
 | **Given** | No hay solicitudes registradas |
-| **When** | El Asistente de Programa accede al módulo |
-| **Then** | El sistema muestra mensaje sin solicitudes |
+| **When** | La Dirección de Programa accede al módulo |
+| **Then** | El sistema muestra un mensaje indicando que no hay solicitudes por gestionar |
 
 ---
 
-## Historia de usuario 14
+## Registro de decisión final sobre la equivalencia
 
 | **Historia N°:** | 14 |
 |---|---|
 | **Yo como** | Jefe de Departamento |
 | **Quiero** | Aprobar o rechazar una equivalencia |
-| **Para** | Registrar la decisión |
+| **Para** | Formalizar el resultado de la evaluación con trazabilidad en el sistema |
 
-**Scenario 14.1:** Aprobar solicitud
+**Scenario 14.1:** Aprobación de solicitud
 
 | | |
 |---|---|
@@ -535,7 +600,7 @@ RF8 - RF9
 | **When** | El Jefe de Departamento aprueba la equivalencia |
 | **Then** | El sistema cambia el estado a "aprobada" |
 
-**Scenario 14.2:** Rechazar solicitud
+**Scenario 14.2:** Rechazo de solicitud
 
 | | |
 |---|---|
@@ -545,12 +610,12 @@ RF8 - RF9
 
 ---
 
-## Historia de usuario 15
+## Generación automática del certificado de decisión
 
 | **Historia N°:** | 15 |
 |---|---|
 | **Yo como** | Jefe de Departamento |
-| **Quiero** | Que el sistema genere y asigne de forma automática un certificado al registrar la decisión final |
+| **Quiero** | Que el sistema genere y distribuya automáticamente un certificado al registrar la decisión final |
 | **Para** | Formalizar el resultado y garantizar que todas las entidades involucradas queden notificadas con respaldo oficial |
 
 **Scenario 15.1:** Generación exitosa del certificado al aprobar
@@ -558,28 +623,28 @@ RF8 - RF9
 | | |
 |---|---|
 | **Given** | El Jefe de Departamento registra una decisión de aprobación |
-| **When** | El Sistema confirma la decisión |
+| **When** | El sistema confirma la decisión |
 | **Then** | Genera un certificado con el nombre del estudiante, curso origen, universidad de origen, curso destino, créditos, decisión, fecha y responsables del flujo |
-| **And** | Envía el certificado al estudiante, asistente de programa, director de programa y jefe de departamento |
-| **And** | Guarda un backup o copia de seguridad en el sistema |
+| **And** | Envía el certificado al estudiante, la Dirección de Programa y el Jefe de Departamento |
+| **And** | Guarda una copia de respaldo en el sistema |
 
-**Scenario 15.2:** Generación del certificado al rechazar
+**Scenario 15.2:** Generación exitosa del certificado al rechazar
 
 | | |
 |---|---|
 | **Given** | El Jefe de Departamento registra una decisión de rechazo |
-| **When** | El Sistema confirma la decisión |
+| **When** | El sistema confirma la decisión |
 | **Then** | Genera un certificado indicando el rechazo de la solicitud junto con la justificación registrada |
-| **And** | Envía el certificado al estudiante, asistente de programa, director de programa y jefe de departamento |
-| **And** | Guarda un backup o copia de seguridad en el sistema |
+| **And** | Envía el certificado al estudiante, la Dirección de Programa y el Jefe de Departamento |
+| **And** | Guarda una copia de respaldo en el sistema |
 
 ---
 
-## Historia de usuario 16
+## Priorización de solicitudes por urgencia y antigüedad
 
 | **Historia N°:** | 16 |
 |---|---|
-| **Yo como** | Asistente de Programa |
+| **Yo como** | Dirección de Programa |
 | **Quiero** | Ver las solicitudes ordenadas por prioridad |
 | **Para** | Atender primero los casos más urgentes o con mayor tiempo de espera |
 
@@ -588,81 +653,16 @@ RF8 - RF9
 | | |
 |---|---|
 | **Given** | Existen solicitudes en la bandeja |
-| **When** | El Asistente accede al módulo de solicitudes |
-| **Then** | El Sistema muestra las solicitudes ordenadas de la más antigua hasta la más reciente |
+| **When** | La Dirección de Programa accede al módulo de solicitudes |
+| **Then** | El sistema muestra las solicitudes ordenadas de la más antigua a la más reciente |
 
-**Scenario 16.2:** Priorización por emergencia declarada
+**Scenario 16.2:** Priorización por urgencia detectada por el sistema
 
 | | |
 |---|---|
-| **Given** | El Sistema marcó la solicitud como urgente al momento en que el Estudiante la enviase (Urgente se refiere a que el Estudiante tiene fecha límite de matrícula próxima o que ocurrió un imprevisto donde el Estudiante ya se encuentra en la otra universidad) |
-| **When** | El Asistente accede al módulo |
-| **Then** | El Sistema destaca visualmente las solicitudes marcadas como urgentes por encima de las demás |
+| **Given** | El sistema identifica una solicitud como urgente (estudiante con fecha límite de matrícula próxima o que ya se encuentra en la universidad de destino) |
+| **When** | La Dirección de Programa accede al módulo |
+| **Then** | El sistema destaca visualmente las solicitudes urgentes por encima de las demás |
+
 
 ---
-
-# Analisis PESTLE
-
-
-## RF1 — Registrar solicitudes de equivalencia
-
-| Dimensión           | Hallazgo dado por el equipo (corregido y ampliado)                                                                                                                                                                                                                                                                                                                                                    | Argumentación ética                                                                                                                                                                                                                                                          |
-| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **P - Político**    | En el contexto colombiano, las universidades están sujetas a lineamientos internos y del Ministerio de Educación Nacional (MEN) que regulan los procesos académicos, incluyendo la gestión de solicitudes de equivalencia. Estos lineamientos buscan garantizar orden, transparencia y equidad en los procesos académicos, por lo que el sistema debe alinearse con dichas políticas institucionales. | Desde una perspectiva ética, es fundamental que el sistema respete las normas institucionales, ya que estas están diseñadas para garantizar procesos justos. Ignorar estas políticas podría generar decisiones arbitrarias que afecten a los estudiantes de manera desigual. |
-| **E - Económico**   | El desarrollo e implementación del sistema de registro implica costos asociados al desarrollo de software, infraestructura tecnológica y mantenimiento. Además, el almacenamiento de solicitudes y documentos genera costos recurrentes en servidores.                                                                                                                                                | No es ético que la institución limite o dificulte el acceso al proceso de equivalencias por razones económicas. El sistema debe garantizar que todos los estudiantes puedan acceder al proceso sin barreras, independientemente de los costos internos de la institución.    |
-| **S - Social**      | No todos los estudiantes tienen el mismo nivel de acceso a herramientas digitales o comprensión de plataformas tecnológicas. Esto puede generar dificultades en el uso del sistema para ciertos grupos, como estudiantes con menor alfabetización digital.                                                                                                                                            | Éticamente, el sistema debe ser inclusivo y accesible. Diseñar un sistema complejo o poco intuitivo puede excluir a ciertos estudiantes, generando desigualdad en el acceso a un derecho académico como lo es solicitar una equivalencia.                                    |
-| **T - Tecnológico** | El sistema depende de la disponibilidad de internet, compatibilidad con dispositivos y estabilidad de la plataforma. Fallos técnicos pueden impedir que los estudiantes registren sus solicitudes correctamente.                                                                                                                                                                                      | Es responsabilidad ética de la institución garantizar que la tecnología funcione correctamente. Un fallo técnico que impida registrar una solicitud puede afectar directamente el futuro académico del estudiante.                                                           |
-| **L - Legal**       | El sistema recopila datos personales del estudiante, los cuales están protegidos por la Ley 1581 de 2012 (Habeas Data), que regula el tratamiento de datos personales en Colombia.                                                                                                                                                                                                                    | El manejo de datos personales implica una responsabilidad ética importante. No basta con cumplir la ley; se debe garantizar que los datos no sean utilizados indebidamente ni expuestos a riesgos.                                                                           |
-| **A - Ambiental**   | La digitalización del proceso elimina la necesidad de formularios físicos y reduce el uso de papel en comparación con procesos tradicionales.                                                                                                                                                                                                                                                         | Aunque el impacto ambiental es positivo, este beneficio no debe ser el único criterio para implementar el sistema. La prioridad ética debe ser el bienestar y la equidad para los estudiantes.                                                                               |
-
----
-
-## RF3 — Asignación automática de solicitudes
-
-| Dimensión           | Hallazgo                                                                                                                                                                                                                                               | Argumentación ética                                                                                                                                                                  |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **P - Político**    | Las universidades operan bajo estructuras organizacionales definidas (facultades, departamentos), y los procesos deben respetar estas jerarquías. La asignación automática debe alinearse con estas estructuras para garantizar validez institucional. | Éticamente, es importante respetar la estructura institucional, ya que esta define responsabilidades claras. Una mala asignación puede llevar a decisiones incorrectas o no válidas. |
-| **E - Económico**   | La automatización reduce la carga administrativa y el tiempo invertido por el personal, optimizando recursos institucionales.                                                                                                                          | Aunque la eficiencia es importante, no es ético sacrificar la precisión del proceso por rapidez o ahorro económico.                                                                  |
-| **S - Social**      | Los estudiantes suelen desconocer el flujo interno de sus solicitudes, lo que genera incertidumbre sobre quién está evaluando su caso.                                                                                                                 | La transparencia es clave para generar confianza. Éticamente, los estudiantes tienen derecho a saber cómo se gestiona su solicitud.                                                  |
-| **T - Tecnológico** | La asignación depende de datos correctos en el sistema (departamentos, cursos, responsables). Errores en estos datos pueden provocar asignaciones incorrectas.                                                                                         | Un error técnico puede afectar directamente la evaluación de un estudiante. Éticamente, el sistema debe minimizar estos riesgos.                                                     |
-| **L - Legal**       | Es necesario registrar quién es responsable de cada etapa del proceso para garantizar trazabilidad en caso de auditorías o reclamaciones.                                                                                                              | La trazabilidad no solo es legal, sino ética, ya que permite identificar responsabilidades y evitar decisiones arbitrarias.                                                          |
-| **A - Ambiental**   | La automatización reduce procesos manuales y uso de recursos físicos.                                                                                                                                                                                  | El beneficio ambiental es positivo, pero secundario frente a la correcta gestión del proceso académico.                                                                              |
-
----
-
-## RF4 — Registrar decisiones
-
-| Dimensión           | Hallazgo                                                                                                                                | Argumentación ética                                                                                                           |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| **P - Político**    | Las decisiones académicas deben poder ser auditadas por entes internos o externos, siguiendo principios de transparencia institucional. | Éticamente, las decisiones deben ser justificables. La falta de registro abre la puerta a arbitrariedad.                      |
-| **E - Económico**   | No registrar decisiones genera reprocesos, aumentando costos administrativos.                                                           | La ineficiencia afecta recursos institucionales, pero lo más importante es que puede afectar negativamente a los estudiantes. |
-| **S - Social**      | Las decisiones impactan directamente la trayectoria académica del estudiante.                                                           | Es éticamente necesario que las decisiones sean claras, justificadas y comprensibles.                                         |
-| **T - Tecnológico** | Se requiere almacenamiento confiable y seguro para preservar la información.                                                            | Perder información afecta derechos del estudiante y la credibilidad del sistema.                                              |
-| **L - Legal**       | Las decisiones deben poder ser utilizadas como evidencia en procesos legales o reclamaciones.                                           | La falta de evidencia puede perjudicar tanto a la institución como al estudiante.                                             |
-| **A - Ambiental**   | Digitalizar decisiones reduce uso de papel.                                                                                             | Beneficio positivo, pero no prioritario frente al impacto social.                                                             |
-
----
-
-## RF6 — Actualizar decisiones históricas
-
-| Dimensión           | Hallazgo                                                                                                             | Argumentación ética                                                                                                     |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| **P - Político**    | Las políticas académicas pueden cambiar con el tiempo, lo que puede requerir la actualización de decisiones pasadas. | Cambiar decisiones sin criterios claros puede generar injusticias y afectar la confianza en la institución.             |
-| **E - Económico**   | Reprocesar decisiones implica costos administrativos adicionales.                                                    | No es ético priorizar el ahorro económico sobre la equidad en decisiones académicas.                                    |
-| **S - Social**      | Cambiar una decisión puede afectar directamente a un estudiante que ya había recibido un resultado.                  | Esto puede percibirse como injusto, especialmente si el estudiante ya tomó decisiones basadas en el resultado anterior. |
-| **T - Tecnológico** | Es necesario mantener un historial de cambios para garantizar trazabilidad.                                          | La transparencia es esencial para mantener la confianza en el sistema.                                                  |
-| **L - Legal**       | Cambios deben ser auditables para evitar conflictos legales.                                                         | La falta de registro puede generar disputas legales.                                                                    |
-| **A - Ambiental**   | Proceso digital reduce recursos físicos.                                                                             | Impacto positivo pero secundario.                                                                                       |
-
----
-
-## RF7 — Evaluación automática con IA
-
-| Dimensión           | Hallazgo                                                                                                                 | Argumentación ética                                                   |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- |
-| **P - Político**    | Aunque no hay regulación específica de IA, el MEN exige transparencia en decisiones académicas.                          | No es ético tomar decisiones sin posibilidad de explicación.          |
-| **E - Económico**   | La IA implica costos de desarrollo, mantenimiento y actualización, aunque puede reducir costos operativos a largo plazo. | No es ético priorizar ahorro sobre justicia en decisiones académicas. |
-| **S - Social**      | Puede generar desconfianza si los estudiantes no entienden cómo funciona.                                                | Las personas tienen derecho a entender cómo son evaluadas.            |
-| **T - Tecnológico** | Puede replicar sesgos históricos en los datos.                                                                           | La tecnología no debe perpetuar desigualdades.                        |
-| **L - Legal**       | Uso de datos personales regulado por Ley 1581.                                                                           | Protección de datos es un derecho fundamental.                        |
-| **A - Ambiental**   | Consumo energético de sistemas de IA.                                                                                    | Impacto menor frente al impacto social.                               |
