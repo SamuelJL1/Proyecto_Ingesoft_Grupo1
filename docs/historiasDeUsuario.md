@@ -630,8 +630,6 @@ Yo como estudiante quiero ver la ficha detallada de un curso para comprender su 
   - **Then** el sistema muestra error 404
 
 ## Información de Cursos
-## Visualización de videos explicativos de cursos
-
 | Título de la Historia de Usuario 33 |  Visualización de videos explicativos de cursos |
 |---|---|
 | **Yo, como** | Estudiante |
@@ -661,24 +659,30 @@ Yo como estudiante quiero ver la ficha detallada de un curso para comprender su 
 **When** el curso no tiene un video de presentación disponible  
 **Then** el sistema muestra un mensaje indicando que el curso no cuenta con un video informativo  
 
-### Historia de usuario 34
+# Historia de Usuario 34
 
-**Titulo:** Visualizacion de ofertas de electivas internacionales  
-**Como:** Estudiante en porceso de intercambio  
-**Quiero:** ver la lista de las electivas ofertadas por otras universidades en convenio  
-**Para:** agilizar la busqueda entre los cursos extranjeros y los de ICESI  
+| Título de la Historia de Usuario 34 | Visualización de ofertas de electivas internacionales |
+|---|---|
+| Yo, como | Estudiante |
+| Quiero | Ver la lista de las electivas ofertadas por otras universidades en convenio |
+| Para | Explorar oportunidades académicas internacionales |
 
-**Criterios de aceptacion:**
+## Criterios de Aceptación (Formato Gherkin)
 
-#### Scenario: Consulta de materias en universidades en convenio  
-**Given:** Que el estudiante entra al modulo de movilidad internacional  
-**When:** Selecciona una universidad extranjera de la lista  
-**Then:** El sistema despliega los cursos disponibles en esa institucion que pueden ser tomados como electivas  
+### Scenario: Consulta de cursos internacionales
+Given el estudiante accede al de módulo matricular electivas  
+When selecciona una universidad en convenio  
+Then el sistema muestra la lista de electivas disponibles de esa institución  
 
-#### Scenario: Identificacion de similitudes   
-**Given:** El estudiante visualiza la lista de cursos internacionales    
-**When:** Compara la informacion de un curso extranjero con una electiva de ICESI    
-**Then:** El sistema permite visualizar los objetivos de ambos para facilitar el tramite 
+### Scenario: Visualización de información del curso
+Given el estudiante consulta una electiva internacional  
+When selecciona un curso de la lista  
+Then el sistema presenta información académica del curso, incluyendo nombre, descripción y objetivos  
+
+### Scenario: Ausencia de electivas disponibles
+Given el estudiante selecciona una universidad en convenio  
+When la institución no tiene electivas disponibles  
+Then el sistema muestra un mensaje indicando que no existen cursos ofertados actualmente  
 
 ### Historia de usuario 35    
 
