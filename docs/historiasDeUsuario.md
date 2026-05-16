@@ -629,24 +629,37 @@ Yo como estudiante quiero ver la ficha detallada de un curso para comprender su 
   - **When** el estudiante intenta acceder mediante URL directa  
   - **Then** el sistema muestra error 404
 
-### Historia de usuario 33
+## Información de Cursos
+## Visualización de videos explicativos de cursos
 
-**Titulo:** Presentacion de cursos por videos  
-**Como:** Estudiante interesado en lo academico  
-**Quiero:** Ver los videos que suben los profesores explicando de que trata su materia  
-**Para:** Entender sus enfoques de manera clara  
+| Título de la Historia de Usuario 33 |  Visualización de videos explicativos de cursos |
+|---|---|
+| **Yo, como** | Estudiante |
+| **Quiero** | Visualizar videos informativos publicados por los docentes sobre sus cursos |
+| **Para** | Comprender el enfoque de las materias antes de seleccionarlas |
 
- **Criterios de aceptacion:**
+---
 
-#### Scenario: Acceso al material del curso  
-**Given:** El estudiante esta explorando la información de una electiva  
-**When:** Hace clic en una seccion llamada "Presentación del docente o curso"  
-**Then:** El sistema reproduce un video donde el profesor explica su materia y que van a hacer  
+# Criterios de Aceptación (Formato Gherkin)
 
-#### Scenario: Interfaz para informacion  
-**Given:** El estudiante busca una alternativa al sistema actual (Banner)  
-**When:** Navega por el nuevo sitio de información de cursos  
-**Then:** El sistema presenta la informacion de manera intuitiva y visualmente atractiva  
+## Scenario: Reproducción de video del curso
+**Given** el módulo de la información de electiva con un video cargado  
+**When** el usuario selecciona la sección "Presentación del curso"  
+**Then** el sistema reproduce un video informativo del docente sobre la materia  
+
+---
+
+## Scenario: Disponibilidad del video
+**Given** el estudiante accede a la información de una electiva  
+**When** el curso tiene un video de presentación disponible  
+**Then** el sistema muestra un reproductor de video accesible desde la página del curso  
+
+---
+
+## Scenario: Video no disponible
+**Given** el estudiante accede a la información de una electiva  
+**When** el curso no tiene un video de presentación disponible  
+**Then** el sistema muestra un mensaje indicando que el curso no cuenta con un video informativo  
 
 ### Historia de usuario 34
 
