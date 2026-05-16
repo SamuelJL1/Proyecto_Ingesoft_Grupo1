@@ -2,13 +2,13 @@
 
 ## Requerimiento funcionales:
 
-RF1: Registrar solicitudes de equivalencia por parte del estudiante
+RF1: Registrar solicitudes de equivalencia con documentos adjuntos por parte del estudiante
 
 RF1.1: Adjuntar documentos (syllabus, contenidos, etc.)
 
 RF2: Consultar estado de solicitudes
 
-RF3: Asignar automáticamente la solicitud al responsable según el departamento
+RF3: Asignar automáticamente la solicitud al responsable según el flujo oficial de tres niveles
 
 RF4: Registrar decisiones (aprobado, rechazado, pendiente)
 
@@ -34,11 +34,9 @@ Actores:
 
 Estudiante
 
-Asistente
-
 Administrador del sistema
 
-Director de programa
+Dirección de programa
 
 Jefe de departamento
 
@@ -93,19 +91,25 @@ RF8 - RF9
 **Título:** Registro de solicitud de equivalencia
 
 **Historia:**
-Yo, como estudiante, quiero registrar una solicitud de equivalencia con la información del curso y documentos, para que mi curso sea evaluado por la universidad.
+Yo como estudiante quiero registrar mi solicitud de equivalencia adjuntando el syllabus y el código del curso para iniciar formalmente el proceso de validación de materias cursadas en otra institución.
 
 **Criterios de aceptación:**
 
-### Scenario: Registro exitoso con datos completos
+### Scenario: El estudiante está autenticado en el sistema
 
-**Given:** El estudiante se encuentra en el formulario de solicitud
+**Given:** El estudiante está autenticado en el sistema
+
+**And:** Se encuentra en el formulario de solicitud de equivalencia
+
+**And:** Tiene disponibles los archivos de syllabus, código de curso y balance académico en formato PDF
 
 **When:** Ingresa curso origen, curso destino y adjunta documentos válidos
 
 **Then:** El sistema guarda la solicitud correctamente
 
 **And:** Muestra un mensaje de confirmación
+
+**And:** notifica al asistente de programa que existe una nueva solicitud pendiente
 
 ### Scenario: Registro fallido por datos incompletos
 
@@ -291,6 +295,32 @@ Yo, como estudiante, quiero recibir notificaciones sobre el estado de mi solicit
 **Then:** El sistema muestra el estado actualizado
 
 ---
+
+### Historia de usuario 7
+
+**Título:** Asignación automática siguiendo el flujo oficial 
+
+**Historia**
+Yo, como director de programa quiero que el sistema asigne automáticamente cada solicitud al siguiente actor del flujo oficial para garantizar que el proceso se respete sin intervenciones manuales ni saltos de nivel.
+
+**Criterios de aceptación:**
+
+### Scenario: Transición exitosa al siguiente nivel del flujo
+
+**Given:** El asistente de programa está autenticado
+
+**And:** Ha completado su revisión de una solicitud y la marca como lista para avanzar
+
+**When:** confirma la transición al siguiente nivel del flujo
+  
+**Then:** el sistema notifica automáticamente al director de programa
+    
+**And:** actualiza el estado de la solicitud a "En revisión — Director de programa"
+
+**And:** registra la transición con actor, fecha y hora en el log inmutable de auditoría
+
+---
+
 # Analisis PESTLE
 
 
