@@ -26,37 +26,43 @@ RF8: Notificar cambios de estado al estudiante
 
 RF9: Informar al respectivo responsable siguiendo en el flujo
 
+RF10: Generar y distribuir certificados automáticos al registrar la decisión final
+
+RF11: Priorizar solicitudes por fecha de envío y nivel de urgencia
+
+RF12: Consultar información detallada de cursos internos para comparación con externos
+
 ---
 
 ## Entidades:
 
 Actores:
 
-Estudiante
+- Estudiante
 
-Administrador del sistema
+- Administrador del sistema
 
-Dirección de programa
+- Dirección de programa
 
-Jefe de departamento
+- Jefe de departamento
 
-Entidades del negocio:
+- Entidades del negocio:
 
-Solicitud de equivalencia
+- Solicitud de equivalencia
 
-Curso origen
+- Curso origen
 
-Curso destino
+- Curso destino
 
-Departamento
+- Departamento
 
-Programa académico
+- Programa académico
 
-Decisión
+- Decisión
 
-Historial de decisiones
+- Historial de decisiones
 
-Evaluación IA
+- Evaluación IA
 
 --- 
 
@@ -64,15 +70,15 @@ Evaluación IA
 
 Subsistema de Gestión de Solicitudes
 
-RF1 - RF1.1 - RF2
+RF1 - RF1.1 - RF2 - RF12
 
 Subsistema de Flujo de Aprobación:
 
-RF3 - RF4
+RF3 - RF4 - RF4.1 - RF10 - RF11
 
 Subsistema de Base de Datos
 
-Rf4.1 - RF5 - RF6
+RF5 - RF6
 
 Subsistema de Inteligencia Artificial
 
@@ -84,240 +90,514 @@ RF8 - RF9
 
 ---
 
-# Historias de Usuario
+# Solicitud de Equivalencia
+
+---
 
 ## Historia de usuario 1
 
-**Título:** Registro de solicitud de equivalencia
+| **Historia N°:** | 1 |
+|---|---|
+| **Yo como** | Estudiante |
+| **Quiero** | Registrar una solicitud de equivalencia con la información del curso y documentos |
+| **Para** | Que mi curso sea evaluado por la universidad |
 
-**Historia:**
-Yo como estudiante quiero registrar mi solicitud de equivalencia adjuntando el syllabus y el código del curso para iniciar formalmente el proceso de validación de materias cursadas en otra institución.
+**Scenario 1.1:** Registro exitoso con datos completos
 
-**Criterios de aceptación:**
+| | |
+|---|---|
+| **Given** | El estudiante se encuentra en el formulario de solicitud |
+| **When** | Ingresa curso origen, curso destino y adjunta documentos válidos |
+| **Then** | El sistema guarda la solicitud correctamente |
+| **And** | Muestra un mensaje de confirmación |
 
-### Scenario: El estudiante está autenticado en el sistema
+**Scenario 1.2:** Registro fallido por datos incompletos
 
-**Given:** El estudiante está autenticado en el sistema
+| | |
+|---|---|
+| **Given** | El estudiante se encuentra en el formulario de solicitud |
+| **When** | Omite información obligatoria |
+| **Then** | El sistema muestra un mensaje de error indicando campos faltantes |
 
-**And:** Se encuentra en el formulario de solicitud de equivalencia
+**Scenario 1.3:** Registro fallido por documentos inválidos
 
-**And:** Tiene disponibles los archivos de syllabus, código de curso y balance académico en formato PDF
-
-**When:** Ingresa curso origen, curso destino y adjunta documentos válidos
-
-**Then:** El sistema guarda la solicitud correctamente
-
-**And:** Muestra un mensaje de confirmación
-
-**And:** notifica al asistente de programa que existe una nueva solicitud pendiente
-
-### Scenario: Registro fallido por datos incompletos
-
-**Given:** El estudiante se encuentra en el formulario de solicitud
-
-**When:** Omite información obligatoria
-
-**Then:** El sistema muestra un mensaje de error indicando campos faltantes
-
-### Scenario: Registro fallido por documentos inválidos
-
-**Given:** El estudiante se encuentra en el formulario de solicitud
-
-**When:** Adjunta documentos en formato no permitido
-
-**Then:** El sistema muestra un mensaje indicando el formato inválido
+| | |
+|---|---|
+| **Given** | El estudiante se encuentra en el formulario de solicitud |
+| **When** | Adjunta documentos en formato no permitido |
+| **Then** | El sistema muestra un mensaje indicando el formato inválido |
 
 ---
 
 ## Historia de usuario 2
 
-**Título:** Asignación automática de solicitudes
+| **Historia N°:** | 2 |
+|---|---|
+| **Yo como** | Asistente de Programa |
+| **Quiero** | Que el sistema asigne automáticamente las solicitudes al responsable correspondiente siguiendo el flujo institucional |
+| **Para** | Agilizar el proceso de evaluación y garantizar el orden correcto a las entidades respectivas |
 
-**Historia:**
-Yo, como administrador del sistema, quiero asignar automáticamente las solicitudes al responsable correspondiente, para agilizar el proceso de evaluación.
+**Scenario 2.1:** Asignación al Asistente de Programa según departamento
 
-**Criterios de aceptación:**
+| | |
+|---|---|
+| **Given** | El Estudiante ha enviado una solicitud con documentos válidos y completos |
+| **When** | El Sistema registra la nueva solicitud |
+| **Then** | Asigna la solicitud al asistente de programa correspondiente |
+| **And** | Se notifica al asistente |
 
-#### Scenario: Asignación correcta según departamento
+**Scenario 2.2:** Paso del Asistente al Director de Programa
 
-**Given:** Existe una solicitud registrada
+| | |
+|---|---|
+| **Given** | El Asistente de Programa ha revisado la solicitud |
+| **When** | El Asistente de Programa aprueba la solicitud |
+| **Then** | El Sistema asigna la solicitud al Director de programa correspondiente |
+| **And** | Se notifica al Director |
 
-**When:** El sistema identifica el departamento del curso destino
+**Scenario 2.3:** Paso del Director de Programa al Jefe de Departamento
 
-**Then:** Asigna la solicitud al responsable correspondiente
+| | |
+|---|---|
+| **Given** | El Director de Programa ha revisado la solicitud |
+| **When** | El Director de Programa aprueba la solicitud |
+| **Then** | El Sistema asigna la solicitud al Jefe de Departamento correspondiente |
+| **And** | Se notifica al Jefe de Departamento |
 
-### Scenario: Solicitud sin departamento identificado
+**Scenario 2.4:** Paso del Jefe de Departamento a Admisiones
 
-**Given:** Existe una solicitud registrada
+| | |
+|---|---|
+| **Given** | El Jefe de departamento ha revisado la solicitud |
+| **When** | El Jefe de departamento realiza la decisión final |
+| **Then** | El Sistema notifica a admisiones |
+| **And** | Se cierra el flujo de revisión |
 
-**And:** El sistema no puede identificar el departamento
+**Scenario 2.5:** Solicitud sin Departamento Identificado
 
-**When:** Intenta asignarla
-
-**Then:** La solicitud queda en estado pendiente de asignación
-
-**And:** Se notifica al asistente
+| | |
+|---|---|
+| **Given** | El Estudiante ha enviado una solicitud con documentos válidos y completos |
+| **And** | El Sistema no puede identificar el departamento del curso destino |
+| **When** | Intenta asignar la solicitud |
+| **Then** | La Solicitud queda en estado "Pendiente de Asignación" |
+| **And** | Se notifica al asistente para resolverlo manualmente |
 
 ---
 
 ## Historia de usuario 3
 
-**Título:** Evaluación preliminar con inteligencia artificial
+| **Historia N°:** | 3 |
+|---|---|
+| **Yo como** | Jefe de departamento |
+| **Quiero** | Recibir una clasificación automática de las solicitudes |
+| **Para** | Priorizar y optimizar mi revisión |
 
-**Historia:**
-Yo, como jefe de departamento, quiero recibir una clasificación automática de las solicitudes, para priorizar y optimizar mi revisión.
+**Scenario 3.1:** Clasificación en alto cumplimiento
 
-**Criterios de aceptación:**
+| | |
+|---|---|
+| **Given** | Existe una solicitud registrada |
+| **When** | El sistema ejecuta el análisis de IA |
+| **And** | El curso cumple la mayoría de los criterios |
+| **Then** | Clasifica la solicitud como "alto" |
 
-### Scenario: Clasificación en alto cumplimiento
+**Scenario 3.2:** Clasificación en medio cumplimiento
 
-**Given:** Existe una solicitud registrada
+| | |
+|---|---|
+| **Given** | Existe una solicitud registrada |
+| **When** | El sistema ejecuta el análisis de IA |
+| **And** | El curso cumple parcialmente los criterios |
+| **Then** | Clasifica la solicitud como "medio" |
 
-**When:** El sistema ejecuta el análisis de IA
+**Scenario 3.3:** Clasificación en bajo cumplimiento
 
-**And:** El curso cumple la mayoría de criterios
-
-**Then:** Clasifica la solicitud como "alto"
-
-
-### Scenario: Clasificación en medio cumplimiento
-
-**Given:** Existe una solicitud registrada
-
-**When:** El sistema ejecuta el análisis de IA
-
-**And:** El curso cumple parcialmente los criterios
-
-**Then:** Clasifica la solicitud como "medio"
-
-
-### Scenario: Clasificación en bajo cumplimiento
-
-**Given:** Existe una solicitud registrada
-
-**When:** El sistema ejecuta el análisis de IA
-
-**And:** El curso no cumple los criterios
-
-**Then:** Clasifica la solicitud como "bajo"
-
+| | |
+|---|---|
+| **Given** | Existe una solicitud registrada |
+| **When** | El sistema ejecuta el análisis de IA |
+| **And** | El curso no cumple los criterios |
+| **Then** | Clasifica la solicitud como "bajo" |
 
 ---
 
 ## Historia de usuario 4
 
-**Título:** Consulta de equivalencias previas
+| **Historia N°:** | 4 |
+|---|---|
+| **Yo como** | Jefe de departamento |
+| **Quiero** | Consultar equivalencias previamente aprobadas o rechazadas |
+| **Para** | Evitar reprocesar solicitudes similares |
 
-**Historia:**
-Yo, como jefe de departamento, quiero consultar equivalencias previamente aprobadas o rechazadas, para evitar reprocesar solicitudes similares.
+**Scenario 4.1:** Consulta exitosa de historial
 
-**Criterios de aceptación:**
+| | |
+|---|---|
+| **Given** | El jefe de departamento está en el historial |
+| **When** | Busca por curso origen o curso destino |
+| **Then** | El sistema muestra las equivalencias previas |
 
-### Scenario: Consulta exitosa de historial
+**Scenario 4.2:** Consulta sin resultados
 
-**Given:** El evaluador está en el sistema
+| | |
+|---|---|
+| **Given** | El jefe de departamento está en el historial |
+| **When** | Busca un curso sin registros previos |
+| **Then** | El sistema muestra un mensaje indicando que no hay resultados |
 
-**When:** Busca por curso origen o curso destino
+**Scenario 4.3:** Filtrar historial solo por equivalencias aprobadas
 
-**Then:** El sistema muestra las equivalencias previas
-
-
-### Scenario: Consulta sin resultados
-
-**Given:** El evaluador está en el sistema
-
-**When:** Busca un curso sin registros previos
-
-**Then:** El sistema muestra un mensaje indicando que no hay resultados
-
+| | |
+|---|---|
+| **Given** | El jefe de departamento está en el historial |
+| **When** | Aplica el filtro "aprobadas" |
+| **Then** | El sistema muestra únicamente las equivalencias con decisión aprobada |
 
 ---
 
 ## Historia de usuario 5
 
-**Título:** Actualización de decisiones históricas
+| **Historia N°:** | 5 |
+|---|---|
+| **Yo como** | Jefe de departamento |
+| **Quiero** | Modificar decisiones anteriores |
+| **Para** | Mantener actualizados los criterios académicos |
 
-**Historia:**
-Yo, como jefe de departamento, quiero modificar decisiones anteriores, para mantener actualizados los criterios académicos.
+**Scenario 5.1:** Actualización exitosa de decisión
 
-**Criterios de aceptación:**
+| | |
+|---|---|
+| **Given** | Existe una equivalencia previamente registrada |
+| **When** | El Jefe modifica el estado de la decisión |
+| **Then** | El sistema actualiza la información |
+| **And** | Guarda el cambio en el historial |
 
-### Scenario: Actualización exitosa de decisión
+**Scenario 5.2:** Intento de actualización sin permisos
 
-**Given:** Existe una equivalencia previamente registrada
-
-**When:** El jefe modifica el estado de la decisión
-
-**Then:** El sistema actualiza la información
-
-**And:** Guarda el cambio en el historial
-
-
-### Scenario: Intento de actualización sin permisos
-
-**Given:** Existe una equivalencia registrada
-
-**And:** El usuario no es jefe de departamento
-
-**When:** Intenta modificar la decisión
-
-**Then:** El sistema bloquea la acción
-
-**And:** Muestra un mensaje de acceso denegado
-
+| | |
+|---|---|
+| **Given** | Existe una equivalencia registrada |
+| **And** | El usuario no es jefe de departamento |
+| **When** | Intenta modificar la decisión |
+| **Then** | El sistema bloquea la acción |
+| **And** | Muestra un mensaje de acceso denegado |
 
 ---
 
 ## Historia de usuario 6
 
-**Título:** Notificación de cambios en solicitudes
+| **Historia N°:** | 6 |
+|---|---|
+| **Yo como** | Estudiante |
+| **Quiero** | Recibir notificaciones sobre el estado de mi solicitud |
+| **Para** | Estar informado del proceso |
 
-**Historia:**
-Yo, como estudiante, quiero recibir notificaciones sobre el estado de mi solicitud, para estar informado del proceso.
+**Scenario 6.1:** Notificación por cambio de estado
 
-**Criterios de aceptación:**
+| | |
+|---|---|
+| **Given** | Existe una solicitud en proceso |
+| **When** | El estado cambia (aprobado, rechazado o pendiente) |
+| **Then** | El sistema envía una notificación al estudiante |
 
-### Scenario: Notificación por cambio de estado
+**Scenario 6.2:** Consulta manual del estado
 
-**Given:** Existe una solicitud en proceso
-
-**When:** El estado cambia (aprobado, rechazado o pendiente)
-
-**Then:** El sistema envía una notificación al estudiante
-
-
-### Scenario: Consulta manual del estado
-
-**Given:** El estudiante accede al sistema
-
-**When:** Revisa sus solicitudes
-
-**Then:** El sistema muestra el estado actualizado
+| | |
+|---|---|
+| **Given** | El estudiante accede al sistema |
+| **When** | Revisa sus solicitudes |
+| **Then** | El sistema muestra el estado actualizado |
 
 ---
 
-### Historia de usuario 7
+## Historia de usuario 7
 
-**Título:** Asignación automática siguiendo el flujo oficial 
+| **Historia N°:** | 7 |
+|---|---|
+| **Yo como** | Estudiante en movilidad |
+| **Quiero** | Consultar la información detallada de los cursos del área |
+| **Para** | Compararlos con cursos externos |
 
-**Historia**
-Yo, como director de programa quiero que el sistema asigne automáticamente cada solicitud al siguiente actor del flujo oficial para garantizar que el proceso se respete sin intervenciones manuales ni saltos de nivel.
+**Scenario 7.1:** Visualizar cursos con información académica completa
 
-**Criterios de aceptación:**
+| | |
+|---|---|
+| **Given** | Existen cursos registrados en el sistema |
+| **When** | El estudiante accede al módulo de equivalencias |
+| **Then** | El sistema muestra cursos con código, nombre, créditos, competencias y resultados de aprendizaje |
 
-### Scenario: Transición exitosa al siguiente nivel del flujo
+**Scenario 7.2:** No existen cursos registrados
 
-**Given:** El asistente de programa está autenticado
+| | |
+|---|---|
+| **Given** | No existen cursos en el sistema |
+| **When** | El estudiante accede al módulo |
+| **Then** | El sistema muestra mensaje indicando que no hay cursos disponibles |
 
-**And:** Ha completado su revisión de una solicitud y la marca como lista para avanzar
+---
 
-**When:** confirma la transición al siguiente nivel del flujo
-  
-**Then:** el sistema notifica automáticamente al director de programa
-    
-**And:** actualiza el estado de la solicitud a "En revisión — Director de programa"
+## Historia de usuario 8
 
-**And:** registra la transición con actor, fecha y hora en el log inmutable de auditoría
+| **Historia N°:** | 8 |
+|---|---|
+| **Yo como** | Estudiante |
+| **Quiero** | Registrar un curso de una universidad extranjera |
+| **Para** | Iniciar una propuesta de equivalencia |
+
+**Scenario 8.1:** Registrar curso externo correctamente
+
+| | |
+|---|---|
+| **Given** | El Estudiante ingresa nombre del curso, universidad, créditos y descripción |
+| **When** | Guarda el curso externo |
+| **Then** | El Sistema registra el curso asociado al estudiante |
+
+**Scenario 8.2:** Intentar guardar con datos obligatorios faltantes
+
+| | |
+|---|---|
+| **Given** | El Estudiante no ingresa nombre del curso, universidad o créditos |
+| **When** | El Estudiante intenta guardar |
+| **Then** | El Sistema bloquea el registro y solicita completar campos obligatorios |
+
+---
+
+## Historia de usuario 9
+
+| **Historia N°:** | 9 |
+|---|---|
+| **Yo como** | Estudiante |
+| **Quiero** | Adjuntar documentos del curso externo, como el syllabus, código del curso y mi balance académico |
+| **Para** | Sustentar la equivalencia |
+
+**Scenario 9.1:** Adjuntar archivo válido
+
+| | |
+|---|---|
+| **Given** | El Archivo es PDF y pesa menos de 5MB |
+| **When** | El Estudiante carga el documento |
+| **Then** | El Sistema guarda el archivo correctamente |
+
+**Scenario 9.2:** Archivo inválido o excede tamaño permitido
+
+| | |
+|---|---|
+| **Given** | El Archivo no es PDF o supera 5MB |
+| **When** | El Estudiante intenta cargarlo |
+| **Then** | El Sistema rechaza el archivo mostrando mensaje de error |
+
+---
+
+## Historia de usuario 10
+
+| **Historia N°:** | 10 |
+|---|---|
+| **Yo como** | Estudiante |
+| **Quiero** | Recibir una sugerencia preliminar de equivalencia |
+| **Para** | Saber si mi propuesta tiene viabilidad |
+
+**Scenario 10.1:** Generar sugerencia con información suficiente
+
+| | |
+|---|---|
+| **Given** | El Curso externo tiene créditos, descripción y syllabus adjunto |
+| **When** | El Estudiante solicita sugerencia |
+| **Then** | El Sistema genera recomendación preliminar de equivalencia |
+
+**Scenario 10.2:** Información insuficiente para sugerencia
+
+| | |
+|---|---|
+| **Given** | El Curso externo no cuenta con descripción o syllabus adjunto |
+| **When** | El Estudiante solicita sugerencia |
+| **Then** | El Sistema solicita completar la información faltante |
+
+**Scenario 10.3:** Sugerencia basada en criterios de aprobación
+
+| | |
+|---|---|
+| **Given** | El Curso externo tiene créditos, descripción y syllabus adjunto |
+| **When** | El Sistema genera la recomendación preliminar |
+| **Then** | La Sugerencia incluye una clasificación (Alto / Medio / Bajo Cumplimiento) basada en similitud de créditos, objetivos y competencias con el curso destino |
+| **And** | El Sistema indica al estudiante los criterios que cumple y los que no |
+
+**Scenario 10.4:** Recomendación apoyada en historial de solicitudes previas
+
+| | |
+|---|---|
+| **Given** | Existen solicitudes similares previamente aprobadas o rechazadas en el sistema |
+| **When** | El Estudiante solicita sugerencia |
+| **Then** | El Sistema incluye en la recomendación un aviso donde se indica si cursos similares fueron aprobados o rechazados anteriormente |
+
+**Scenario 10.5:** Curso externo sin precedentes en el historial
+
+| | |
+|---|---|
+| **Given** | No existen solicitudes similares previas en el sistema |
+| **When** | El Estudiante solicita sugerencia |
+| **Then** | El Sistema genera la sugerencia únicamente con base en los criterios académicos disponibles |
+| **And** | Indica al estudiante que no hay precedentes registrados para ese curso |
+
+---
+
+## Historia de usuario 11
+
+| **Historia N°:** | 11 |
+|---|---|
+| **Yo como** | Estudiante |
+| **Quiero** | Enviar mi solicitud de equivalencia |
+| **Para** | Revisión académica |
+
+**Scenario 11.1:** Enviar solicitud completa
+
+| | |
+|---|---|
+| **Given** | El curso externo tiene documentos y sugerencia preliminar |
+| **When** | El estudiante envía la solicitud |
+| **Then** | El sistema registra la solicitud con estado "enviada" |
+
+**Scenario 11.2:** Bloquear envío por información incompleta
+
+| | |
+|---|---|
+| **Given** | Faltan documentos o datos obligatorios |
+| **When** | El estudiante intenta enviar la solicitud |
+| **Then** | El sistema bloquea el envío y muestra mensaje de error |
+
+---
+
+## Historia de usuario 12
+
+| **Historia N°:** | 12 |
+|---|---|
+| **Yo como** | Estudiante |
+| **Quiero** | Consultar el estado de mi solicitud |
+| **Para** | Hacer seguimiento |
+
+**Scenario 12.1:** Visualizar estado válido
+
+| | |
+|---|---|
+| **Given** | Existe una solicitud registrada |
+| **When** | El Estudiante consulta su solicitud |
+| **Then** | El Sistema muestra uno de los estados: enviada, en revisión, aprobada o rechazada |
+
+**Scenario 12.2:** Estudiante sin solicitudes
+
+| | |
+|---|---|
+| **Given** | El Estudiante no ha enviado solicitudes |
+| **When** | Accede al módulo |
+| **Then** | El sistema muestra mensaje sin solicitudes |
+
+---
+
+## Historia de usuario 13
+
+| **Historia N°:** | 13 |
+|---|---|
+| **Yo como** | Asistente de Programa |
+| **Quiero** | Revisar solicitudes de equivalencia |
+| **Para** | Gestionarlas y asignarlas al siguiente responsable |
+
+**Scenario 13.1:** Ver solicitudes en revisión
+
+| | |
+|---|---|
+| **Given** | Existen solicitudes con estado "enviada" |
+| **When** | El Asistente de Programa accede al módulo |
+| **Then** | El sistema muestra listado de solicitudes pendientes |
+
+**Scenario 13.2:** No existen solicitudes pendientes
+
+| | |
+|---|---|
+| **Given** | No hay solicitudes registradas |
+| **When** | El Asistente de Programa accede al módulo |
+| **Then** | El sistema muestra mensaje sin solicitudes |
+
+---
+
+## Historia de usuario 14
+
+| **Historia N°:** | 14 |
+|---|---|
+| **Yo como** | Jefe de Departamento |
+| **Quiero** | Aprobar o rechazar una equivalencia |
+| **Para** | Registrar la decisión |
+
+**Scenario 14.1:** Aprobar solicitud
+
+| | |
+|---|---|
+| **Given** | La solicitud está en estado "en revisión" |
+| **When** | El Jefe de Departamento aprueba la equivalencia |
+| **Then** | El sistema cambia el estado a "aprobada" |
+
+**Scenario 14.2:** Rechazar solicitud
+
+| | |
+|---|---|
+| **Given** | La solicitud está en estado "en revisión" |
+| **When** | El Jefe de Departamento rechaza la equivalencia |
+| **Then** | El sistema cambia el estado a "rechazada" |
+
+---
+
+## Historia de usuario 15
+
+| **Historia N°:** | 15 |
+|---|---|
+| **Yo como** | Jefe de Departamento |
+| **Quiero** | Que el sistema genere y asigne de forma automática un certificado al registrar la decisión final |
+| **Para** | Formalizar el resultado y garantizar que todas las entidades involucradas queden notificadas con respaldo oficial |
+
+**Scenario 15.1:** Generación exitosa del certificado al aprobar
+
+| | |
+|---|---|
+| **Given** | El Jefe de Departamento registra una decisión de aprobación |
+| **When** | El Sistema confirma la decisión |
+| **Then** | Genera un certificado con el nombre del estudiante, curso origen, universidad de origen, curso destino, créditos, decisión, fecha y responsables del flujo |
+| **And** | Envía el certificado al estudiante, asistente de programa, director de programa y jefe de departamento |
+| **And** | Guarda un backup o copia de seguridad en el sistema |
+
+**Scenario 15.2:** Generación del certificado al rechazar
+
+| | |
+|---|---|
+| **Given** | El Jefe de Departamento registra una decisión de rechazo |
+| **When** | El Sistema confirma la decisión |
+| **Then** | Genera un certificado indicando el rechazo de la solicitud junto con la justificación registrada |
+| **And** | Envía el certificado al estudiante, asistente de programa, director de programa y jefe de departamento |
+| **And** | Guarda un backup o copia de seguridad en el sistema |
+
+---
+
+## Historia de usuario 16
+
+| **Historia N°:** | 16 |
+|---|---|
+| **Yo como** | Asistente de Programa |
+| **Quiero** | Ver las solicitudes ordenadas por prioridad |
+| **Para** | Atender primero los casos más urgentes o con mayor tiempo de espera |
+
+**Scenario 16.1:** Priorización por fecha de envío
+
+| | |
+|---|---|
+| **Given** | Existen solicitudes en la bandeja |
+| **When** | El Asistente accede al módulo de solicitudes |
+| **Then** | El Sistema muestra las solicitudes ordenadas de la más antigua hasta la más reciente |
+
+**Scenario 16.2:** Priorización por emergencia declarada
+
+| | |
+|---|---|
+| **Given** | El Sistema marcó la solicitud como urgente al momento en que el Estudiante la enviase (Urgente se refiere a que el Estudiante tiene fecha límite de matrícula próxima o que ocurrió un imprevisto donde el Estudiante ya se encuentra en la otra universidad) |
+| **When** | El Asistente accede al módulo |
+| **Then** | El Sistema destaca visualmente las solicitudes marcadas como urgentes por encima de las demás |
 
 ---
 
