@@ -659,8 +659,8 @@ Yo como estudiante quiero ver la ficha detallada de un curso para comprender su 
 **When** el curso no tiene un video de presentación disponible  
 **Then** el sistema muestra un mensaje indicando que el curso no cuenta con un video informativo  
 
-# Historia de Usuario 34
 
+---
 | Título de la Historia de Usuario 34 | Visualización de ofertas de electivas internacionales |
 |---|---|
 | Yo, como | Estudiante |
@@ -684,62 +684,70 @@ Given el estudiante selecciona una universidad en convenio
 When la institución no tiene electivas disponibles  
 Then el sistema muestra un mensaje indicando que no existen cursos ofertados actualmente  
 
-### Historia de usuario 35    
+---
 
-**Titulo:** Busqueda de electivas disponibles    
-**Como:** estudiante de ICESI    
-**Quiero:** buscar electivas que se encuentren disponibles en la universidad    
-**Para:** encontrar mas facilmente los cursos que se ajusten a mis intereses academicos
+| Título de la Historia de Usuario 35 | Búsqueda de electivas disponibles |
+|---|---|
+| Yo, como | Estudiante |
+| Quiero | Buscar electivas que se encuentren disponibles en la universidad |
+| Para | Encontrar más fácilmente los cursos que se ajusten a mis intereses académicos |
 
+## Criterios de Aceptación (Formato Gherkin)
 
-**Criterios de aceptacion:**  
+### Scenario: Búsqueda exitosa de una electiva
+Given El estudiante está en el sitio de electivas  
+When Escribe el nombre o una palabra clave relacionada con el curso  
+Then El sistema muestra las electivas que coinciden con la búsqueda  
 
-#### Scenario: Busqueda exitosa de una electiva      
-**Given:** El estudiante esta en el sitio de electivas    
-**When:** Escribe el nombre o una palabra clave relacionada con el curso    
-**Then:** El sistema muestra las electivas que coinciden con la busqueda      
+### Scenario: Búsqueda de una electiva sin resultados
+Given El estudiante está en el sitio de electivas  
+When Escribe una palabra para buscar un curso  
+Then El sistema muestra un mensaje indicando que no se encontraron resultados  
 
-#### Scenario: Busqueda de una electiva sin resultados      
-**Given:** El estudiante esta en el sitio de electivas      
-**When:** Escribe una palabra para buscar un curso    
-**Then:** El sistema muestra un mensaje indicando que no se encontraron resultados
+---
 
-### Historia de usuario 36    
-**Titulo:** Consulta de informacion general de una electiva    
-**Como:** Estudiante de ICESI    
-**Quiero:** Consultar la informacion principal de una electiva    
-**Para:** Conocer de manera rápida de que trata el curso antes de inscribirlo
+| Título de la Historia de Usuario 36 | Consulta de información general de una electiva |
+|---|---|
+| Yo, como | Estudiante de ICESI |
+| Quiero | Consultar la información principal de una electiva |
+| Para | Conocer de manera rápida de qué trata el curso antes de inscribirlo |
 
-**Criterios de aceptacion:**    
-#### Scenario: Visualizacion exitosa de la información del curso    
-**Given:** Que el estudiante ingresa al sitio de electivas    
-**When:** Selecciona una electiva de la lista    
-**Then:** el sistema muestra la descripcion, objetivos, contenidos, departamento responsable y el profesor encargado    
+## Criterios de Aceptación (Formato Gherkin)
 
-#### Scenario: Información incompleta del curso    
-**Given:** El estudiante selecciona una electiva    
-**When:** La informacion del curso no está completa    
-**Then:** El sistema muestra los datos disponibles    
-**And:** Informa que falta información por actualizar
+### Scenario: Visualización exitosa de la información del curso
+Given El estudiante ingresa al sitio de electivas  
+When Selecciona una electiva de la lista  
+Then El sistema muestra la descripción, objetivos, contenidos, departamento responsable y el profesor encargado  
 
-### Historia de usuario 37
+### Scenario: Información incompleta del curso
+Given El estudiante selecciona una electiva  
+When La información del curso no está completa  
+Then El sistema muestra los datos disponibles  
+And Informa que falta información por actualizar 
 
-**Título:** Acceso simplificado al syllabus  
-**Como:** estudiante de la Universidad Icesi  
-**Quiero:** acceder fácilmente al syllabus oficial de una electiva desde una plataforma centralizada  
-**Para:** consultar información académica detallada sin depender de sistemas externos confusos.
+---
 
-**Criterios de aceptación:**
+# Historia de Usuario 37
 
-#### Scenario: Consulta exitosa del syllabus    
-**Given:** que el estudiante se encuentra consultando una electiva  
-**When:** selecciona la opción "Ver syllabus"  
-**Then:** el sistema muestra el documento oficial asociado al curso
+| Título de la Historia de Usuario 37 | Acceso simplificado al syllabus |
+|---|---|
+| Yo, como | Estudiante de la Universidad Icesi |
+| Quiero | acceder a un resumen syllabus de una electiva directamente en su descripción |
+| Para | Consultar información académica detallada sin depender de sistemas externos confusos |
 
-#### Scenario: Syllabus no disponible     
-**Given:** que el estudiante consulta una electiva  
-**When:** el syllabus no ha sido publicado  
-**Then:** el sistema muestra un mensaje indicando que no está disponible
+## Criterios de Aceptación (Formato Gherkin)
+
+### Scenario: Consulta del syllabus de una electiva
+Given el estudiante está consultando la información de una electiva  
+When selecciona la opción "Ver syllabus"  
+Then el sistema muestra el syllabus oficial asociado al curso con el objetivo, enfoque y porcentajes de la electiva  
+
+### Scenario: Syllabus no disponible
+Given el estudiante consulta la información de una electiva  
+When el curso no tiene un syllabus publicado  
+Then el sistema muestra un mensaje indicando que el syllabus no se encuentra disponible  
+
+---
 
 ### Historia de usuario 38
 
