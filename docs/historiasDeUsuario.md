@@ -749,192 +749,97 @@ Then el sistema muestra un mensaje indicando que el syllabus no se encuentra dis
 
 ---
 
-### Historia de usuario 38
-
-**Título:** Consulta comparativa de cursos internacionales  
-**Como:** estudiante en proceso de intercambio académico  
-**Quiero:** comparar electivas de universidades extranjeras con cursos de la Universidad Icesi  
-**Para:** identificar similitudes académicas y agilizar mi proceso de homologación.
-
-**Criterios de aceptación:**
-
-#### Scenario: Comparación exitosa de cursos    
-**Given:** que el estudiante selecciona una electiva internacional  
-**When:** solicita comparar su contenido con cursos de Icesi  
-**Then:** el sistema muestra los objetivos académicos de ambos cursos
-
-#### Scenario: Sin cursos comparables
-**Given:** que el estudiante consulta una electiva internacional  
-**When:** no existen similitudes registradas  
-**Then:** el sistema informa que no hay equivalencias disponibles
-
-### Historia de usuario 39
-
-*Título:* Estructura organizada de electivas  
-*Yo, como:* estudiante de la Universidad Icesi  
-*Quiero:* visualizar la informacion de los cursos de manera estructurada  
-*Para:* entender facilmente los datos academicos.  
-
-**Criterios de aceptación:**
-
-#### Scenario: Visualizacion estructurada*  
-Given que el estudiante accede a la informacion de una electiva  
-When visualiza los datos del curso  
-Then el sistema organiza la informacion en secciones claras como objetivos, contenido, profesor y departamento  
-
-#### Scenario: Informacion organizada*  
-Given que el sistema contiene informacion del curso  
-When se muestra al estudiante  
-Then el sistema garantiza que la informacion esté organizada y sea facil de interpretar  
-
-### Historia de usuario 40  
-
-**Titulo:** Filtros de busqueda de electivas  
-**Como:** Estudiante de la universidad  
-**Quiero:** Contar con una base de datos que permita realizar busquedas por contenido y horario  
-**Para:** Encontrar electivas que se ajusten a mi disponibilidad academica  
-
-**Criterios de aceptacion:**
-
-#### Scenario: Busqueda efectiva por criterios especificos    
-**Given:** El estudiante esta en el buscador de cursos  
-**When:** Ingresa un criterio de busqueda como "contenido" o un "horario"  
-**Then:** el sistema muestra una lista de cursos filtrados que coinciden exactamente con los parametros que puso el usuario  
-
-#### Scenario: Visualizacion de una estructura organizada  
-**Given:** El estudiante tiene duda sobre la procedencia de un curso  
-**When:** Selecciona una electiva del listado  
-**Then:** El sistema muestra a que departamento pertenece el curso para futuras consultas  
-
-### Historia de usuario 41 
-
-**Titulo:** Gestion y validacion de Syllabus  
-**Como:** Jefe de departamento  
-**Quiero:** Un sistema que permita organizar, consultar y validar la informacion de los syllabus creados por los profesores  
-**Para:** Que la informacion académica sea oficial y sea accesible para los estudiantes  
-
-**Criterios de aceptacion:**
-
-#### Scenario: Validacion exitosa de un nuevo syllabus*  
-**Given:** Un profesor ha cargado el syllabus de su curso en el sistema  
-**When:** El jefe de departamento revisa y le da en "Aprobar"  
-**Then:** El sistema publica la informacion automaticamente para que sea visible para los estudiantes  
-
-#### Scenario: Agente inteligente para consultas  
-**Given:** El sistema cuenta con un agente inteligente integrado  
-**When:** Un usuario realiza una pregunta compleja sobre el contenido de los syllabus  
-**Then:** El agente inteligente procesa la base de datos y entrega una respuesta  
-
-### Historia de usuario 42
-
-**Titulo:** Visualizar departamento al que pertenece una electiva  
-**Como:** Estudiante de la universidad  
-**Quiero:** Identificar a que departamento pertenece cada electiva  
-**Para:** Saber a donde dirigir las consultas o solicitudes relacionadas con el curso  
-
-**Criterios de aceptacion:**  
-
-#### Scenario: Visualizacion del departamento de una electiva  
-**Given:** El estudiante esta consultando la lista de las electivas  
-**When:** Selecciona una electiva  
-**Then:** el sistema muestra al departamento académico que pertenece el curso  
-
-#### Scenario: Electiva sin departamento asignado  
-**Given:** El estudiante esta consultando la lista de las electivas  
-**When:** Selecciona un curso de electiva que no tiene departamento  
-**Then:** El sistema informa en un mensaje indicando que la informacion del departamento esta pendiente por actualizar  
-
-### Historia de usuario 43 
-
-**Titulo:** Consultar syllabus de una electiva  
-**Como:** Estudiante de la universidad   
-**Quiero:** Acceder de manera sencilla al syllabus de una electiva    
-**Para:** Conocer la información detallada de los contenidos, objetivos, metodología y evaluación del curso
-
-**Criterios de aceptacion:**  
-#### Scenario: Consulta exitosa del syllabus      
-**Given:** El estudiante está visualizando la información de una electiva    
-**When:** Selecciona la opcion de “Consultar syllabus”    
-**Then:** El sistema muestra el syllabus del curso de forma clara y accesible    
-
-#### Scenario: Syllabus no disponible   
-**Given:** El estudiante intenta consultar el syllabus de una electiva  
-**When:** El Syllabus no ha sido cargado o aprobado   
-**Then:** El sistema informa que el syllabus aun no se encuentra disponible 
-
-### Historia de usuario 44
-
-**Título:** Actualización de información académica de electivas  
-**Como:** profesor encargado de una electiva  
-**Quiero:** actualizar la información registrada de mi curso  
-**Para:** mantener vigente la información académica disponible para consulta estudiantil.
-
-**Criterios de aceptación:**
-
-#### Scenario: Actualización exitosa      
-**Given:** que el profesor accede a su curso registrado  
-**When:** modifica la información y guarda los cambios  
-**Then:** el sistema actualiza la información y la envía nuevamente a revisión
-
-#### Scenario: Actualización incompleta  
-**Given:** que el profesor está editando la información del curso  
-**When:** omite campos obligatorios  
-**Then:** el sistema muestra un mensaje indicando los datos faltantes
-
-### Historia de usuario 45
-
-**Título:** Consulta del estado de validación del syllabus  
-**Como:** profesor encargado de una electiva  
-**Quiero:** consultar el estado de revisión de la información registrada  
-**Para:** conocer si fue aprobada o requiere ajustes.
-
-**Criterios de aceptación:**
-
-#### Scenario: Consulta de syllabus aprobado  
-**Given:** que el profesor accede al sistema  
-**When:** consulta una electiva aprobada  
-**Then:** el sistema muestra el estado "Aprobado"
-
-#### Scenario: Consulta de syllabus rechazado  
-**Given:** que el profesor accede al sistema  
-**When:** consulta una electiva rechazada  
-**Then:** el sistema muestra las observaciones registradas por el jefe de departamento
-
-### Historia de usuario 46
-
-*Título:* Estructura organizada de electivas  
-*Yo, como:* estudiante de la Universidad Icesi  
-*Quiero:* visualizar la informacion de los cursos de manera estructurada  
-*Para:* entender facilmente los datos academicos.  
-
-**Criterios de aceptación:**
-
-#### Scenario: Visualizacion estructurada*  
-Given que el estudiante accede a la informacion de una electiva  
-When visualiza los datos del curso  
-Then el sistema organiza la informacion en secciones claras como objetivos, contenido, profesor y departamento  
-
-#### Scenario: Informacion organizada*  
-Given que el sistema contiene informacion del curso  
-When se muestra al estudiante  
-Then el sistema garantiza que la informacion esté organizada y sea facil de interpretar  
 
 
-### Historia de usuario 47
+| Título de la Historia de Usuario 38 | Filtros de búsqueda de electivas |
+|---|---|
+| Yo, como | Estudiante |
+| Quiero | filtrar electivas al buscar por contenido u horario |
+| Para | Encontrar electivas que se ajusten a mi disponibilidad académica |
 
-*Título:* Consulta rapida de informacion  
-*Yo, como:* estudiante de la Universidad Icesi  
-*Quiero:* acceder rapidamente a la informacion relevante de una electiva  
-*Para:* tomar decisiones academicas de manera agil.  
+## Criterios de Aceptación (Formato Gherkin)
 
-**Criterios de aceptación:**
+### Scenario: Búsqueda efectiva por criterios específicos
+Given El estudiante está en el buscador de cursos  
+When Ingresa un criterio de búsqueda como "contenido" o un "horario"  
+Then El sistema muestra una lista de cursos filtrados que coinciden con los parámetros ingresados  
 
-#### Scenario: Consulta eficiente*  
-Given que el estudiante busca informacion de una electiva  
-When accede al curso  
-Then el sistema muestra la informacion principal sin necesidad de multiples pasos  
+### Scenario: Visualización de una estructura organizada
+Given El estudiante tiene duda sobre la procedencia de un curso  
+When Selecciona una electiva del listado  
+Then El sistema muestra a qué departamento pertenece el curso para futuras consultas  
 
-#### Scenario: Acceso optimizado*  
-Given que el estudiante intenta consultar una electiva  
-When el proceso puede ser complejo  
-Then el sistema optimiza el acceso para reducir la cantidad de pasos necesarios  
+---
+
+| Título de la Historia de Usuario 39 | Gestión y validación de Syllabus |
+|---|---|
+| Yo, como | Planeador Academico |
+| Quiero | Un sistema que permite organizar, consultar y validar la información de los syllabus creados por los profesores |
+| Para | Que la información académica sea oficial y accesible para los estudiantes |
+
+## Criterios de Aceptación (Formato Gherkin)
+
+### Scenario: Validación exitosa de un nuevo syllabus
+Given Un profesor ha cargado el syllabus de su curso en el sistema  
+When El jefe de departamento revisa y da clic en "Aprobar"  
+Then El sistema publica la información automáticamente para que sea visible para los estudiantes  
+
+### Scenario: Consulta de syllabus aprobados
+Given un syllabus ha sido aprobado  
+When un estudiante consulta la información de una electiva  
+Then el sistema muestra el syllabus oficial publicado  
+
+### Scenario: Rechazo de un syllabus con observaciones
+Given el jefe de departamento revisa un syllabus registrado  
+When identifica información incompleta o incorrecta  
+Then el sistema permite rechazar el syllabus y registrar observaciones para el profesor  
+
+---
+
+| Título de la Historia de Usuario 40 | Visualizar departamento al que pertenece una electiva |
+|---|---|
+| Yo, como | Estudiante |
+| Quiero | Identificar a qué departamento pertenece cada electiva |
+| Para | Saber a dónde dirigir las consultas o solicitudes relacionadas con el curso |
+
+## Criterios de Aceptación (Formato Gherkin)
+
+### Scenario: Visualización del departamento de una electiva
+Given El estudiante está consultando la lista de las electivas  
+When Selecciona una electiva  
+Then El sistema muestra el departamento académico al que pertenece el curso  
+
+### Scenario: Electiva sin departamento asignado
+Given El estudiante está consultando la lista de las electivas  
+When Selecciona un curso de electiva que no tiene departamento asignado  
+Then El sistema informa en un mensaje indicando que la información del departamento está pendiente por actualizar  
+
+### Scenario: Consulta del departamento desde la información del curso
+Given el estudiante está visualizando la información detallada de una electiva  
+When revisa los datos académicos del curso  
+Then el sistema muestra el nombre del departamento académico responsable  
+
+---
+
+| Título de la Historia de Usuario 41 | Actualización de información académica de electivas |
+|---|---|
+| Yo, como | Profesor |
+| Quiero | Actualizar la información registrada de mi curso |
+| Para | Mantener actualizada la información académica disponible para consulta estudiantil |
+
+## Criterios de Aceptación (Formato Gherkin)
+
+### Scenario: Actualización de información de una electiva
+Given el profesor accede a la información de una electiva registrada  
+When modifica la información académica y selecciona la opción "Guardar cambios"  
+Then el sistema actualiza la información y la envía al proceso de revisión académica  
+
+### Scenario: Validación de campos obligatorios
+Given el profesor está editando la información de una electiva  
+When intenta guardar el formulario con campos obligatorios vacíos  
+Then el sistema muestra un mensaje indicando los campos pendientes por completar  
+
+### Scenario: Confirmación de actualización enviada
+Given el profesor actualiza la información de una electiva correctamente  
+When el sistema registra los cambios  
+Then el sistema muestra un mensaje confirmando que la información fue enviada a revisión  
