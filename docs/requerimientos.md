@@ -66,20 +66,19 @@
 
 ---
 
-## RF24: El sistema debe permitir a los usuarios realizar busquedas de electivas filtrando por contenido, horario y departamento academico
+## RF24: Búsqueda avanzada y filtrado de materias electivas académicas 
 
-### Analisis PESTLE RF: NO APLICA
+El sistema debe tener un buscador donde el estudiante pueda ingresar términos y palabras clave para aplicar filtros por contenido del curso, variedad horaria y el departamento académico específico al que pertenece la materia. Al realizar la consulta, la interfaz desplegará una lista con las búsquedas más exactas. Si el usuario selecciona cualquier electiva del listado, el sistema abrirá un panel detallando el nombre del departamento de origen, para que no se pierda la información del filtro anterior si el usuario decide regresar o hacer algún cambio.
+
+Diseñar un sistema de búsqueda difícil de entender puede excluir a ciertos grupos de estudiantes con menor alfabetización, generando un conflicto en el acceso a la oferta académica. Y esto éticamente, la plataforma debe garantizar una búsqueda transparente que no introduzca sesgos en la visibilidad de los cursos, permitiendo que todas las electivas tengan la misma oportunidad de ser entendidas independientemente del departamento.
 
 ---
 
-## RF25: El sistema debe proporcionar una interfaz para que el jefe de departamento consulte y apruebe los syllabus cargados por los profesores
+## RF25: Gestión de aprobación del Syllabus
 
-### Analisis PESTLE RF:
+El sistema debe proveerle una interfaz exclusiva para el Planeador Académico y los Jefes de Departamento que centralice la organización, consulta y validación de los syllabus académicos cargados previamente por los docentes para presentar sus cursos. Cuando un profesor registre un syllabus, el jefe de departamento visualizará una alerta en su panel con las opciones de "Aprobar" o "Rechazar con observaciones". Si el jefe de departamento selecciona "Aprobar", el sistema cambiará el estado del documento a oficial y lo publicará de forma automática en el buscador general de los estudiantes. En caso de identificar datos incompletos o incorrectos, el sistema permitirá registrar retroalimentaciones y notificará al profesor para su respectiva corrección, impidiendo la visualización pública del documento hasta que sea validado.
 
-|  Dimension  |  Hallazgo  |  Argumentacion Etica  |
-|-------------|------------|-----------------------|
-|P-Politico   | El Ministerio de Educacion Nacional exige transparencia en la disponibilidad de los microcurriculos | Garantizar que el estudiante acceda a informacion oficial y aprobada para no inducir al error | 
-|S-Social     | Existe una necesidad de estandarizar la calidad educativa entre los departamentos | Asegurarse que todos los estudiantes sin importar el departamento, reciban informacion con el mismo rigor de revision |
+En el contexto de la educación superior, las universidades están sujetas a lineamientos exigidos por el Ministerio de Educación Nacional (MEN) y el ICFES respecto a la y claridad de los currículos académicos. Por ende, éticamente es obligatorio asegurar que el flujo de aprobación certifique que toda la información visible para el estudiante sea oficial y esté actualizada, previniendo decisiones incorrectas o demoras en las validaciones que afecten directamente la planeación de las matrículas de los estudiantes.
 
 ---
 
