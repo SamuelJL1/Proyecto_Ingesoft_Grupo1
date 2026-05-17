@@ -82,14 +82,11 @@ En el contexto de la educación superior, las universidades están sujetas a lin
 
 ---
 
-## RF26: El sistema debe mostrar el departamento académico al que pertenece una electiva, o informar cuando esta información esté pendiente por actualizar
+## RF26: El sistema debe permitir al estudiante consultar la información académica de una electiva
 
-### Analisis PESTLE RF:
+El estudiante puede consultar la información académica de una electiva, incluyendo datos como el nombre del curso, descripción, departamento académico responsable y demás información asociada disponible en el sistema. 
 
-|  Dimension      |  Hallazgo   |  Argumentacion Etica  |
-|-----------------|-------------|-----------------------|
-|S - Social   | Los estudiantes necesitan saber a que departamento pertenece una electiva para dirigir correctamente sus consultas o solicitudes | El sistema debe facilitar el acceso claro a la informacion institucional y evitar confusiones en la comunicacion academica |  
-|T - Tecnologico  | La plataforma debe mostrar el departamento asociado al curso y manejar el caso en que este dato no exista | El sistema debe informar claramente cuando la informacion esta pendiente, en lugar de dejar el campo vacio |  
+Las limitaciones de acceso tecnológico pueden dificultar que algunos estudiantes consulten la información académica de manera oportuna. Fallos en la disponibilidad del sistema o en la actualización de datos pueden provocar desinformación sobre las electivas.
 
 ---
 
@@ -107,7 +104,10 @@ En el contexto de la educación superior, las universidades están sujetas a lin
 
 ## RF28: El sistema debe permitir a los profesores editar la información académica de las electivas asignadas.  
 
-### Analisis PESTLE RF: No aplica
+El sistema permite a los profesores editar la información académica de las electivas que tienen asignadas, modificando datos relevantes del curso y enviando los cambios para su respectiva validación o revisión académica.
+
+La dependencia tecnológica del sistema puede afectar la actualización de la información en caso de fallos de conectividad o errores de almacenamiento. Cambios no controlados o accesos indebidos podrían comprometer la integridad de la información académica. 
+
 ---
 
 ## RF29: El sistema debe permitir a los profesores consultar el estado de revisión de cada syllabus registrado.  
@@ -121,12 +121,4 @@ En el contexto de la educación superior, las universidades están sujetas a lin
 
 ---
 
-## RF31: El sistema debe permitir el acceso rápido a la información principal de cada electiva.  
 
-### Analisis PESTLE RF:
-
-|  Dimension  |  Hallazgo   |  Argumentacion Etica  |
-|-------------|-------------|-----------------------|
-|E-Economico | Reducir el tiempo de consulta mejora la eficiencia del estudiante en la toma de decisiones académicas | Se debe garantizar que el acceso rápido a la información no omita datos importantes que puedan afectar la decisión del estudiante |
-
----
