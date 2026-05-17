@@ -61,9 +61,8 @@ En el contexto de la educación superior, las universidades están sujetas a lin
 
 ## RF26: El sistema debe permitir al estudiante consultar la información académica de una electiva
 
-El estudiante puede consultar la información académica de una electiva, incluyendo datos como el nombre del curso, descripción, departamento académico responsable y demás información asociada disponible en el sistema. 
+El estudiante puede consultar la información académica de una electiva, incluyendo datos como el nombre del curso, descripción, departamento académico responsable y demás información asociada disponible en el sistema. Si la información no se encuentra registrada o actualizada, el sistema debe informar dicha situación al usuario sin generar errores en la consulta. las limitaciones de acceso tecnológico pueden dificultar que algunos estudiantes consulten la información académica de manera oportuna. Fallos en la disponibilidad del sistema o en la actualización de datos pueden provocar desinformación sobre las electivas. Además, la información académica almacenada debe cumplir con lineamientos institucionales y normativas de protección de datos, evitando modificaciones no autorizadas o divulgación indebida de información.
 
-Las limitaciones de acceso tecnológico pueden dificultar que algunos estudiantes consulten la información académica de manera oportuna. Fallos en la disponibilidad del sistema o en la actualización de datos pueden provocar desinformación sobre las electivas.
 
 ---
 
@@ -81,9 +80,7 @@ Las limitaciones de acceso tecnológico pueden dificultar que algunos estudiante
 
 ## RF28: El sistema debe permitir a los profesores editar la información académica de las electivas asignadas.  
 
-El sistema permite a los profesores editar la información académica de las electivas que tienen asignadas, modificando datos relevantes del curso y enviando los cambios para su respectiva validación o revisión académica.
-
-La dependencia tecnológica del sistema puede afectar la actualización de la información en caso de fallos de conectividad o errores de almacenamiento. Cambios no controlados o accesos indebidos podrían comprometer la integridad de la información académica. 
+El profesor puede modificar los datos correspondientes del curso y enviar los cambios para revisión académica. Si existen campos obligatorios vacíos o inconsistencias en la información registrada, el sistema deberá notificarlo antes de guardar los cambios. Considerando que fallos de conectividad o errores del sistema pueden ocasionar pérdida de información durante la edición, el sistema deberá implementar mecanismos de validación y almacenamiento temporal de datos para evitar la pérdida de cambios realizados por el docente. Además, para garantizar la integridad y seguridad de la información académica, únicamente los profesores autorizados podrán realizar modificaciones, manteniendo trazabilidad de los cambios efectuados y cumplimiento de las políticas institucionales de protección de datos.
 
 ---
 
