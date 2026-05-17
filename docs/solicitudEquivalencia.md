@@ -6,103 +6,87 @@
 
 El estudiante registra una solicitud indicando el curso origen, curso destino y los documentos requeridos. Si faltan campos obligatorios o los documentos no cumplen el formato establecido, el sistema lo indica sin perder la información ya ingresada.
 
-- Social/Tecnológico: La brecha digital puede excluir a estudiantes con menor acceso tecnológico; fallos durante el registro pueden bloquear el inicio del proceso sin posibilidad de recuperar la información.
-
-- Legal: Los datos personales recopilados están sujetos a la Ley 1581 de 2012; su manejo inadecuado constituye una violación directa al derecho de Habeas Data.
+La brecha digital puede excluir a estudiantes con menor acceso tecnológico; fallos durante el registro pueden bloquear el inicio del proceso sin posibilidad de recuperar la información. Los datos personales recopilados están sujetos a la Ley 1581 de 2012; su manejo inadecuado constituye una violación directa al derecho de Habeas Data.
 
 ### RF1.1: Carga y validación de documentos de soporte
 
 El estudiante adjunta los documentos que sustentan la equivalencia (syllabus, código del curso y balance académico) en formato PDF con un tamaño máximo de 5MB por archivo. Si el archivo no cumple estas condiciones, el sistema indica el motivo con un mensaje específico.
 
-- Social: Exigir un formato estricto sin orientación clara puede excluir a estudiantes con menor acceso o conocimiento técnico, vulnerando su derecho a participar en el proceso.
-
-- Tecnológico: La inestabilidad del sistema durante la carga puede provocar pérdida de documentos y dejar la solicitud incompleta sin que el estudiante lo sepa.
+Exigir un formato estricto sin orientación clara puede excluir a estudiantes con menor acceso o conocimiento técnico, vulnerando su derecho a participar en el proceso. La inestabilidad del sistema durante la carga puede provocar pérdida de documentos y dejar la solicitud incompleta sin que el estudiante lo sepa.
 
 ### RF2: Consulta del estado de solicitudes por parte del estudiante
 
-El estudiante consulta en cualquier momento el estado actual de su solicitud: enviada, en revisión, aprobada o rechazada. Si no tiene solicitudes registradas, el sistema lo indica.
-
-- Político/Social: La falta de visibilidad sobre el estado de la solicitud incumple el principio de transparencia exigido por el MEN y genera desconfianza en el proceso institucional.
+El estudiante consulta en cualquier momento el estado actual de su solicitud: enviada, en revisión, aprobada o rechazada. Si no tiene solicitudes registradas, el sistema lo indica. La falta de visibilidad sobre el estado de la solicitud incumple el principio de transparencia exigido por el MEN y genera desconfianza en el proceso institucional.
 
 ### RF3: Asignación automática de solicitudes en el flujo institucional
 
 Al registrarse una solicitud, el sistema la asigna al primer responsable de la cadena (Dirección de Programa), siguiendo el flujo institucional hacia el Jefe de Departamento y finalmente Admisiones. Si no es posible identificar el departamento del curso destino, la solicitud queda en estado "Pendiente de Asignación" y se notifica a la Dirección de Programa para su resolución manual.
 
-- Político: Una asignación incorrecta que no respete la jerarquía institucional invalida el proceso académico y puede generar decisiones sin respaldo institucional.
-
-- Tecnológico: Errores en los datos maestros del sistema (departamentos, cursos, responsables) pueden provocar asignaciones incorrectas que perjudiquen directamente al estudiante.
-
-
+Una asignación incorrecta que no respete la jerarquía institucional invalida el proceso académico y puede generar decisiones sin respaldo institucional. Errores en los datos maestros del sistema (departamentos, cursos, responsables) pueden provocar asignaciones incorrectas que perjudiquen directamente al estudiante.
 
 ### RF4: Registro de decisión final de solicitudes por parte del Jefe de Departamento
 
 El Jefe de Departamento registra la decisión final (aprobada o rechazada) junto con una justificación obligatoria. El sistema actualiza el estado de la solicitud y desencadena automáticamente la generación del certificado y las notificaciones correspondientes.
 
-- Político/Legal: Omitir la justificación hace que la decisión no sea auditable, abriendo la puerta a arbitrariedad y exponiendo a la institución a conflictos legales.
-
-- Social: Una decisión sin justificación comprensible afecta directamente la trayectoria académica del estudiante sin darle elementos para apelarla.
+Omitir la justificación hace que la decisión no sea auditable, abriendo la puerta a arbitrariedad y exponiendo a la institución a conflictos legales. Una decisión sin justificación comprensible afecta directamente la trayectoria académica del estudiante sin darle elementos para apelarla.
 
 ### RF4.1: Almacenar decisiones con trazabilidad histórica
 
 Cada decisión queda almacenada con fecha, responsable, estado y justificación. El historial es inmutable; cualquier modificación posterior genera una nueva entrada sin eliminar la anterior, garantizando trazabilidad completa del proceso.
 
-- Legal: Sin trazabilidad inmutable, el historial no puede usarse como evidencia válida en procesos de reclamación o auditoría institucional.
+Sin trazabilidad inmutable, el historial no puede usarse como evidencia válida en procesos de reclamación o auditoría institucional. La pérdida de registros por fallos del sistema afecta los derechos del estudiante y la credibilidad institucional del proceso.
 
-- Tecnológico: La pérdida de registros por fallos del sistema afecta los derechos del estudiante y la credibilidad institucional del proceso.
+### RF5: Consulta de historial de equivalencias previas por parte del Jefe de Departament
 
-### RF5: Consulta de historial de equivalencias para reutilización de criterios
+El Jefe de Departamento busca equivalencias previas por curso origen, curso destino o filtrando por estado (aprobadas o rechazadas), con el fin de reutilizar criterios en solicitudes similares y evitar reprocesos. Si no existen registros para el criterio ingresado, el sistema lo indica sin generar error.
 
-El Jefe de Departamento busca equivalencias previas por curso origen, curso destino o filtrando por estado (aprobadas o rechazadas). Si no existen registros para el criterio ingresado, el sistema lo indica sin generar error.
-
-- Social/Económico: No contar con historial consultable obliga a reprocesar solicitudes similares, generando inconsistencias en las decisiones y mayor carga administrativa innecesaria.
+No contar con historial consultable obliga a reprocesar solicitudes similares, generando inconsistencias en las decisiones y mayor carga administrativa innecesaria.
 
 ### RF6: Modificación justificada de decisiones previas con registro de cambios
 
 El Jefe de Departamento puede modificar el estado o justificación de una equivalencia previamente registrada. El cambio queda registrado en el historial con fecha y responsable, sin eliminar la decisión anterior.
 
-- Social/Legal: Modificar una decisión sin dejar rastro auditable puede afectar a un estudiante que ya actuó con base en el resultado anterior, y expone a la institución a disputas legales sin evidencia que las respalde.
+Modificar una decisión sin dejar rastro auditable puede afectar a un estudiante que ya actuó con base en el resultado anterior, y expone a la institución a disputas legales sin evidencia que las respalde.
 
 ### RF7: Análisis automático de Solicitudes mediante IA por nivel de cumplimiento académico
 
 El sistema analiza la solicitud comparando créditos, objetivos y competencias del curso externo con los del curso destino. El resultado incluye una clasificación de viabilidad (Alto, Medio o Bajo cumplimiento) y una indicación explícita de qué criterios cumple y cuáles no, de forma que el Jefe de Departamento pueda tomar una decisión informada.
 
-- Social/Político: Un análisis automatizado sin explicabilidad incumple el principio de transparencia exigido por el MEN y puede generar desconfianza en los estudiantes sobre cómo son evaluados.
-
-- Tecnológico: El modelo puede replicar sesgos presentes en datos históricos, perpetuando decisiones desiguales de forma sistemática.
+Un análisis automatizado sin explicabilidad incumple el principio de transparencia exigido por el MEN y puede generar desconfianza en los estudiantes sobre cómo son evaluados. El modelo puede replicar sesgos presentes en datos históricos, perpetuando decisiones desiguales de forma sistemática.
 
 ### RF8: Notificación automática al estudiante sobre cambios en el estado de su solicitud
 
-Cada vez que el estado de una solicitud cambia, el sistema notifica automáticamente al estudiante con el nuevo estado y, si aplica, la justificación registrada. Los fallos en el envío se gestionan con reintentos automáticos.
+Cada vez que el estado de una solicitud cambia, el sistema notifica automáticamente al estudiante indicando el nuevo estado y, cuando aplica, el motivo registrado por el Jefe de Departamento al tomar la decisión (por ejemplo, si fue aprobada porque los créditos y competencias son equivalentes, o rechazada por diferencia en objetivos de aprendizaje). Los fallos en el envío se gestionan con reintentos automáticos para garantizar que el estudiante reciba la información.
 
-- Social/Tecnológico: La falta de notificación oportuna puede llevar al estudiante a tomar decisiones académicas con información desactualizada; un fallo técnico sin reintento equivale a dejar al estudiante sin respuesta.
+La falta de notificación oportuna puede llevar al estudiante a tomar decisiones académicas con información desactualizada; un fallo técnico sin reintento equivale a dejar al estudiante sin respuesta.
 
-### RF9: Notificación automática dentro del flujo institucional
+### RF9: Notificación automática de solicitudes pendientes al siguiente responsable en la cadena institucional
 
-Al aprobarse el paso al siguiente nivel, el sistema notifica automáticamente al responsable correspondiente en la cadena. Si el envío falla, el sistema reintenta y alerta a la Dirección de Programa en caso de fallo persistente.
+Cada vez que un responsable aprueba el paso de una solicitud al siguiente nivel, el sistema notifica automáticamente al receptor correspondiente en la cadena (Dirección de Programa → Jefe de Departamento → Admisiones), indicándole que tiene una solicitud pendiente de revisión. Si el envío falla, el sistema reintenta automáticamente y alerta a la Dirección de Programa en caso de fallo persistente para que la gestión no se detenga.
 
-- Político/Tecnológico: Un fallo de notificación sin manejo de errores puede paralizar completamente el flujo institucional sin que ningún responsable lo detecte a tiempo.
+Un fallo de notificación sin manejo de errores puede paralizar completamente el flujo institucional sin que ningún responsable lo detecte a tiempo.
 
-### RF10: Generación y distribución automática del certificado de decisión final
+### RF10: Generación automática del certificado de decisión final
+Al registrar el Jefe de Departamento la decisión final sobre una solicitud, el sistema genera automáticamente un certificado que contiene: nombre del estudiante, curso origen, universidad de origen, curso destino, créditos, decisión (aprobada o rechazada), motivo de la decisión, fecha y responsables del flujo institucional.
 
-Al registrarse la decisión final, el sistema genera un certificado con el nombre del estudiante, curso origen, universidad de origen, curso destino, créditos, decisión, fecha y responsables del flujo. Lo distribuye al estudiante, Dirección de Programa y Jefe de Departamento, y guarda una copia de respaldo en el sistema.
+El certificado es la evidencia formal de la decisión; generarlo con información incompleta deja sin respaldo legal tanto al estudiante como a la institución.
 
-- Legal: El certificado es la evidencia formal de la decisión; generarlo con información incompleta o no almacenarlo correctamente deja sin respaldo legal tanto al estudiante como a la institución.
+### RF10.1: Distribución y respaldo del certificado de decisión final
+Una vez generado el certificado, el sistema lo distribuye al estudiante, la Dirección de Programa y el Jefe de Departamento. Adicionalmente, guarda una copia de respaldo en el sistema para garantizar su disponibilidad ante futuras consultas o requerimientos legales. Si el envío falla, el sistema reintenta automáticamente.
 
-- Social: Sin distribución automática, la notificación queda sujeta a procesos manuales que pueden omitirse, dejando al estudiante sin constancia oficial del resultado.
+Sin distribución automática, la notificación queda sujeta a procesos manuales que pueden omitirse, dejando al estudiante sin constancia oficial del resultado.
 
 ### RF11: Priorización automática de solicitudes por urgencia o tiempo de espera
 
 La bandeja de la Dirección de Programa muestra las solicitudes ordenadas de más antigua a más reciente. Las solicitudes que el sistema identifica como urgentes (estudiante con fecha límite de matrícula próxima o que ya se encuentra en la universidad de destino) se destacan visualmente por encima de las demás.
 
-- Social: No atender a tiempo una solicitud urgente puede comprometer la situación académica o migratoria del estudiante de forma irreversible.
+No atender a tiempo una solicitud urgente puede comprometer la situación académica o migratoria del estudiante de forma irreversible. Si el sistema no detecta automáticamente las condiciones de urgencia, la priorización depende de criterio manual y puede ser inconsistente.
 
-- Tecnológico: Si el sistema no detecta automáticamente las condiciones de urgencia, la priorización depende de criterio manual y puede ser inconsistente.
+### RF12: Consulta de información académica de cursos internos por parte del estudiante en movilidad
 
-### RF12: Consulta de información académica de cursos internos para comparación con externos
+El estudiante en movilidad consulta los cursos del área con su código, nombre, créditos, competencias y resultados de aprendizaje, con el fin de identificar qué curso interno podría ser equivalente al que cursó en el extranjero antes de iniciar una solicitud formal. Si no hay cursos registrados en el sistema, se indica al estudiante sin generar error.
 
-El estudiante en movilidad consulta los cursos del área con su código, nombre, créditos, competencias y resultados de aprendizaje para compararlos con cursos externos antes de iniciar una solicitud. Si no hay cursos registrados, el sistema lo indica.
-
-- Social: Sin acceso a esta información, el estudiante enfrenta una asimetría de conocimiento frente a la institución que lo obliga a iniciar solicitudes a ciegas, aumentando la tasa de rechazos evitables.
+Sin acceso a esta información, el estudiante enfrenta una asimetría de conocimiento frente a la institución que lo obliga a iniciar solicitudes a ciegas, aumentando la tasa de rechazos evitables.
 
 ---
 
@@ -137,7 +121,7 @@ RF1 - RF1.1 - RF2 - RF12
 
 Subsistema de Flujo de Aprobación:
 
-RF3 - RF4 - RF4.1 - RF10 - RF11
+RF3 - RF4 - RF4.1 - RF10 - RF10.1 - RF11
 
 Subsistema de Base de Datos
 
