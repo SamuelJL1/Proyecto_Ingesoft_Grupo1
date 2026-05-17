@@ -30,19 +30,13 @@ El Jefe de Departamento registra la decisión final (aprobada o rechazada) junto
 
 Omitir la justificación hace que la decisión no sea auditable, abriendo la puerta a arbitrariedad y exponiendo a la institución a conflictos legales. Una decisión sin justificación comprensible afecta directamente la trayectoria académica del estudiante sin darle elementos para apelarla.
 
-### RF4.1: Almacenar decisiones con trazabilidad histórica
-
-Cada decisión queda almacenada con fecha, responsable, estado y justificación. El historial es inmutable; cualquier modificación posterior genera una nueva entrada sin eliminar la anterior, garantizando trazabilidad completa del proceso.
-
-Sin trazabilidad inmutable, el historial no puede usarse como evidencia válida en procesos de reclamación o auditoría institucional. La pérdida de registros por fallos del sistema afecta los derechos del estudiante y la credibilidad institucional del proceso.
-
-### RF5: Consulta de historial de equivalencias previas por parte del Jefe de Departament
+### RF5: Consulta de historial de equivalencias previas por parte del Jefe de Departamento
 
 El Jefe de Departamento busca equivalencias previas por curso origen, curso destino o filtrando por estado (aprobadas o rechazadas), con el fin de reutilizar criterios en solicitudes similares y evitar reprocesos. Si no existen registros para el criterio ingresado, el sistema lo indica sin generar error.
 
 No contar con historial consultable obliga a reprocesar solicitudes similares, generando inconsistencias en las decisiones y mayor carga administrativa innecesaria.
 
-### RF6: Modificación justificada de decisiones previas con registro de cambios
+### RF6: Actualización del estado de la solicitud
 
 El Jefe de Departamento puede modificar el estado o justificación de una equivalencia previamente registrada. El cambio queda registrado en el historial con fecha y responsable, sin eliminar la decisión anterior.
 
@@ -71,10 +65,13 @@ Al registrar el Jefe de Departamento la decisión final sobre una solicitud, el 
 
 El certificado es la evidencia formal de la decisión; generarlo con información incompleta deja sin respaldo legal tanto al estudiante como a la institución.
 
-### RF10.1: Distribución y respaldo del certificado de decisión final
-Una vez generado el certificado, el sistema lo distribuye al estudiante, la Dirección de Programa y el Jefe de Departamento. Adicionalmente, guarda una copia de respaldo en el sistema para garantizar su disponibilidad ante futuras consultas o requerimientos legales. Si el envío falla, el sistema reintenta automáticamente.
+### RF10.1: Distribución del certificado de decisión final
+Una vez generado el certificado, el sistema lo distribuye al estudiante, la Dirección de Programa y el Jefe de Departamento. Si el envío falla, el sistema reintenta automáticamente.
 
 Sin distribución automática, la notificación queda sujeta a procesos manuales que pueden omitirse, dejando al estudiante sin constancia oficial del resultado.
+
+### RF10.2: Registro del certificado de decisión final
+Una vez generado el certificado, el sistema guarda una copia de respaldo en el sistema para garantizar su disponibilidad ante futuras consultas o requerimientos legales.
 
 ### RF11: Priorización automática de solicitudes por urgencia o tiempo de espera
 
