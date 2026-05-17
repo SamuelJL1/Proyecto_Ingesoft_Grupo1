@@ -1,36 +1,13 @@
 #RF Información de Cursos
-## RF16: El sistema debe tener un reproductor de video que permita a los estudiantes ver las presentaciones de los docentes sobre sus cursos
+## RF16: Reproducción de videos de presentación de cursos
 
-### Analisis PESTLE RF:
+El sistema debe permitir a los estudiantes seleccionar y reproducir videos grabados de presentación de los docentes sobre sus cursos, incluyendo opciones básicas como pausar, reanudar, adelantar, retroceder y visualizar en pantalla completa. La funcionalidad debe considerar compatibilidad con distintos dispositivos, navegadores y condiciones de conectividad, evitando que el acceso al contenido audiovisual excluya a estudiantes con limitaciones tecnológicas, discapacidad auditiva o visual. Por ello, los videos deben contar con alternativas accesibles como subtítulos o transcripciones.
+## RF17: Consulta de electivas internacionales en convenio
 
-|  Dimension  |  Hallazgo   |  Argumentacion Etica  |
-|-------------|-------------|-----------------------|
-|T-Tecnologico | El contenido por video suele ser menos pesado para los estudiantes | Los videos no se conviertan en un factor de exclusión para estudiantes con limitacion |
+El sistema debe mostrar una lista de electivas ofrecidas por universidades extranjeras con convenio activo, incluyendo como mínimo el nombre de la electiva, universidad, país, modalidad y objetivos del curso. La información presentada debe estar validada institucionalmente y corresponder únicamente a convenios vigentes, ya que estos pueden cambiar según acuerdos académicos, decisiones institucionales o relaciones entre universidades. Además, la publicación digital debe reducir la dependencia de material impreso, siempre que la información sea completa, clara, actualizada y accesible para los estudiantes.
 
----
-
-## RF17: El sistema debe desplegar una lista de electivas de universidades extranjeras en convenio, detallando sus objetivos
-
-### Analisis PESTLE RF:
-
-|  Dimension  |  Hallazgo   |  Argumentacion Etica  |
-|-------------|-------------|-----------------------|
-|P-Politico   | Los convenios internacionales estan sujetos a tratados diplomáticos | El sistema mostrara solo convenios activos para no generar falsas expectativas |
-|L-Legal      | El intercambio de informacion de cursos debe cumplir con las leyes de proteccion de datos personales | El manejo de datos debe ser transparente para proteger la integridad del estudiante |
-|A-Ambiental  | La digitalizacion del catalogo de electivas internacionales reduce el uso de folletos | El beneficio de eliminar el papel es positivo, siempre que se garantice que la información digital sea completa |
-
----
-
-## RF18: El sistema debe permitir la búsqueda de electivas disponibles por nombre o palabra clave.
-
-### Analisis PESTLE RF:
-
-|  Dimension      |  Hallazgo   |  Argumentacion Etica  |
-|-----------------|-------------|-----------------------|
-|S - Social   | Los estudiantes necesitan una forma sencilla de buscar electivas segun sus intereses academicos | El sistema debe facilitar el acceso equitativo a la información para que todos los estudiantes puedan encontrar cursos sin depender de terceros |  
-|T - Tecnologico  | Se requiere un buscador funcional que permita consultar cursos por nombre una palabra clave | La herramienta debe ser facil e intuitiva de usar para no complicar el acceso a la informacion|  
-
----
+## RF18: Búsqueda de electivas disponibles
+El sistema debe permitir a los estudiantes buscar electivas disponibles mediante el nombre de la electiva o palabras clave asociadas a su descripción, objetivos o área académica. La búsqueda debe facilitar que los estudiantes encuentren opciones acordes con sus intereses académicos sin depender de terceros, promoviendo el acceso equitativo a la información. Los resultados deben ser claros, pertinentes y comprensibles para apoyar una toma de decisiones informada.
 
 
 ## RF19: El sistema debe permitir consultar la descripcion, objetivos, contenidos, departamento responsable y profesor encargado de una electiva
