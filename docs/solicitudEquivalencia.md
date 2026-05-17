@@ -2,84 +2,90 @@
 
 ## Requerimiento funcionales:
 
-### RF1 – Registro de solicitud de equivalencia por parte del estudiante
+### RF1 – El sistema permite al estudiante registar una solicitud de equivalencia
 
 El estudiante registra una solicitud indicando el curso origen, curso destino y los documentos requeridos. Si faltan campos obligatorios o los documentos no cumplen el formato establecido, el sistema lo indica sin perder la información ya ingresada.
 
 La brecha digital puede excluir a estudiantes con menor acceso tecnológico; fallos durante el registro pueden bloquear el inicio del proceso sin posibilidad de recuperar la información. Los datos personales recopilados están sujetos a la Ley 1581 de 2012; su manejo inadecuado constituye una violación directa al derecho de Habeas Data.
 
-### RF1.1: Carga y validación de documentos de soporte
+### RF1.1: El sistema permite al estudiante cargar documentos de soporte
 
 El estudiante adjunta los documentos que sustentan la equivalencia (syllabus, código del curso y balance académico) en formato PDF con un tamaño máximo de 5MB por archivo. Si el archivo no cumple estas condiciones, el sistema indica el motivo con un mensaje específico.
 
 Exigir un formato estricto sin orientación clara puede excluir a estudiantes con menor acceso o conocimiento técnico, vulnerando su derecho a participar en el proceso. La inestabilidad del sistema durante la carga puede provocar pérdida de documentos y dejar la solicitud incompleta sin que el estudiante lo sepa.
 
-### RF2: Consulta del estado de solicitudes por parte del estudiante
+### RF2: El sistema permite al estudiante consultar el estado de sus solicitudes
 
 El estudiante consulta en cualquier momento el estado actual de su solicitud: enviada, en revisión, aprobada o rechazada. Si no tiene solicitudes registradas, el sistema lo indica. La falta de visibilidad sobre el estado de la solicitud incumple el principio de transparencia exigido por el MEN y genera desconfianza en el proceso institucional.
 
-### RF3: Asignación automática de solicitudes en el flujo institucional
+### RF3: El sistema asigna automáticamente las solicitudes según el flujo institucional
 
 Al registrarse una solicitud, el sistema la asigna al primer responsable de la cadena (Dirección de Programa), siguiendo el flujo institucional hacia el Jefe de Departamento y finalmente Admisiones. Si no es posible identificar el departamento del curso destino, la solicitud queda en estado "Pendiente de Asignación" y se notifica a la Dirección de Programa para su resolución manual.
 
 Una asignación incorrecta que no respete la jerarquía institucional invalida el proceso académico y puede generar decisiones sin respaldo institucional. Errores en los datos maestros del sistema (departamentos, cursos, responsables) pueden provocar asignaciones incorrectas que perjudiquen directamente al estudiante.
 
-### RF4: Registro de decisión final de solicitudes por parte del Jefe de Departamento
+### RF4: El sistema permite al Jefe de Departamento registrar la decisión final tomada en una solicitud
 
 El Jefe de Departamento registra la decisión final (aprobada o rechazada) junto con una justificación obligatoria. El sistema actualiza el estado de la solicitud y desencadena automáticamente la generación del certificado y las notificaciones correspondientes.
 
 Omitir la justificación hace que la decisión no sea auditable, abriendo la puerta a arbitrariedad y exponiendo a la institución a conflictos legales. Una decisión sin justificación comprensible afecta directamente la trayectoria académica del estudiante sin darle elementos para apelarla.
 
-### RF5: Consulta de historial de equivalencias previas por parte del Jefe de Departamento
+### RF5: El sistema permite al Jefe de Departamento consultar el historial de equivalencias previas
 
-El Jefe de Departamento busca equivalencias previas por curso origen, curso destino o filtrando por estado (aprobadas o rechazadas), con el fin de reutilizar criterios en solicitudes similares y evitar reprocesos. Si no existen registros para el criterio ingresado, el sistema lo indica sin generar error.
+El Jefe de Departamento visualiza las equivalencias previas por curso origen o curso destino para conocer la cantidad de solicitudes que ha recibido y que debe atender. Si no hay solicitudes, el sistema indica que al momento no se han hecho solicitudes.
 
-No contar con historial consultable obliga a reprocesar solicitudes similares, generando inconsistencias en las decisiones y mayor carga administrativa innecesaria.
+No contar con historial consultable no permite al Jefe de Departamento conocer las solicitudes que han realizado los estudiantes, generando inconvenientes al no evaluar todas la solicitudes realizadas
 
-### RF6: Actualización del estado de la solicitud
+### RF5.1: El sistema permite al Jefe de Departamento buscar en el historial de equivalencias previas
 
-El Jefe de Departamento puede modificar el estado o justificación de una equivalencia previamente registrada. El cambio queda registrado en el historial con fecha y responsable, sin eliminar la decisión anterior.
+El Jefe de Departamento busca solicitudes de equivalencias por curso origen, curso destino o filtrando por estado (aprobadas o rechazadas) con el fin de reutilizar criterios en solicitudes similares y evitar reprocesos. Si no existen registros para el criterio ingresado, el sistema lo indica sin generar error.
+
+No contar con historial filtrable hace que el Jefe de Departamento tenga que reprocesar solicitudes similares, generando inconsistencias en las decisiones y mayor carga administrativa innecesaria.
+
+### RF6: El sistema permite al Jefe de Departamento actualizar el estado de la solicitud
+
+El Jefe de Departamento modifica el estado o justificación de una equivalencia previamente registrada. El cambio queda registrado en el historial con fecha y responsable, sin eliminar la decisión anterior.
 
 Modificar una decisión sin dejar rastro auditable puede afectar a un estudiante que ya actuó con base en el resultado anterior, y expone a la institución a disputas legales sin evidencia que las respalde.
 
-### RF7: Análisis automático de Solicitudes mediante IA por nivel de cumplimiento académico
+### RF7: El sistema realiza un análisis automático de Solicitudes mediante IA por nivel de cumplimiento académico
 
-El sistema analiza la solicitud comparando créditos, objetivos y competencias del curso externo con los del curso destino. El resultado incluye una clasificación de viabilidad (Alto, Medio o Bajo cumplimiento) y una indicación explícita de qué criterios cumple y cuáles no, de forma que el Jefe de Departamento pueda tomar una decisión informada.
+El sistema hace uso de una IA para analizar la solicitud comparando créditos, competencias y similitud de objetivos de aprendizaje en el pensum del curso externo con los del curso destino. El resultado incluye una clasificación de viabilidad (Alto, Medio o Bajo cumplimiento) y una indicación explícita de qué criterios cumple y cuáles no, de forma que el Jefe de Departamento pueda tomar una decisión informada.
 
 Un análisis automatizado sin explicabilidad incumple el principio de transparencia exigido por el MEN y puede generar desconfianza en los estudiantes sobre cómo son evaluados. El modelo puede replicar sesgos presentes en datos históricos, perpetuando decisiones desiguales de forma sistemática.
 
-### RF8: Notificación automática al estudiante sobre cambios en el estado de su solicitud
+### RF8: El sistema envía una notificación automática al estudiante sobre cambios en el estado de su solicitud
 
 Cada vez que el estado de una solicitud cambia, el sistema notifica automáticamente al estudiante indicando el nuevo estado y, cuando aplica, el motivo registrado por el Jefe de Departamento al tomar la decisión (por ejemplo, si fue aprobada porque los créditos y competencias son equivalentes, o rechazada por diferencia en objetivos de aprendizaje). Los fallos en el envío se gestionan con reintentos automáticos para garantizar que el estudiante reciba la información.
 
 La falta de notificación oportuna puede llevar al estudiante a tomar decisiones académicas con información desactualizada; un fallo técnico sin reintento equivale a dejar al estudiante sin respuesta.
 
-### RF9: Notificación automática de solicitudes pendientes al siguiente responsable en la cadena institucional
+### RF9: El sistema envía una notificación automática de solicitudes pendientes al siguiente responsable en la cadena institucional
 
 Cada vez que un responsable aprueba el paso de una solicitud al siguiente nivel, el sistema notifica automáticamente al receptor correspondiente en la cadena (Dirección de Programa → Jefe de Departamento → Admisiones), indicándole que tiene una solicitud pendiente de revisión. Si el envío falla, el sistema reintenta automáticamente y alerta a la Dirección de Programa en caso de fallo persistente para que la gestión no se detenga.
 
 Un fallo de notificación sin manejo de errores puede paralizar completamente el flujo institucional sin que ningún responsable lo detecte a tiempo.
 
-### RF10: Generación automática del certificado de decisión final
+### RF10: El sistema genera automáticamente el certificado de decisión final
 Al registrar el Jefe de Departamento la decisión final sobre una solicitud, el sistema genera automáticamente un certificado que contiene: nombre del estudiante, curso origen, universidad de origen, curso destino, créditos, decisión (aprobada o rechazada), motivo de la decisión, fecha y responsables del flujo institucional.
 
 El certificado es la evidencia formal de la decisión; generarlo con información incompleta deja sin respaldo legal tanto al estudiante como a la institución.
 
-### RF10.1: Distribución del certificado de decisión final
+### RF10.1: El sistema distribuye el certificado de decisión final
 Una vez generado el certificado, el sistema lo distribuye al estudiante, la Dirección de Programa y el Jefe de Departamento. Si el envío falla, el sistema reintenta automáticamente.
 
 Sin distribución automática, la notificación queda sujeta a procesos manuales que pueden omitirse, dejando al estudiante sin constancia oficial del resultado.
 
-### RF10.2: Registro del certificado de decisión final
+### RF10.2: El sistema registar el certificado de decisión final
 Una vez generado el certificado, el sistema guarda una copia de respaldo en el sistema para garantizar su disponibilidad ante futuras consultas o requerimientos legales.
 
-### RF11: Priorización automática de solicitudes por urgencia o tiempo de espera
+### RF11: El sistema prioriza automáticamente las solicitudes por urgencia o tiempo de espera
 
 La bandeja de la Dirección de Programa muestra las solicitudes ordenadas de más antigua a más reciente. Las solicitudes que el sistema identifica como urgentes (estudiante con fecha límite de matrícula próxima o que ya se encuentra en la universidad de destino) se destacan visualmente por encima de las demás.
 
 No atender a tiempo una solicitud urgente puede comprometer la situación académica o migratoria del estudiante de forma irreversible. Si el sistema no detecta automáticamente las condiciones de urgencia, la priorización depende de criterio manual y puede ser inconsistente.
 
-### RF12: Consulta de información académica de cursos internos por parte del estudiante en movilidad
+### RF12: El sistema permite al estudiante consultar información académica de cursos internos
 
 El estudiante en movilidad consulta los cursos del área con su código, nombre, créditos, competencias y resultados de aprendizaje, con el fin de identificar qué curso interno podría ser equivalente al que cursó en el extranjero antes de iniciar una solicitud formal. Si no hay cursos registrados en el sistema, se indica al estudiante sin generar error.
 
