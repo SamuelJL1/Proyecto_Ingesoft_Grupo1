@@ -118,7 +118,7 @@ RF1 - RF1.1 - RF2 - RF12
 
 Subsistema de Flujo de Aprobación:
 
-RF3 - RF4 - RF4.1 - RF10 - RF10.1 - RF11
+RF3 - RF4 - RF4.1 - RF10 - RF10.1 - RF10.2 - RF11
 
 Subsistema de Base de Datos
 
