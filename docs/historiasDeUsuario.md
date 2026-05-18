@@ -41,22 +41,30 @@
 | Quiero | Ver la lista de las electivas ofertadas por otras universidades en convenio |
 | Para | Explorar oportunidades académicas internacionales |
 
-## Criterios de Aceptación (Formato Gherkin)
+---
 
-### Scenario: Consulta de cursos internacionales
-Given el estudiante accede al de módulo matricular electivas  
-When selecciona una universidad en convenio  
-Then el sistema muestra la lista de electivas disponibles de esa institución  
+### Criterios de Aceptación
+| **Scenario 34.1** | **Consulta de cursos internacionales** |
+|---|---|
+| **Given** | El estudiante accede al módulo matricular electivas |
+| **When** | Selecciona una universidad en convenio |
+| **Then** | El sistema muestra la lista de electivas disponibles de esa institución |
 
-### Scenario: Visualización de información del curso
-Given el estudiante consulta una electiva internacional  
-When selecciona un curso de la lista  
-Then el sistema presenta información académica del curso, incluyendo nombre, descripción y objetivos  
 
-### Scenario: Ausencia de electivas disponibles
-Given el estudiante selecciona una universidad en convenio  
-When la institución no tiene electivas disponibles  
-Then el sistema muestra un mensaje indicando que no existen cursos ofertados actualmente  
+
+| **Scenario 34.2** | **Visualización de información del curso** |
+|---|---|
+| **Given** | El estudiante consulta una electiva internacional |
+| **When** | Selecciona un curso de la lista |
+| **Then** | El sistema presenta información académica del curso, incluyendo nombre, descripción y objetivos |
+
+
+
+| **Scenario 34.3** | **Ausencia de electivas disponibles** |
+|---|---|
+| **Given** | El estudiante selecciona una universidad en convenio |
+| **When** | La institución no tiene electivas disponibles |
+| **Then** | El sistema muestra un mensaje indicando que no existen cursos ofertados actualmente |
 
 ---
 
