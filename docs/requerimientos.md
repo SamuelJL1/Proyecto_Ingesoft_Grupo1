@@ -26,14 +26,12 @@ El sistema debe permitir a los estudiantes buscar electivas disponibles mediante
 |T - Tecnológico  | La plataforma debe manejar casos donde falten datos o informacion | El sistema debe mostrar mensajes claros y no dejar al estudiante sin contexto |  
 ---
 
-## RF21: El sistema debe permitir a los estudiantes acceder al syllabus oficial de cada electiva desde una plataforma centralizada.  
+## RF21: Acceder al syllabus oficial de una electiva
 
-### Analisis PESTLE RF: No aplica
----
+El estudiante accede al syllabus oficial de una electiva desde una plataforma centralizada. La plataforma debe permitir acceder a la versión actual del documento; con los contenidos, objetivos, metodología y los criterios de evaluación del curso.
 
 ## RF22: El sistema debe permitir seleccionar una electiva internacional para realizar comparación académica.  
 
-### Analisis PESTLE RF: No aplica
 
 ---
 
@@ -67,14 +65,11 @@ El estudiante puede consultar la información académica de una electiva, incluy
 ---
 
 
-## RF27: El sistema debe permitir consultar el syllabus de una electiva cuando esté disponible
+## RF27: Consultar el syllabus de una electiva
 
-### Analisis PESTLE RF:
+El estudiante consulta el Syllabus de una electiva, consiguiendo el acceso a los contenidos, objetivos, metodologías y la evaluación del curso. Si la electiva no se encuentra disponible y/o tiene información no aprobada, se le advertirá al estudiante sobre la situación dada.
 
-|  Dimension      |  Hallazgo   |  Argumentacion Etica  |
-|-----------------|-------------|-----------------------|
-|S - Social   | Los estudiantes necesitan acceder fácilmente al syllabus para conocer contenidos, objetivos, metodologia y evaluacion del curso | El sistema debe facilitar el acceso equitativo a la informacion academica antes de que el estudiante tome decisiones sobre la electiva |    
-|L - Legal    | El syllabus debe ser informacion oficial del curso | El sistema debe evitar mostrar informacion no aprobada o no validada como si fuera definitiva |  
+Los estudiantes necesitan acceder fácilmente al syllabus para conocer contenidos, objetivos, metodología y evaluación del curso; se debe facilitar el acceso equitativo a la información académica antes de que el estudiante tome decisiones sobre la electiva. El syllabus debe ser información oficial del curso; se debe evitar mostrar información no aprobada o no validada como si fuera definitiva.
 
 ---
 
