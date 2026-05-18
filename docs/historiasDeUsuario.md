@@ -100,18 +100,20 @@
 | Quiero | Consultar la información principal de una electiva |
 | Para | Conocer de manera rápida de qué trata el curso antes de inscribirlo |
 
-## Criterios de Aceptación (Formato Gherkin)
+| **Scenario 36.1** | **Visualización exitosa de la información del curso** |
+|---|---|
+| **Given** | El estudiante ingresa al sitio de electivas |
+| **When** | Selecciona una electiva de la lista |
+| **Then** | El sistema muestra la descripción, objetivos, contenidos, departamento responsable y el profesor encargado |
 
-### Scenario: Visualización exitosa de la información del curso
-Given El estudiante ingresa al sitio de electivas  
-When Selecciona una electiva de la lista  
-Then El sistema muestra la descripción, objetivos, contenidos, departamento responsable y el profesor encargado  
 
-### Scenario: Información incompleta del curso
-Given El estudiante selecciona una electiva  
-When La información del curso no está completa  
-Then El sistema muestra los datos disponibles  
-And Informa que falta información por actualizar 
+
+| **Scenario 36.2** | **Información incompleta del curso** |
+|---|---|
+| **Given** | El estudiante selecciona una electiva |
+| **When** | La información del curso no está completa |
+| **Then** | El sistema muestra los datos disponibles |
+| **And** | Informa que falta información por actualizar |
 
 ---
 
