@@ -125,17 +125,19 @@
 | Quiero | acceder a un resumen syllabus de una electiva directamente en su descripción |
 | Para | Consultar información académica detallada sin depender de sistemas externos confusos |
 
-## Criterios de Aceptación (Formato Gherkin)
+| **Scenario 37.1** | **Consulta del syllabus de una electiva** |
+|---|---|
+| **Given** | El estudiante está consultando la información de una electiva |
+| **When** | Selecciona la opción "Ver syllabus" |
+| **Then** | El sistema muestra el syllabus oficial asociado al curso con el objetivo, enfoque y porcentajes de la electiva |
 
-### Scenario: Consulta del syllabus de una electiva
-Given el estudiante está consultando la información de una electiva  
-When selecciona la opción "Ver syllabus"  
-Then el sistema muestra el syllabus oficial asociado al curso con el objetivo, enfoque y porcentajes de la electiva  
 
-### Scenario: Syllabus no disponible
-Given el estudiante consulta la información de una electiva  
-When el curso no tiene un syllabus publicado  
-Then el sistema muestra un mensaje indicando que el syllabus no se encuentra disponible  
+
+| **Scenario 37.2** | **Syllabus no disponible** |
+|---|---|
+| **Given** | El estudiante consulta la información de una electiva |
+| **When** | El curso no tiene un syllabus publicado |
+| **Then** | El sistema muestra un mensaje indicando que el syllabus no se encuentra disponible |
 
 ---
 
@@ -149,15 +151,17 @@ Then el sistema muestra un mensaje indicando que el syllabus no se encuentra dis
 
 ## Criterios de Aceptación (Formato Gherkin)
 
-### Scenario: Búsqueda efectiva por criterios específicos
-Given El estudiante está en el buscador de cursos  
-When Ingresa un criterio de búsqueda como "contenido" o un "horario"  
-Then El sistema muestra una lista de cursos filtrados que coinciden con los parámetros ingresados  
+| **Scenario 38.1** | **Búsqueda efectiva por criterios específicos** |
+|---|---|
+| **Given** | El estudiante está en el buscador de cursos |
+| **When** | Ingresa un criterio de búsqueda como "contenido" o un "horario" |
+| **Then** | El sistema muestra una lista de cursos filtrados que coinciden con los parámetros ingresados |
 
-### Scenario: Visualización de una estructura organizada
-Given El estudiante tiene duda sobre la procedencia de un curso  
-When Selecciona una electiva del listado  
-Then El sistema muestra a qué departamento pertenece el curso para futuras consultas  
+| **Scenario 38.2** | **Visualización de departamento** |
+|---|---|
+| **Given** | El estudiante tiene duda sobre la procedencia de un curso |
+| **When** | Selecciona una electiva del listado |
+| **Then** | El sistema muestra a qué departamento pertenece el curso para futuras consultas |
 
 ---
 
@@ -169,20 +173,23 @@ Then El sistema muestra a qué departamento pertenece el curso para futuras cons
 
 ## Criterios de Aceptación (Formato Gherkin)
 
-### Scenario: Validación exitosa de un nuevo syllabus
-Given Un profesor ha cargado el syllabus de su curso en el sistema  
-When El jefe de departamento revisa y da clic en "Aprobar"  
-Then El sistema publica la información automáticamente para que sea visible para los estudiantes  
+| **Scenario 39.1** | **Validación exitosa de un nuevo syllabus** |
+|---|---|
+| **Given** | Un profesor ha cargado el syllabus de su curso en el sistema |
+| **When** | El jefe de departamento revisa y da clic en "Aprobar" |
+| **Then** | El sistema publica la información automáticamente para que sea visible para los estudiantes |
 
-### Scenario: Consulta de syllabus aprobados
-Given un syllabus ha sido aprobado  
-When un estudiante consulta la información de una electiva  
-Then el sistema muestra el syllabus oficial publicado  
+| **Scenario 39.2** | **Consulta de syllabus aprobados** |
+|---|---|
+| **Given** | Un syllabus ha sido aprobado |
+| **When** | Un estudiante consulta la información de una electiva |
+| **Then** | El sistema muestra el syllabus oficial publicado |
 
-### Scenario: Rechazo de un syllabus con observaciones
-Given el jefe de departamento revisa un syllabus registrado  
-When identifica información incompleta o incorrecta  
-Then el sistema permite rechazar el syllabus y registrar observaciones para el profesor  
+| **Scenario 39.3** | **Rechazo de un syllabus con observaciones** |
+|---|---|
+| **Given** | El jefe de departamento revisa un syllabus registrado |
+| **When** | Identifica información incompleta o incorrecta |
+| **Then** | El sistema permite rechazar el syllabus y registrar observaciones para el profesor |
 
 ---
 
@@ -194,20 +201,27 @@ Then el sistema permite rechazar el syllabus y registrar observaciones para el p
 
 ## Criterios de Aceptación (Formato Gherkin)
 
-### Scenario: Visualización del departamento de una electiva
-Given El estudiante está consultando la lista de las electivas  
-When Selecciona una electiva  
-Then El sistema muestra el departamento académico al que pertenece el curso  
+| **Scenario 40.1** | **Visualización del departamento de una electiva** |
+|---|---|
+| **Given** | El estudiante está consultando la lista de las electivas |
+| **When** | Selecciona una electiva |
+| **Then** | El sistema muestra el departamento académico al que pertenece el curso |
 
-### Scenario: Electiva sin departamento asignado
-Given El estudiante está consultando la lista de las electivas  
-When Selecciona un curso de electiva que no tiene departamento asignado  
-Then El sistema informa en un mensaje indicando que la información del departamento está pendiente por actualizar  
 
-### Scenario: Consulta del departamento desde la información del curso
-Given el estudiante está visualizando la información detallada de una electiva  
-When revisa los datos académicos del curso  
-Then el sistema muestra el nombre del departamento académico responsable  
+
+| **Scenario 40.2** | **Electiva sin departamento asignado** |
+|---|---|
+| **Given** | El estudiante está consultando la lista de las electivas |
+| **When** | Selecciona un curso de electiva que no tiene departamento asignado |
+| **Then** | El sistema informa en un mensaje indicando que la información del departamento está pendiente por actualizar |
+
+
+
+| **Scenario 40.3** | **Consulta del departamento desde la información del curso** |
+|---|---|
+| **Given** | El estudiante está visualizando la información detallada de una electiva |
+| **When** | Revisa los datos académicos del curso |
+| **Then** | El sistema muestra el nombre del departamento académico responsable |
 
 ---
 
@@ -219,17 +233,24 @@ Then el sistema muestra el nombre del departamento académico responsable
 
 ## Criterios de Aceptación (Formato Gherkin)
 
-### Scenario: Actualización de información de una electiva
-Given el profesor accede a la información de una electiva registrada  
-When modifica la información académica y selecciona la opción "Guardar cambios"  
-Then el sistema actualiza la información y la envía al proceso de revisión académica  
+| **Scenario 41.1** | **Actualización de información de una electiva** |
+|---|---|
+| **Given** | El profesor accede a la información de una electiva registrada |
+| **When** | Modifica la información académica y selecciona la opción "Guardar cambios" |
+| **Then** | El sistema actualiza la información y la envía al proceso de revisión académica |
 
-### Scenario: Validación de campos obligatorios
-Given el profesor está editando la información de una electiva  
-When intenta guardar el formulario con campos obligatorios vacíos  
-Then el sistema muestra un mensaje indicando los campos pendientes por completar  
 
-### Scenario: Confirmación de actualización enviada
-Given el profesor actualiza la información de una electiva correctamente  
-When el sistema registra los cambios  
-Then el sistema muestra un mensaje confirmando que la información fue enviada a revisión  
+
+| **Scenario 41.2** | **Validación de campos obligatorios** |
+|---|---|
+| **Given** | El profesor está editando la información de una electiva |
+| **When** | Intenta guardar el formulario con campos obligatorios vacíos |
+| **Then** | El sistema muestra un mensaje indicando los campos pendientes por completar |
+
+
+
+| **Scenario 41.3** | **Confirmación de actualización enviada** |
+|---|---|
+| **Given** | El profesor actualiza la información de una electiva correctamente |
+| **When** | El sistema registra los cambios |
+| **Then** | El sistema muestra un mensaje confirmando que la información fue enviada a revisión |
