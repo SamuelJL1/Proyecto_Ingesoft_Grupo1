@@ -74,17 +74,23 @@
 | Quiero | Buscar electivas que se encuentren disponibles en la universidad |
 | Para | Encontrar más fácilmente los cursos que se ajusten a mis intereses académicos |
 
-## Criterios de Aceptación (Formato Gherkin)
+---
 
-### Scenario: Búsqueda exitosa de una electiva
-Given El estudiante está en el sitio de electivas  
-When Escribe el nombre o una palabra clave relacionada con el curso  
-Then El sistema muestra las electivas que coinciden con la búsqueda  
+### Criterios de Aceptación (Formato Gherkin)
 
-### Scenario: Búsqueda de una electiva sin resultados
-Given El estudiante está en el sitio de electivas  
-When Escribe una palabra para buscar un curso  
-Then El sistema muestra un mensaje indicando que no se encontraron resultados  
+| **Scenario 35.1** | **Búsqueda exitosa de una electiva** |
+|---|---|
+| **Given** | El estudiante está en el sitio de electivas |
+| **When** | Escribe el nombre o una palabra clave relacionada con el curso |
+| **Then** | El sistema muestra las electivas que coinciden con la búsqueda |
+
+
+
+| **Scenario 35.2** | **Búsqueda de una electiva sin resultados** |
+|---|---|
+| **Given** | El estudiante está en el sitio de electivas |
+| **When** | Escribe una palabra para buscar un curso |
+| **Then** | El sistema muestra un mensaje indicando que no se encontraron resultados |
 
 ---
 
