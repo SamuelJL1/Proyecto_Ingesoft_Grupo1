@@ -9,26 +9,29 @@
 
 ---
 
-# Criterios de Aceptación (Formato Gherkin)
+### Criterios de Aceptación
 
-## Scenario: Reproducción de video del curso
-**Given** el módulo de la información de electiva con un video cargado  
-**When** el usuario selecciona la sección "Presentación del curso"  
-**Then** el sistema reproduce un video informativo del docente sobre la materia  
+| **Scenario 33.1** |**Reproducción de video del curso** |
+|---|---|
+| **Given** | El módulo de la información de electiva con un video cargado |
+| **When** | El usuario selecciona la sección "Presentación del curso" |
+| **Then** | El sistema reproduce un video informativo del docente sobre la materia |
 
----
 
-## Scenario: Disponibilidad del video
-**Given** el estudiante accede a la información de una electiva  
-**When** el curso tiene un video de presentación disponible  
-**Then** el sistema muestra un reproductor de video accesible desde la página del curso  
 
----
+| **Scenario 33.2** | **Disponibilidad del video** |
+|---|---|
+| **Given** | El estudiante accede a la información de una electiva |
+| **When** | El curso tiene un video de presentación disponible |
+| **Then** | El sistema muestra un reproductor de video accesible desde la página del curso |
 
-## Scenario: Video no disponible
-**Given** el estudiante accede a la información de una electiva  
-**When** el curso no tiene un video de presentación disponible  
-**Then** el sistema muestra un mensaje indicando que el curso no cuenta con un video informativo  
+
+
+| **Scenario 33.3** | **Video no disponible** |
+|---|---|
+| **Given** | El estudiante accede a la información de una electiva |
+| **When** | El curso no tiene un video de presentación disponible |
+| **Then** | El sistema muestra un mensaje indicando que el curso no cuenta con un video informativo |  
 
 
 ---
