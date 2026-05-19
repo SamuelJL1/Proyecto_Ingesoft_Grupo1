@@ -430,3 +430,269 @@ Yo como jefe de departamento quiero consultar los cursos registrados para accede
   - **Given** que no existen cursos registrados en el sistema  
   - **When** el jefe consulta la lista de cursos  
   - **Then** el sistema indica que no hay cursos registrados  
+
+#Ultimas historias de usuario con respecto a los nuevos requerimientos
+
+# HU1 — Diligenciar encuesta de evaluación
+
+## Título: Diligenciar encuesta de evaluación de asignatura
+
+**Yo, como** estudiante  
+**Quiero** diligenciar una encuesta de evaluación asociada a un curso y periodo académico cursado  
+**Para** registrar mi opinión sobre la calidad de la asignatura y el desempeño académico.  
+
+## Criterios de aceptación
+
+### Scenario: Acceso exitoso a encuesta disponible
+**Given** el estudiante ha cursado una asignatura en un periodo académico válido  
+**When** accede al módulo de evaluación  
+**Then** el sistema muestra la encuesta correspondiente al curso y periodo.  
+
+### Scenario: Envío exitoso de encuesta diligenciada
+**Given** el estudiante completó todas las preguntas y agregó un comentario obligatorio  
+**When** selecciona enviar encuesta  
+**Then** el sistema registra las respuestas y muestra confirmación de envío exitoso.  
+
+---
+
+# HU2 — Validar y enviar encuesta
+
+## Título: Validación y envío definitivo de encuesta
+
+**Yo, como** estudiante  
+**Quiero** validar que mi encuesta esté completa antes de enviarla  
+**Para** asegurar que mi evaluación sea registrada correctamente.  
+
+## Criterios de aceptación
+
+### Scenario: Validación exitosa
+**Given** la encuesta tiene todas las respuestas completas y comentario válido  
+**When** el estudiante selecciona validar y enviar  
+**Then** el sistema cambia el estado a ENVIADA.  
+
+### Scenario: Validación fallida por preguntas incompletas
+**Given** existen preguntas sin responder  
+**When** el estudiante intenta enviar la encuesta  
+**Then** el sistema muestra mensaje indicando preguntas pendientes.  
+
+---
+
+# HU3 — Seleccionar anonimato
+
+## Título: Selección de privacidad de encuesta
+
+**Yo, como** estudiante  
+**Quiero** decidir si mi encuesta será anónima o identificada  
+**Para** controlar la privacidad de mi información.  
+
+## Criterios de aceptación
+
+### Scenario: Selección de envío anónimo
+**Given** el estudiante diligenció la encuesta  
+**When** activa la opción anónima  
+**Then** el sistema registra la preferencia de anonimato.  
+
+### Scenario: Selección de envío identificado
+**Given** el estudiante diligenció la encuesta  
+**When** desactiva la opción anónima  
+**Then** el sistema asocia la identidad al envío.  
+
+---
+
+# HU4 — Consultar evaluaciones filtradas
+
+## Título: Consulta de evaluaciones filtradas
+
+**Yo, como** jefe de departamento  
+**Quiero** consultar evaluaciones usando filtros  
+**Para** revisar información específica de cursos y periodos.  
+
+## Criterios de aceptación
+
+### Scenario: Filtrado por estado
+**Given** existen evaluaciones registradas  
+**When** el jefe filtra por estado  
+**Then** el sistema muestra solo evaluaciones coincidentes.  
+
+### Scenario: Ocultamiento de identidad en anónimas
+**Given** existe una evaluación anónima  
+**When** el jefe visualiza resultados  
+**Then** el sistema oculta identidad del estudiante.  
+
+---
+
+# HU5 — Vista filtrable de evaluaciones
+
+## Título: Vista filtrable de evaluaciones institucionales
+
+**Yo, como** jefe de departamento  
+**Quiero** visualizar evaluaciones en una interfaz filtrable  
+**Para** facilitar el control de calidad institucional.  
+
+## Criterios de aceptación
+
+### Scenario: Filtrado por curso y periodo
+**Given** el jefe accede a la vista de evaluaciones  
+**When** selecciona curso y periodo  
+**Then** el sistema actualiza la lista filtrada.  
+
+### Scenario: No existen resultados para filtros seleccionados
+**Given** el jefe de departamento accede a la vista de evaluaciones  
+**And** aplica filtros por curso, periodo y estado sin coincidencias  
+**When** ejecuta la búsqueda  
+**Then** el sistema muestra un mensaje indicando "No se encontraron evaluaciones para los filtros seleccionados".  
+
+---
+
+# HU6 — Rechazar validación con justificación
+
+## Título: Rechazo de evaluación con justificación
+
+**Yo, como** jefe de departamento  
+**Quiero** rechazar evaluaciones pendientes con una justificación obligatoria  
+**Para** dejar trazabilidad de mis decisiones.  
+
+## Criterios de aceptación
+
+### Scenario: Rechazo exitoso
+**Given** una evaluación está en estado pendiente  
+**When** el jefe registra motivo válido y rechaza  
+**Then** el sistema actualiza estado a RECHAZADA.  
+
+### Scenario: Rechazo fallido por justificación corta
+**Given** el motivo tiene menos de 10 caracteres  
+**When** intenta rechazar  
+**Then** el sistema muestra error de validación.  
+
+---
+
+# HU7 — Generar reportes analíticos
+
+## Título: Generación de reportes analíticos
+
+**Yo, como** jefe de departamento  
+**Quiero** generar reportes analíticos de retroalimentación  
+**Para** identificar tendencias académicas.  
+
+## Criterios de aceptación
+
+### Scenario: Generación exitosa de reporte
+**Given** existen evaluaciones consolidadas  
+**When** el jefe solicita reporte  
+**Then** el sistema genera métricas y comparaciones.  
+
+### Scenario: Generación de reporte con datos insuficientes
+**Given** no existen evaluaciones aprobadas o rechazadas para el curso seleccionado  
+**When** el jefe solicita generar reporte  
+**Then** el sistema informa que no hay datos suficientes para análisis.  
+
+---
+
+# HU8 — Registrar cierre de periodo académico
+
+## Título: Registro de cierre académico
+
+**Yo, como** sistema administrativo  
+**Quiero** registrar el cierre de un periodo académico  
+**Para** activar procesos automáticos institucionales.  
+
+## Criterios de aceptación
+
+### Scenario: Registro exitoso de cierre
+**Given** el periodo está activo  
+**When** se registra fecha de cierre  
+**Then** el sistema marca el periodo como cerrado.  
+
+### Scenario: Intento de cierre de periodo ya cerrado
+**Given** el periodo académico ya se encuentra registrado como cerrado  
+**When** el administrador intenta registrar nuevamente el cierre  
+**Then** el sistema muestra mensaje indicando que el periodo ya fue cerrado previamente.  
+
+---
+
+# HU9 — Envío automático de reportes
+
+## Título: Distribución automática de reportes
+
+**Yo, como** sistema  
+**Quiero** enviar automáticamente reportes a jefes de departamento  
+**Para** garantizar entrega oportuna de información.  
+
+## Criterios de aceptación
+
+### Scenario: Envío automático exitoso
+**Given** el periodo académico fue cerrado  
+**When** se generan reportes  
+**Then** el sistema los envía automáticamente.  
+
+### Scenario: Fallo en envío automático de reportes
+**Given** el sistema generó los reportes correctamente  
+**And** ocurre un error en el envío al jefe de departamento  
+**When** se intenta distribuir automáticamente  
+**Then** el sistema registra el fallo y notifica que el envío no pudo completarse.  
+
+---
+
+# HU10 — Consultar histórico de reportes
+
+## Título: Consulta histórica de reportes
+
+**Yo, como** jefe de departamento  
+**Quiero** consultar reportes históricos  
+**Para** analizar evolución académica.  
+
+## Criterios de aceptación
+
+### Scenario: Consulta exitosa
+**Given** existen reportes históricos  
+**When** el jefe aplica filtros  
+**Then** el sistema muestra reportes coincidentes.  
+
+### Scenario: Consulta sin filtros opcionales
+**Given** el jefe de departamento accede al histórico de reportes  
+**When** consulta sin especificar curso ni periodo académico  
+**Then** el sistema muestra todos los reportes disponibles asociados a su departamento.  
+
+---
+
+# HU11 — Comparar cursos con IA
+
+## Título: Comparación inteligente de cursos
+
+**Yo, como** jefe de departamento  
+**Quiero** comparar cursos mediante inteligencia artificial  
+**Para** identificar similitudes y oportunidades de mejora.  
+
+## Criterios de aceptación
+
+### Scenario: Comparación exitosa
+**Given** dos cursos válidos seleccionados  
+**When** el jefe ejecuta comparación  
+**Then** el sistema muestra porcentaje de similitud y recomendación.  
+
+### Scenario: Comparación fallida por cursos inválidos
+**Given** uno o ambos cursos seleccionados no existen o no están validados  
+**When** el jefe ejecuta la comparación  
+**Then** el sistema muestra un mensaje indicando que la comparación no puede realizarse.  
+
+---
+
+# HU12 — Comentario obligatorio
+
+## Título: Registro de comentario obligatorio
+
+**Yo, como** estudiante  
+**Quiero** ingresar un comentario obligatorio de mínimo 50 palabras  
+**Para** aportar contexto cualitativo a mi evaluación.  
+
+## Criterios de aceptación
+
+### Scenario: Comentario válido
+**Given** el comentario tiene al menos 50 palabras  
+**When** el estudiante continúa  
+**Then** el sistema permite seguir con el proceso.  
+
+### Scenario: Comentario inválido
+**Given** el comentario tiene menos de 50 palabras  
+**When** intenta continuar  
+**Then** el sistema bloquea avance y muestra mensaje de error.  
