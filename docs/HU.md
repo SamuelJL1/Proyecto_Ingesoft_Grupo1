@@ -431,7 +431,7 @@ Yo como jefe de departamento quiero consultar los cursos registrados para accede
   - **When** el jefe consulta la lista de cursos  
   - **Then** el sistema indica que no hay cursos registrados  
 
-#Ultimas historias de usuario con respecto a los nuevos requerimientos
+# Ultimas historias de usuario con respecto a los nuevos requerimientos
 
 # HU1 — Diligenciar encuesta de evaluación
 
